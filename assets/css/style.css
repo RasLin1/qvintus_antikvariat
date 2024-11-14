@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav {
+	width: 96%;
+	background-color: #000;
+	color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+	height: 15%;
+}
+
+#nav h2 {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	text-transform: uppercase;
+	display: inline;
+}
+
+#nav ul {
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#nav li {
+	display: inline;
+	margin-right: 0px;
+	margin-left: 20px;
+	text-transform: uppercase;
+}
+
+#nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000;
+	color: #fff;
+	font-size: 20px;
+	min-height: 70%;
+}
+
+.account-container{
+	visibility: block;
+}
+
+
+
+#footer{
+	width: 100%;
+	height: 15%;
+	background-color: #000;
+	padding : 0px;
+}
+
+.footer-text{
+	color: #fff;
+	text-align: center;
+}
+
+    /* The Modal (background) */
+	.Modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */  
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	  }
+	
+	
+	  
+	  /* Modal Content/Box */
+	  .modal-content {
+		margin: 15% auto; /* 15% from the top and centered */
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%; /* Could be more or less, depending on screen size */
+		color: black !important;
+	  }
+
+	  .modal-label {
+		color: black;
+	  }
+	  
+	  /* The Close Button */
+	  .close {
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	  }
+	  
+	  .close:hover,
+	  .close:focus {
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	  }
+
+
+.nav-link-button {
+background: none;
+border: none;
+color: inherit;
+font: inherit;
+cursor: pointer;
+text-decoration: underline; /* Or match your link styling */
+padding: 0; /* Remove padding for inline appearance */
+}
+
+.nav-link-button:hover {
+    color: #007bff; /* Match your link hover color */
+}

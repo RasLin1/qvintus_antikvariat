@@ -1,0 +1,373 @@
+home.php
+
+sanitizeInput($data){
+$data = trim($data);
+$data = stripslashes($data);
+$data = htmlspecialchars($data);
+return $data;
+}
+
+bookSearch(){
+takes the inputted $searchTerm and compares it to the xml file and gives suggestions. 
+When done it sends the $searchTerm to fetchBooks() function.
+}
+
+fetchFeturedItems($pdo, $itemType){
+prepares and executes SELECT query where item_type = $itemType; to get the different featured items
+}
+
+populateFeaturedItemField($feturedItems){
+runs foreach loop for the previous query results
+}
+
+
+
+books.php
+
+fetchBooks($pdo, $searchTerm){
+prepares and executes a very long SELECT query for books table that is inner joined with other tables such as book_authors. It sends back an array called $books upon completion.
+}
+
+populateBookField($books){
+runs a foreach loop for the previous query results
+}
+
+
+
+singleBook.php
+
+fetchSingleBook($pdo, $currBookId){
+takes the books id and preforms a SELECT query to get all data on it
+}
+
+
+
+contact.php
+
+sendContactRequest($pdo){
+takes the request data and does an INSERT query to put it in the database
+}
+
+
+
+employeeLogin.php
+
+loginUser($pdo){
+preform a SELECT query based on the inputed username and saves data as $userData
+if(!$userdata){
+return "FALSE";
+}
+elseif($userdata){
+Verifyes that the password is correct
+}
+if($passwordMatch == TRUE){
+saves relevant data like username, id and role number to their respective $_SESSION variables
+if($role = admin){
+redirects to adminPanel.php
+}
+else{
+redirect to bookEditor.php
+}}}
+
+
+
+adminPanel.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to bookEditor.php
+}
+
+
+
+bookEditor.php
+
+//employee only functions
+searchOwnBooks($pdo, $userId, $searchTerm){
+preforms a SELECT query for books WHERE employee_fk = $userId and WHERE book_titel = $searchTerm
+}
+
+
+//These are the functions that employee, manager and admin roles can access
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+createNewBook($pdo){
+preforms a INSERT query with the inputed data. Creates new rows in associated tables such as book_author.
+}
+
+editBook($pdo, $bookId){
+preforms an UPDATE query with the new data WHERE book_id = $bookId
+}
+
+deleteBook($pdo, $bookId){
+preforms a DELETE query on the books table WHERE book_id = $bookId
+}
+
+liveSearchAuthor(){
+takes the inputted $searchTerm and compares it to the xml file and gives suggestions. When a suggestion is pressed it saves the corresponding id to an hidden <input>
+}
+
+liveSearchIllustrator(){
+	-||-
+}
+
+liveSearchPublisher(){
+	-||-
+}
+
+liveSearchSeries(){
+	-||-
+}
+
+sanitizeInput($data){
+$data = trim($data);
+$data = stripslashes($data);
+$data = htmlspecialchars($data);
+return $data;
+}
+
+
+//manager and admin functions
+searchAllBooks($pdo, $searchTerm){
+preforms a SELECT query for books WHERE book_titel = $searchTerm
+}
+
+
+//admin only functions
+addAuthor($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+addIllustrator($pdo){
+	-||-
+}
+
+addPublisher($pdo){
+	-||-
+}
+
+addSeries($pdo){
+	-||-
+}
+
+
+
+frontPageEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+searchAllBooks($pdo, $searchTerm){
+preforms a SELECT query for books WHERE book_titel = $searchTerm
+}
+
+addFeturedItem($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editFeaturedItem($pdo, $featItemId){
+preforms an UPDATE query with the new data WHERE feat_item_id = $featItemId)
+}
+
+deleteFeaturedItem($pdo, $featItemId){
+preforms a DELETE query on the books table WHERE feat_item_id = $featItemId)
+}
+
+fetchFeturedItems($pdo, $itemType){
+prepares and executes SELECT query where item_type = $itemType; to get the different featured items
+}
+
+populateFeaturedItem($feturedItems){
+runs foreach loop for the previous query results
+}
+
+
+
+userEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+addUser($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editUser($pdo, $userId){
+preforms an UPDATE query with the new data WHERE emp_id = $userId
+}
+
+deleteUser($pdo, $userId){
+preforms a DELETE query on the books table WHERE emp_id = $userId
+}
+
+fetchUsers($pdo, $username){
+prepares and executes SELECT query where emp_username = $username; 
+}
+
+populateUserField($users){
+runs foreach loop for the previous query results
+}
+
+
+
+genreEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+addGenre($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editGenre($pdo, $genreId){
+preforms an UPDATE query with the new data WHERE genre_id= $genreId
+}
+
+deleteGenre($pdo, $featItemId){
+preforms a DELETE query on the books table WHERE genre_id= $genreId
+}
+
+fetchGenres($pdo, $genreName){
+prepares and executes SELECT query where genre_name = $genreName; 
+}
+
+populateGenreField($genres){
+runs foreach loop for the previous query results
+}
+
+
+
+publisherEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+addPublisher($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editPublisher($pdo, $pubId){
+preforms an UPDATE query with the new data WHERE pub_id = $pubId
+}
+
+deletePublisher($pdo, $pubId){
+preforms a DELETE query on the books table WHERE pub_id = $pubId
+}
+
+fetchPublisher($pdo, $pubName){
+prepares and executes SELECT query where pub_name = $pubName;
+}
+
+populatePublisherField($publishers){
+runs foreach loop for the previous query results
+}
+
+
+
+authorEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+addAuthor($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editAuthor($pdo, $authorId){
+preforms an UPDATE query with the new data WHERE author_id = $auhorId
+}
+
+deleteAuthor($pdo, $authorId){
+preforms a DELETE query on the books table WHERE author_id = $auhorId
+}
+
+fetchAuthors($pdo, $authorName){
+prepares and executes SELECT query where author_name = $authorName;
+}
+
+populateAuthorField($authors){
+runs foreach loop for the previous query results
+}
+
+
+
+illustratorEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+addIllustrator($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editIllustrator($pdo, $illustratorId){
+preforms an UPDATE query with the new data WHERE illustrator_id = $illustratorId
+}
+
+deleteIllustrator($pdo, $illustratorId){
+preforms a DELETE query on the books table WHERE illustrator_id = $illustratorId
+}
+
+fetchIllustrators($pdo, $illustratorName){
+prepares and executes SELECT query where illustrator_name = $illustratorName;
+}
+
+populateIllustratorField($illustrators){
+runs foreach loop for the previous query results
+}
+
+
+
+categoryEditor.php
+
+checkUserRole($role){
+if $role is < than the required value redirect to home.php
+}
+
+addCategory($pdo){
+preforms a INSERT query with the inputed data.
+}
+
+editCategory($pdo, $categoryId){
+preforms an UPDATE query with the new data WHERE category_id = $categoryId
+}
+
+deleteCategory($pdo, $categoryId){
+preforms a DELETE query on the books table WHERE category_id = $categoryId
+}
+
+fetchCategorys($pdo, $categoryName){
+prepares and executes SELECT query where category_name = $categoryName;
+}
+
+populateCategoryField($categories){
+runs foreach loop for the previous query results
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

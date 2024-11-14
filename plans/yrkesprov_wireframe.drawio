@@ -1,0 +1,1614 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.4" pages="8">
+  <diagram name="Framsida" id="pLnlySoKtoWe7aqmdB-H">
+    <mxGraphModel dx="1235" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="2030" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="720" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-3" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="250" y="222.5" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-6" value="Kontakt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-9" value="Qvintus Logo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-10" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.looking_glass;" vertex="1" parent="1">
+          <mxGeometry x="520" y="227.5" width="20.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-11" value="Vad letar du efter?" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="280" y="177.5" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-12" value="Verksamhet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-13" value="Exklusivt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-14" value="Böcker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-15" value="Hem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="720" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-18" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Sällsynt och Värdefullt&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="350" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="410" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-23" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-24" value="Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="435" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-26" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="115" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-31" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="115" y="530" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-55" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="435" width="20" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-56" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="60" y="435" width="20" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-57" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="630" width="720" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-58" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Populära genrer&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="640" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-73" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="720" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-75" value="Genre Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="437.5" y="730" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-78" value="Genre Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="790" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-89" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="720" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-90" value="Genre Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="587.5" y="730" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-91" value="Genre Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="790" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-92" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="720" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-93" value="Genre Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="287.5" y="730" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-94" value="Genre Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="790" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-95" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="720" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-96" value="Genre Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="137.5" y="730" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-97" value="Genre Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="790" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-98" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="410" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-99" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-100" value="Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="282.5" y="435" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-101" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="265" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-102" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="265" y="530" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-103" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415.5" y="410" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-104" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415.5" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-105" value="Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="433" y="435" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-106" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="415.5" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-107" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="415.5" y="530" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-108" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="410" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-109" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-110" value="Bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="582.5" y="435" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-111" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="565" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-112" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="565" y="530" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-113" value="Se mer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="640" y="350" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-114" value="Se alla" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="640" y="640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-130" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="870" width="720" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-131" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Populärt just nu&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="880" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-137" value="" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="990" width="20" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-138" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="60" y="990" width="20" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-154" value="Se mer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="640" y="880" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-155" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="929" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-156" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="929" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-157" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="929" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-158" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="929" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-159" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="929" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-160" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="929" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-161" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="1079" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-162" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="1109" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-163" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="1139" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-164" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="929" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-165" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="1079" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-166" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="1109" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-167" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="1139" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-168" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="929" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-169" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="1079" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-170" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="1109" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-171" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="1139" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-172" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="470" y="929" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-173" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1079" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-174" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1109" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-175" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="1139" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-180" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="929" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-181" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="1079" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-182" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="1109" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-183" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="1139" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-184" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1190" width="720" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-185" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Hittar du inte det du söker?&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1210" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-186" value="Oroa dig inte, vi fixar de flesta önskemålen, både store och små" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="285" y="1250" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-187" value="Gör ett önskemål" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1340" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-188" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1400" width="360" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-189" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1400" width="360" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-190" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Hälsningar från Qvintus&lt;/h1&gt;&lt;hr style=&quot;margin: 0px; padding: 0px; clear: both; border: 0px; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;div id=&quot;Content&quot; style=&quot;margin: 0px; padding: 0px; position: relative; font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;div id=&quot;bannerL&quot; style=&quot;margin: 0px 0px 0px -300px; padding: 0px; position: sticky; top: 20px; width: 300px; height: 10px; float: left;&quot;&gt;&lt;/div&gt;&lt;div id=&quot;bannerR&quot; style=&quot;margin: 0px -300px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 300px; height: 10px; float: right;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;boxed&quot; style=&quot;margin: 10px 28.8px; padding: 0px; clear: both;&quot;&gt;&lt;div id=&quot;lipsum&quot; style=&quot;margin: 0px; padding: 0px;&quot;&gt;&lt;p style=&quot;text-align: justify; margin: 0px 0px 15px; padding: 0px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel ullamcorper justo, sed ornare nisi. Nunc et libero vitae massa suscipit dignissim ut ut nunc. Sed eu bibendum libero. Nam pellentesque at neque vel blandit. Ut finibus venenatis purus, eu ultrices risus.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="65" y="1420" width="310" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-191" value="Bild på qvintus" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1490" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-192" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1640" width="720" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-193" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Kund historier&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1650" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-194" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="1710" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-197" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="1710" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-200" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="1710" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-203" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="1710" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-204" value="Artikel bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="1720" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-205" value="Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="1780" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-209" value="Läs mera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="1810" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-210" value="Artikel bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="282.5" y="1720" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-211" value="Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="1780" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-212" value="Läs mera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="1810" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-213" value="Artikel bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="432.5" y="1720" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-214" value="Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="1780" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-215" value="Läs mera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="1810" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-216" value="Artikel bild" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="582.5" y="1720" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-217" value="Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="1780" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-218" value="Läs mera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="1810" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-219" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1880" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-220" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1880" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-221" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1880" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-222" value="Kontakt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1890" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-223" value="Laglika Saker" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1890" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-224" value="Social Media" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1890" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-225" value="Telefon: 0503821567" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="96.25" y="1920" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-226" value="Epost: qvintus@aol.com" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="93.75" y="1950" width="132.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-228" value="Kontakta oss" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2030" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-229" value="Integritetspolicy" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="345" y="1930" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-230" value="Adress: Frenckellinaukio 2 B" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="93.75" y="1980" width="156.25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-232" value="Användarvilkor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="345" y="1970" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-233" value="Truth Social" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="1940" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-234" value="Twitter" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="1980" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ie9GXFyOtyc5cb-BF2_Z-235" value="Telegram" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="2020" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n_oXfTzsH7i4QRgCLrEk-1" value="Inlogning för anställda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="325.63" y="2010" width="148.75" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Jtzj5s758oZhBq6UQmLk" name="Bok Sida">
+    <mxGraphModel dx="1500" dy="814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-2" value="Kontakt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-3" value="Qvintus Logo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-4" value="Verksamhet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-5" value="Exklusivt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-6" value="Böcker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-7" value="Hem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-10" value="Böcker" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="130" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-17" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="730" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="730" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="730" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-20" value="Kontakt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="100" y="740" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-21" value="Laglika Saker" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="340" y="740" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-22" value="Social Media" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="580" y="740" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-23" value="Telefon: 0503821567" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="96.25" y="770" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-24" value="Epost: qvintus@aol.com" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="93.75" y="800" width="132.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-25" value="Kontakta oss" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="880" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-26" value="Integritetspolicy" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="345" y="780" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-27" value="Adress: Frenckellinaukio 2 B" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="93.75" y="830" width="156.25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-28" value="Användarvilkor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="345" y="820" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-29" value="Truth Social" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="790" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-30" value="Twitter" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="830" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w06Joc1WWN4rJvagcyrQ-31" value="Telegram" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="870" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="190" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="190" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="190" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="190" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="190" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-6" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="190" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-7" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-8" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-9" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-10" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="190" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-11" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-12" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-13" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-14" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="190" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-15" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-16" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-17" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-18" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="470" y="190" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-19" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-20" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-21" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-22" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="190" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-23" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-24" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="370" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-25" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="400" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="450" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="450" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="450" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-29" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="450" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-30" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="450" width="100" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-31" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="450" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-32" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="600" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-33" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="630" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-34" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="660" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-35" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="450" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-36" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="600" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-37" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="630" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-38" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="660" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-39" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="450" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-40" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="600" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-41" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="630" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-42" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="660" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-43" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="470" y="450" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-44" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="600" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-45" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="630" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-46" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="660" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-47" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="450" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-48" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="600" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-49" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="630" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-50" value="Pris" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="660" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BfxxoWMmyqu-qR-J5VCA-76" value="Search results page looks the same" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="830" y="40" width="190" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="eZLmNy-qdpxB8jz06hJJ-1" value="Inlogning för anställda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="325.63" y="860" width="148.75" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CzHsUVyj3zvNJl3AOG9z" name="Kontakt Sida">
+    <mxGraphModel dx="1050" dy="570" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="F_qWBRk3jHI_jffYUKnn-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-1" value="Kontakt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-2" value="Qvintus Logo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-3" value="Verksamhet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-4" value="Exklusivt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-5" value="Böcker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-6" value="Hem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="210" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="210" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7-hgjNpcbl8DvQb-36Ho-9" value="Kontakta oss" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="130" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZbJkw04pLUNvkVC145Su-1" value="Här kommer en karta som visar var qvintus butik finns" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="330" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ZbJkw04pLUNvkVC145Su-2" value="Namn" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="250" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZbJkw04pLUNvkVC145Su-3" value="E-post" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="300" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZbJkw04pLUNvkVC145Su-4" value="Telefon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="350" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZbJkw04pLUNvkVC145Su-5" value="Ärende" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="400" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ZbJkw04pLUNvkVC145Su-6" value="Skicka" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="520" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="570" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="570" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-4" value="Kontakt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="100" y="580" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-5" value="Laglika Saker" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="340" y="580" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-6" value="Social Media" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="580" y="580" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-7" value="Telefon: 0503821567" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="96.25" y="610" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-8" value="Epost: qvintus@aol.com" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="93.75" y="640" width="132.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-9" value="Kontakta oss" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="720" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-10" value="Integritetspolicy" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="345" y="620" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-11" value="Adress: Frenckellinaukio 2 B" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="93.75" y="670" width="156.25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-12" value="Användarvilkor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="345" y="660" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-13" value="Truth Social" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="630" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-14" value="Twitter" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="670" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tG2_B8B-uJHswXyrtMr2-15" value="Telegram" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="591.25" y="710" width="97.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EBQ0giXVqmTtSqz3LgCv-1" value="Inlogning för anställda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=4" vertex="1" parent="1">
+          <mxGeometry x="325.62" y="700" width="148.75" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="VApVpy3Cr6_15vte8-Fb" name="Admin Panel">
+    <mxGraphModel dx="1050" dy="570" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="y8yUytksiBlIEFTPM3Z8-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="y8yUytksiBlIEFTPM3Z8-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="y8yUytksiBlIEFTPM3Z8-10" value="Qvintus Admin Panel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="60" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y8yUytksiBlIEFTPM3Z8-16" value="Böcker" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="162.5" y="260" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="y8yUytksiBlIEFTPM3Z8-32" value="Framsida" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="162.5" y="200" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nAGF19QJ5XVg4SGuQMmQ-1" value="Genrer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="162.5" y="320" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nAGF19QJ5XVg4SGuQMmQ-2" value="Författare" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="162.5" y="380" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nAGF19QJ5XVg4SGuQMmQ-3" value="Illustratörer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="442.5" y="200" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nAGF19QJ5XVg4SGuQMmQ-4" value="Kategorier" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="442.5" y="260" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nAGF19QJ5XVg4SGuQMmQ-5" value="Förlager" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="442.5" y="320" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nAGF19QJ5XVg4SGuQMmQ-6" value="Användar Konton" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="442.5" y="380" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0rT3HNk7MAAdkkByvfNt-1" value="Admin Framsida" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="kUOmouq1GwCzSWR1t9Ea" name="Admin Framsida Editor">
+    <mxGraphModel dx="1313" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iMoWJYYpPrubYzsA0qW2-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="1610" as="geometry" />
+        </mxCell>
+        <mxCell id="iMoWJYYpPrubYzsA0qW2-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="iMoWJYYpPrubYzsA0qW2-3" value="Qvintus Admin Panel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="640" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-2" value="Sällsynt och Värdefullt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="290" y="160" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="210" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="210" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-6" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="210" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="260" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="360" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-11" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-12" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="210" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-14" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="210" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-15" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="210" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-17" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="210" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-18" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="260" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-20" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="260" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-21" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="310" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-23" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-24" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="360" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-26" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-27" value="Lägg till objekt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="410" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="260" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-29" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="260" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-31" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="260" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="310" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-33" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="310" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-35" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-36" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="360" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-37" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="360" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-39" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-40" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="260" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-41" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="260" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-43" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="260" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-44" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="310" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-45" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="310" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-47" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-48" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="360" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-49" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="360" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A5WjFdPfDwivNvu9Zerc-51" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="490" width="640" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-2" value="Genrer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="290" y="490" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="540" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-6" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="620" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-11" value="Namn på genren" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="570" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-27" value="Lägg till objekt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="810" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-52" value="Framsida Editor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-53" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="540" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-54" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="620" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-55" value="Namn på genren" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-56" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="680" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-57" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="760" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-58" value="Namn på genren" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="710" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-59" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="680" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-60" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="760" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-xh4dWMnF7thdiHY05Q-61" value="Namn på genren" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="710" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bG5NU8c52nalGwBx-UoI-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF99AA;" edge="1" parent="1" source="A5WjFdPfDwivNvu9Zerc-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="340" as="sourcePoint" />
+            <mxPoint x="880" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bG5NU8c52nalGwBx-UoI-2" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="285" width="300" height="295" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-1" value="Modal for adding different featured items. The modal looks and works the same for all featured item categories." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="960" y="200" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-2" value="Skriv in bokens namn" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="310" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-3" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.looking_glass;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="320" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-6" value="Objekt 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="360" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-7" value="Objekt 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="410" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-8" value="Objekt 3" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="460" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-9" value="Välj" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="360" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-10" value="Välj" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="410" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-11" value="Välj" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="460" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UdTpxKVdInbXigeYHQq3-13" value="Bekräfta" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="970" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="640" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-2" value="Populärt just nu" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="290" y="900" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="950" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="950" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="950" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-6" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="950" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1000" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1050" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1100" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-10" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="950" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-11" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="950" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-12" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="950" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-13" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="950" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-14" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="950" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-15" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="1000" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-16" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1000" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-17" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="1050" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-18" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1050" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-19" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="1100" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-20" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1100" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-21" value="Lägg till objekt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1150" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="1000" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-23" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="1000" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-24" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="1000" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="1050" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-26" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="1050" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-27" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="1050" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="1100" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-29" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="1100" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-30" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="305" y="1100" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-31" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1000" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-32" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="1000" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-33" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1000" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-34" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1050" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-35" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="1050" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-36" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1050" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-37" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1100" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-38" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="1100" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MkwsK3Zl21CLKCEDwDph-39" value="Namn på boken" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1100" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="640" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-2" value="Kundhistorier" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1240" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1290" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-4" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1370" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-5" value="Artikel namn" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="1320" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-6" value="Lägg till objekt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1560" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1290" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-8" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1370" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-9" value="Artikel namn" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1320" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1430" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-11" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1510" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-12" value="Artikel namn" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1430" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-14" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1510" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_hyXl75xqZGKWIbH3hZX-15" value="Artikel namn" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="1460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e0jLdcdFAwpvd_Lvvf5s-1" value="Admin Framsida" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Jq7PzZSk4TpmiMSM2ep6" name="Bok Editor">
+    <mxGraphModel dx="1105" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-3" value="Qvintus Admin Panel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-49" value="Bok editor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-60" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="285" width="300" height="1225" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-61" value="Model for adding new books. The modal for editing books looks the same." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="960" y="200" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-70" value="Bekräfta" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="970" y="1460" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PVBKq3anwtzWwMwh64ZK-125" value="This site is for creating, editing or deleting books. The normal user is sent here automatically when login in.&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="40" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZD6aLjwUrI_XvCHZgM8W-1" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="250" y="215" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZD6aLjwUrI_XvCHZgM8W-2" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#000000;shadow=0;dashed=0;shape=mxgraph.ios7.icons.looking_glass;" vertex="1" parent="1">
+          <mxGeometry x="520" y="220" width="20.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZD6aLjwUrI_XvCHZgM8W-3" value="Sök boken med titteln" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="175" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="285" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-2" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="285" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-3" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="435" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-4" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="465" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-6" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="495" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-7" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="535" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="285" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-9" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="480" y="285" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-10" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="435" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-11" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="465" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-12" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="495" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-13" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="535" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="285" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-15" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="350" y="285" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-16" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="435" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-17" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="465" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-18" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="495" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-19" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="535" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="285" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-21" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="220" y="285" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-22" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="435" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-23" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="465" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-24" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="495" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-25" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="535" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="285" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-27" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="285" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-28" value="Titel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="435" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-29" value="Författare" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="465" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-30" value="Redigera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="495" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-31" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="535" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pFMOFDDGUXc9vXW7FpFK-32" value="Lägg till en ny bok" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="320" y="640" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="djonih_APtXpEqJeQTRO-1" value="Admin Framsida" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jPpvd51EJJFmM6nl7r6G-1" value="Titel" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="310" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jPpvd51EJJFmM6nl7r6G-3" value="Författare" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="370" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-3" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="jPpvd51EJJFmM6nl7r6G-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1370" y="390" as="sourcePoint" />
+            <mxPoint x="1090" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-5" value="This is a &amp;lt;select&amp;gt; combined with a livesearch function. The authors appear under the search and you click one of them to choose that one. The author, illustrator and publisher choosing works the same way. Things like genre, age rec and category are a simple &amp;lt;select&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="312.5" width="160" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-7" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="435" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-8" value="Välj" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="435" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-9" value="J.R.R. Tolkien" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="435" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-10" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="480" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-11" value="Välj" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="480" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-12" value="George R.R. Martin" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="480" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-13" value="Skapa ny författare" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="535" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="TgKpIAXvUQmyexc6U1Rj-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1380" y="550" as="sourcePoint" />
+            <mxPoint x="1310" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-15" value="The create new option only appears if the admin is inputing a new book" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="515" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-16" value="Bok serie" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="700" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-18" value="Skapa ny serie" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="762.5" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-20" value="Sammanfattning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1380" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-21" value="Illustratör" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="585" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-23" value="Skapa ny illustratör" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="647.5" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-24" value="Genre" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="938.75" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-27" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="375" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-32" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="590" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-33" value="Förlag" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="820" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-34" value="Skapa nytt förlag" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="882.5" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-35" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="825" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-36" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="943.75" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-37" value="Ålders rekomendation" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1060" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-39" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="1065" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-40" value="Språk" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1120" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-41" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="1125" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-42" value="Kategori" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1000" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-43" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="1005" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-44" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="705" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-45" value="Utgivnings datum" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1180" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-46" value="Antal sidor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1230" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TgKpIAXvUQmyexc6U1Rj-47" value="Pris" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1280" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7QsO4SKsfKKLEz5Bbsjv-2" value="Bild" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1330" width="260" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="DpmLq_g2Ye4ZJj57p3El" name="Användare Editor">
+    <mxGraphModel dx="1500" dy="814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="unYTv0QsytvqPDaRgkjj-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-3" value="Qvintus Admin Panel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-4" value="Användarkonto Editor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-38" value="Lägg till en ny användare" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="320" y="510" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-39" value="Admin Framsida" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-40" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="150" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-41" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="150" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-42" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="200" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-43" value="&lt;br&gt;&lt;div&gt;Användarnamn: försäljare1&lt;/div&gt;&lt;div&gt;Namn: Peter Nyqvist&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="150" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="unYTv0QsytvqPDaRgkjj-44" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="unYTv0QsytvqPDaRgkjj-38">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="470" as="sourcePoint" />
+            <mxPoint x="830" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="285" width="300" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="320" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-10" value="Bekräfta" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="920" y="545" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-11" value="Användarnamn:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="300" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="380" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-13" value="Förnamn:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="360" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="440" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-15" value="Efternamn:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="420" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="500" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-17" value="Lösenord:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="480" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="270" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-19" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-20" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="320" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-21" value="&lt;br&gt;&lt;div&gt;Användarnamn: försäljare2&lt;/div&gt;&lt;div&gt;Namn: Alfred Blomfors&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="270" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-23" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="390" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-24" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-25" value="&lt;br&gt;&lt;div&gt;Användarnamn: försäljare3&lt;/div&gt;&lt;div&gt;Namn: Henrik Andersen&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hd-EO_PnI5GSMlZqCAPm-26" value="The modal for creating and editing users are the same" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="895" y="200" width="170" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="l4iKVSiGiPGGAutlh8oP" name="Genre Editor">
+    <mxGraphModel dx="1235" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="720" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-3" value="Qvintus Admin Panel" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-4" value="Genre Editor" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-5" value="Lägg till en ny genre" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="320" y="510" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-6" value="Admin Framsida" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="55" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-8" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="150" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-9" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="200" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-10" value="Skräck" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="QTGnvqyiOGzcrgccHBsR-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="470" as="sourcePoint" />
+            <mxPoint x="830" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-12" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="285" width="300" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="320" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-14" value="Bekräfta" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="920" y="545" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-15" value="Användarnamn:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="300" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="380" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-17" value="Förnamn:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="360" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="440" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-19" value="Efternamn:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="420" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="500" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-21" value="Lösenord:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="480" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="150" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-23" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="150" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-24" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="200" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-25" value="Science Fiction" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="150" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QTGnvqyiOGzcrgccHBsR-30" value="The modal for creating and editing genres are the same" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="895" y="200" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="270" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-6" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="270" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-7" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="320" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-8" value="Historiskt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="270" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-10" value="Editera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="270" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-11" value="Radera" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="320" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-12" value="Spänning" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tBjjYsp-ngePfYaz-bzf-13" value="The editing sites for everything except frontpage, book or users are the same as this one (genre editor)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="840" y="40" width="320" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

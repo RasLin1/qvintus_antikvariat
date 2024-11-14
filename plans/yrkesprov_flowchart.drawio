@@ -1,0 +1,327 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.4">
+  <diagram name="Page-1" id="YXeJr2W6sERCRwTg70zW">
+    <mxGraphModel dx="1235" dy="1840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="310" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-2" value="home.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-3" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="190" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-4" value="&lt;div&gt;sanitizeInput()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;bookSearch()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchFeaturedItems()&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateFeturedFields()&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="400" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-9" value="" style="shape=actor;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;fillColor=#007FFF;" vertex="1" parent="1">
+          <mxGeometry x="30" y="70" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-10" value="Employee" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-11" value="" style="shape=actor;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;fillColor=#33FF33;" vertex="1" parent="1">
+          <mxGeometry x="30" y="170" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-12" value="Admin" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-15" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-1" target="yZJffEkvb6bC4oEsWzsj-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="660" as="sourcePoint" />
+            <mxPoint x="400.0000000000002" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-17" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="120" y="580" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-18" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="190" y="630" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-19" value="sendContactRequest()" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="670" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-25" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-26" value="books.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-27" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="190" y="90" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-28" value="fetchBooks()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateBookField()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="130" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-34" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="yZJffEkvb6bC4oEsWzsj-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="310" as="sourcePoint" />
+            <mxPoint x="280" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-50" value="contact.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="590" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-51" value="" style="shape=actor;whiteSpace=wrap;html=1;strokeColor=default;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-52" value="Everyoune" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="330" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-53" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-17" target="yZJffEkvb6bC4oEsWzsj-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="460" as="sourcePoint" />
+            <mxPoint x="490" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-59" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#319fff;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="400" y="310" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-60" value="employee-login.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="320" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-61" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="470" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-62" value="loginUser()" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="455" y="400" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-63" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="720" y="310" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-64" value="admin-panel.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="780" y="320" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-65" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="790" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-66" value="checkUserRole()" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="775" y="400" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-67" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-59" target="yZJffEkvb6bC4oEsWzsj-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="460" as="sourcePoint" />
+            <mxPoint x="490" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-68" value="If admin login" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yZJffEkvb6bC4oEsWzsj-67">
+          <mxGeometry x="-0.2214" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-69" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#319fff;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="400" y="620" width="370" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-70" value="book-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="525" y="630" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-71" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="535" y="670" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-72" value="&lt;div&gt;Theese functions are for employees and admins&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;searchOwnBooks()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;createNewBook()&lt;div&gt;&lt;br&gt;&lt;div&gt;editBook()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteBook()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;liveSearchAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;liveSearchIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;liveSearchPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;liveSearchSeries()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;checkUserRole()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;sanitizeInput()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="427.5" y="740" width="130" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-73" value="Theese functions are only for admins&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;searchAllBooks()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addSeries()&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="612.5" y="740" width="130" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-74" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-59" target="yZJffEkvb6bC4oEsWzsj-69">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="610" as="sourcePoint" />
+            <mxPoint x="510" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="520" y="580" />
+              <mxPoint x="493" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-75" value="if user login" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yZJffEkvb6bC4oEsWzsj-74">
+          <mxGeometry x="-0.0928" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-76" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="310" width="240" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-77" value="frontpage-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="320" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-78" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-79" value="addFeaturedItem()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editFeaturedItem()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteFeaturedItem()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;searchAllBooks()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;checkUserRole()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;featchFeaturedItems()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateFeaturedFields()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="400" width="130" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-81" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-63" target="yZJffEkvb6bC4oEsWzsj-76">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="950" y="480" as="sourcePoint" />
+            <mxPoint x="1000" y="470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="990" y="430" />
+              <mxPoint x="990" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-82" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="720" y="40" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-83" value="user-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="780" y="50" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-84" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="790" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-85" value="checkUserRole()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addUser()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editUser()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteUser()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchUsers()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateUserField()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="775" y="120" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-86" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-63" target="yZJffEkvb6bC4oEsWzsj-82">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="280" as="sourcePoint" />
+            <mxPoint x="810" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-87" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="40" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-88" value="genre-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="50" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-89" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-90" value="checkUserRole()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addGenre()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editGenre()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteGenre()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchGenres()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateGenreField()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="120" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-91" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-69" target="yZJffEkvb6bC4oEsWzsj-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="800" as="sourcePoint" />
+            <mxPoint x="780" y="750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="678" y="580" />
+              <mxPoint x="720" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-92" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-63" target="yZJffEkvb6bC4oEsWzsj-87">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1010" y="260" as="sourcePoint" />
+            <mxPoint x="1060" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="900" y="290" />
+              <mxPoint x="990" y="290" />
+              <mxPoint x="990" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-93" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="40" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-94" value="publisher-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="50" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-95" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-96" value="checkUserRole()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deletePublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchPublishers()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populatePublisherField()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1375" y="120" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-97" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-63" target="yZJffEkvb6bC4oEsWzsj-93">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1050" y="330" as="sourcePoint" />
+            <mxPoint x="1100" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="300" />
+              <mxPoint x="1290" y="300" />
+              <mxPoint x="1290" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-98" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="810" y="660" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-99" value="author-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="870" y="670" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-100" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="880" y="700" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-101" value="checkUserRole()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addAuuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchAuthors()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateAuthorField()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="865" y="740" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-102" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-98" target="yZJffEkvb6bC4oEsWzsj-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="500" as="sourcePoint" />
+            <mxPoint x="730" y="450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="590" />
+              <mxPoint x="840" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-103" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="660" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-104" value="illustrator-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="670" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-105" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="700" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-106" value="checkUserRole()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchIllustrators()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateIllustratorField()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="740" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-108" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#007600;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="660" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-109" value="category-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="670" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-110" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="700" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-111" value="checkUserRole()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addCategory()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;editCategory()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteCategory()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;fetchCategories()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;populateCategoryFied()&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1445" y="740" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-112" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-103" target="yZJffEkvb6bC4oEsWzsj-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1080" y="660" as="sourcePoint" />
+            <mxPoint x="1130" y="610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1160" y="640" />
+              <mxPoint x="900" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-113" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-108" target="yZJffEkvb6bC4oEsWzsj-63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="670" as="sourcePoint" />
+            <mxPoint x="1140" y="620" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1450" y="630" />
+              <mxPoint x="960" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-114" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="120" y="-240" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-115" value="singleBook.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="-230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-116" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="190" y="-190" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-117" value="fetchSingleBook()" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="-150" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-118" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-25" target="yZJffEkvb6bC4oEsWzsj-114">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" as="sourcePoint" />
+            <mxPoint x="560" y="-50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
