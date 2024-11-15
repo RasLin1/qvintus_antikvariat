@@ -34,9 +34,7 @@ if(isset($_POST['logout'])){
     <div>
         <h2>Qvintus Antikvariat Admin</h2>
         <ul>
-            <form method="POST">
-                <input type="submit" name="logout" value="Logout"/>
-            </form>
+            
         </ul>
     </div>
 </div>

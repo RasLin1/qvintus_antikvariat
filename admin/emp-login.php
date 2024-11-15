@@ -5,7 +5,7 @@ if(isset($_POST['login'])){
     $loginUser = login($pdo);
 
     if($loginUser == "true"){
-        if($_SESSION['urole'] == "");
+        header("Location: admin-panel.php");
     }
 
     elseif($loginUser == "falsen"){
@@ -21,9 +21,7 @@ if(isset($_POST['login'])){
     }
 }
 
-if(isset($_POST['register'])){
-    $registerUser = register($pdo);
-}
+
 
 ?>
 
@@ -38,7 +36,6 @@ if(isset($_POST['register'])){
             <label for="u_pass">Enter Password:</label><br>
             <input type="password" id="u_pass" name="u_pass" required="required"><br><br>
             <input type="submit" name="login" value="Login">
-            <input type="submit" name="register" value="register">
         </form><br>
     </div>
 </div>

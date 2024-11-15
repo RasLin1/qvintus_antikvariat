@@ -1,5 +1,7 @@
 <div class="row" id="footer">
-    <p>Footer</p>
+    <form method="POST">
+        <input type="submit" name="logout" value="Logout"/>
+    </form>
 </div>
 </div>
 </body>
