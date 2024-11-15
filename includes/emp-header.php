@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 if(isset($_POST['logout'])){
     session_unset();
     session_destroy();
-    header("Location: index.php");
+    header("Location: ../main/index.php");
     exit();
 }
 
@@ -32,13 +32,11 @@ if(isset($_POST['logout'])){
 <div class="container">
 <div id="nav">
     <div>
-        <h2>Qvintus Antikvariat</h2>
+        <h2>Qvintus Antikvariat Admin</h2>
         <ul>
-            <li><a href="index.php">Hem</a></li>
-            <li><a href="books.php">Böcker</a></li>
-            <li><a href="books.php">Exklusivt</a></li>
-            <li><a href="about.php">Verksamhet</a></li>
-            <li><a href="contact.php">Kontakt</a></li>
+            <form method="POST">
+                <input type="submit" name="logout" value="Logout"/>
+            </form>
         </ul>
     </div>
 </div>
