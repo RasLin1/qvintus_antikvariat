@@ -1,12 +1,24 @@
 <?php 
 
-
-// Query to select all authors from db
+// Query to select all authors, illustrators, publishers, and genres from the db
 $stmt_fetchAuthors = $pdo->query("SELECT * FROM authors");
 $authors = $stmt_fetchAuthors->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt_fetchIllustrators = $pdo->query("SELECT * FROM illustrators");
+$illustrators = $stmt_fetchIllustrators->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt_fetchPublishers = $pdo->query("SELECT * FROM publishers");
+$publishers = $stmt_fetchPublishers->fetchAll(PDO::FETCH_ASSOC);
+
+// Handle adding new authors, illustrators, publishers, and genres
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAuthor') {
     $addAuthor = addAuthor($pdo, $_POST['authorName']);
+}
+if (isset($_POST['formType']) && $_POST['formType'] === 'addIllustrator') {
+    $addIllustrator = addIllustrator($pdo, $_POST['illustratorName']);
+}
+if (isset($_POST['formType']) && $_POST['formType'] === 'addPublisher') {
+    $addPublisher = addPublisher($pdo, $_POST['publisherName']);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addGenre') {
     $addGenre = addGenre($pdo, $_POST['genreName']);
@@ -29,10 +41,13 @@ $genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <!-- Book Title -->
                     <div class="mb-3">
                         <label for="bookTitle" class="form-label">Book Title</label>
                         <input type="text" name="bookTitle" class="form-control" id="bookTitle" required>
                     </div>
+
+                    <!-- Genre -->
                     <div class="mb-3">
                         <label for="bookGenre" class="form-label">Genre</label>
                         <select name="bookGenre" class="form-control" id="bookGenre" multiple="multiple" style="width: 100%;">
@@ -46,6 +61,8 @@ $genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
                             Add New Genre
                         </button>
                     </div>
+
+                    <!-- Author -->
                     <div class="mb-3">
                         <label for="bookAuthor" class="form-label">Author</label>
                         <select name="bookAuthor" class="form-control" id="bookAuthor" multiple="multiple" style="width: 100%;">
@@ -57,6 +74,36 @@ $genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
                         </select>
                         <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addAuthorModal">
                             Add New Author
+                        </button>
+                    </div>
+
+                    <!-- Illustrator -->
+                    <div class="mb-3">
+                        <label for="bookIllustrator" class="form-label">Illustrator</label>
+                        <select name="bookIllustrator" class="form-control" id="bookIllustrator" multiple="multiple" style="width: 100%;">
+                            <?php foreach ($illustrators as $illustrator): ?>
+                                <option value="<?php echo htmlspecialchars($illustrator['illustrator_id']); ?>">
+                                    <?php echo htmlspecialchars($illustrator['illustrator_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addIllustratorModal">
+                            Add New Illustrator
+                        </button>
+                    </div>
+
+                    <!-- Publisher -->
+                    <div class="mb-3">
+                        <label for="bookPublisher" class="form-label">Publisher</label>
+                        <select name="bookPublisher" class="form-control" id="bookPublisher" multiple="multiple" style="width: 100%;">
+                            <?php foreach ($publishers as $publisher): ?>
+                                <option value="<?php echo htmlspecialchars($publisher['publisher_id']); ?>">
+                                    <?php echo htmlspecialchars($publisher['publisher_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addPublisherModal">
+                            Add New Publisher
                         </button>
                     </div>
                 </div>
@@ -73,7 +120,7 @@ $genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="" method="POST" id="addAuthorForm">
-            <input type="hidden" name="formType" value="addAuthor">
+                <input type="hidden" name="formType" value="addAuthor">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addAuthorModalLabel">Add New Author</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -92,13 +139,60 @@ $genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
+<!-- Add Illustrator Modal -->
+<div class="modal fade" id="addIllustratorModal" tabindex="-1" aria-labelledby="addIllustratorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="POST" id="addIllustratorForm">
+                <input type="hidden" name="formType" value="addIllustrator">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addIllustratorModalLabel">Add New Illustrator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="illustratorName" class="form-label">Illustrator Name</label>
+                        <input type="text" name="illustratorName" class="form-control" id="illustratorName" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="addIllustrator" value="Add Illustrator" class="btn btn-secondary">Save Illustrator</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add Publisher Modal -->
+<div class="modal fade" id="addPublisherModal" tabindex="-1" aria-labelledby="addPublisherModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="POST" id="addPublisherForm">
+                <input type="hidden" name="formType" value="addPublisher">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addPublisherModalLabel">Add New Publisher</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="publisherName" class="form-label">Publisher Name</label>
+                        <input type="text" name="publisherName" class="form-control" id="publisherName" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="addPublisher" value="Add Publisher" class="btn btn-secondary">Save Publisher</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- Add Genre Modal -->
 <div class="modal fade" id="addGenreModal" tabindex="-1" aria-labelledby="addGenreModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="" method="POST" id="addGenreForm">
-            <input type="hidden" name="formType" value="addGenre">
+                <input type="hidden" name="formType" value="addGenre">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addGenreModalLabel">Add New Genre</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -119,56 +213,66 @@ $genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Include Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<!-- Initialize Select2 and Modal handling -->
+
 <script>
 $(document).ready(function () {
-    // Initialize Select2 for the author and genre dropdowns
+    // Initialize Select2 for the dropdowns
     $('#addBookModal').on('shown.bs.modal', function () {
-        $('#bookAuthor').select2({
-            placeholder: 'Select an author',
+        $('#bookAuthor, #bookIllustrator, #bookPublisher, #bookGenre').select2({
+            placeholder: 'Select an option',
             allowClear: true,
             dropdownParent: $('#addBookModal'),
         });
-
-        $('#bookGenre').select2({
-            placeholder: 'Select a genre',
-            allowClear: true,
-            dropdownParent: $('#addBookModal'),
-        });
-    });
-
-    // Close any open dropdowns when modal is reopened
-    $('#addBookModal').on('hidden.bs.modal', function () {
-        $('#bookAuthor').select2('close'); // Ensure the dropdown isn't left open
-        $('#bookGenre').select2('close');
     });
 
     // Handle adding a new author
     $('#addAuthorForm').on('submit', function (e) {
-    var authorName = $('#authorName').val();
+        var authorName = $('#authorName').val();
 
-    if (authorName) {
-        var newAuthorId = Date.now();
-        var newOption = new Option(authorName, newAuthorId, false, false);
+        if (authorName) {
+            var newAuthorId = Date.now(); 
+            var newOption = new Option(authorName, newAuthorId, false, false);
 
-        $('#bookAuthor').append(newOption).trigger('change');
+            $('#bookAuthor').append(newOption).trigger('change');
+            return;
+        }
+    });
 
-        // Do not prevent default; allow the form to submit
-        return; // Ends the function, but form submission continues
-    }
-});
+    // Handle adding a new illustrator
+    $('#addIllustratorForm').on('submit', function (e) {
+        var illustratorName = $('#illustratorName').val();
+
+        if (illustratorName) {
+            var newIllustratorId = Date.now(); 
+            var newOption = new Option(illustratorName, newIllustratorId, false, false);
+
+            $('#bookIllustrator').append(newOption).trigger('change');
+            return;
+        }
+    });
+
+    // Handle adding a new publisher
+    $('#addPublisherForm').on('submit', function (e) {
+        var publisherName = $('#publisherName').val();
+
+        if (publisherName) {
+            var newPublisherId = Date.now(); 
+            var newOption = new Option(publisherName, newPublisherId, false, false);
+
+            $('#bookPublisher').append(newOption).trigger('change');
+            return;
+        }
+    });
 
     // Handle adding a new genre
     $('#addGenreForm').on('submit', function (e) {
         var genreName = $('#genreName').val();
 
         if (genreName) {
-            var newGenreId = Date.now(); // Temporary unique ID for the new genre
+            var newGenreId = Date.now(); // Temporary unique ID
             var newOption = new Option(genreName, newGenreId, false, false);
 
-            // Add new genre to the Select2 dropdown
             $('#bookGenre').append(newOption).trigger('change');
-
             return;
         }
     });

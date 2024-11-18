@@ -105,4 +105,38 @@ function addGenre($pdo, $genName, $redirectTo = 'book-editor.php') {
 		return "ERROR";
 	}
 }
+
+//Adds a new illustrator to db
+function addIllustrator($pdo, $illName, $redirectTo = 'book-editor.php') {
+    $stmt_addIllustrator = $pdo->prepare("INSERT INTO illustrators (illustrator_name) VALUES (:illName)");
+	$stmt_addIllustrator->bindParam(":illName" ,$illName, PDO::PARAM_STR);
+    if($stmt_addIllustrator->execute()){
+		// Store the success message in the session
+        $_SESSION['message'] = 'Illustrator added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?ill-success');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
+
+//Adds a new illustrator to db
+function addPublisher($pdo, $pubName, $redirectTo = 'book-editor.php') {
+    $stmt_addPublisher = $pdo->prepare("INSERT INTO publishers (pub_name) VALUES (:pubName)");
+	$stmt_addPublisher->bindParam(":illName" ,$illName, PDO::PARAM_STR);
+    if($stmt_addPublisher->execute()){
+		// Store the success message in the session
+        $_SESSION['message'] = 'Publisher added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?pub-success');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
 ?>
