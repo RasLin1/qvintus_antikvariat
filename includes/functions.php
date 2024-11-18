@@ -69,4 +69,31 @@ function register($pdo){
 		return "Something went wrong";
 	}
 }
+
+
+//Adds a new author to db
+function addAuthor($pdo, $authName) {
+    $stmt_addAuthor = $pdo->prepare("INSERT INTO authors (author_name) VALUES (:authName)");
+	$stmt_addAuthor->bindParam(":authName" ,$authName, PDO::PARAM_STR);
+    if($stmt_addAuthor->execute()){
+		header('book-editor.php?message=Author added successfully');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
+
+//Adds a new genre to db
+function addGenre($pdo, $genName, $redirectUrl = 'book-editor.php?message=Genre added successfully') {
+    $stmt_addGenre = $pdo->prepare("INSERT INTO genres (genre_name) VALUES (:genName)");
+	$stmt_addGenre->bindParam(":genName" ,$genName, PDO::PARAM_STR);
+    if($stmt_addGenre->execute()){
+		header($redirectUrl);
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
 ?>

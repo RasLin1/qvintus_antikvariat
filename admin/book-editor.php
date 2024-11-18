@@ -1,7 +1,7 @@
 <?php
 include_once '../includes/emp-header.php';
 
-checkUserRole(3, "book-editor.php");
+checkUserRole(1, "book-editor.php");
 ?>
 
 <div class="container" id="book_editor_area">
@@ -12,7 +12,18 @@ checkUserRole(3, "book-editor.php");
         
     </div>
     <div class="row" id="add_area">
+    <div class="container">
+        <h1 class="my-4">Manage Books and Authors</h1>
         
+        <!-- Button to trigger modals -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">
+            Add New Book
+        </button>
+        
+    </div>
+
+    <!-- Include modals -->
+    <?php include '../includes/modals.php'; ?>
     </div>
 </div>
 
