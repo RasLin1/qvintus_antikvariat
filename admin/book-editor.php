@@ -13,7 +13,7 @@ checkUserRole(1, "book-editor.php");
     </div>
     <div class="row" id="add_area">
     <div class="container">
-        <h1 class="my-4">Manage Books and Authors</h1>
+        <h3 class="my-4">Book Editor</h3>
         
         <!-- Button to trigger modals -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">

@@ -71,25 +71,34 @@ function register($pdo){
 }
 
 
-//Adds a new author to db
-function addAuthor($pdo, $authName) {
+// Adds a new author to db and redirects
+function addAuthor($pdo, $authName, $redirectTo = 'book-editor.php') {
     $stmt_addAuthor = $pdo->prepare("INSERT INTO authors (author_name) VALUES (:authName)");
-	$stmt_addAuthor->bindParam(":authName" ,$authName, PDO::PARAM_STR);
-    if($stmt_addAuthor->execute()){
-		header('book-editor.php?message=Author added successfully');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
+    $stmt_addAuthor->bindParam(":authName" ,$authName, PDO::PARAM_STR);
+    
+    if ($stmt_addAuthor->execute()) {
+        
+        // Store the success message in the session
+        $_SESSION['message'] = 'Author added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?auth-success');
+        exit;
+    } else {
+        return "ERROR";
+    }
 }
 
 //Adds a new genre to db
-function addGenre($pdo, $genName, $redirectUrl = 'book-editor.php?message=Genre added successfully') {
+function addGenre($pdo, $genName, $redirectTo = 'book-editor.php') {
     $stmt_addGenre = $pdo->prepare("INSERT INTO genres (genre_name) VALUES (:genName)");
 	$stmt_addGenre->bindParam(":genName" ,$genName, PDO::PARAM_STR);
     if($stmt_addGenre->execute()){
-		header($redirectUrl);
+		// Store the success message in the session
+        $_SESSION['message'] = 'Genre added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?gen-success');
 		exit;
 	}
 	else{

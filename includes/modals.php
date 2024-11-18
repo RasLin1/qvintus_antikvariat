@@ -146,26 +146,20 @@ $(document).ready(function () {
     // Handle adding a new author
     $('#addAuthorForm').on('submit', function (e) {
     var authorName = $('#authorName').val();
+
     if (authorName) {
-        var newAuthorId = Date.now(); // Temporary unique ID
+        var newAuthorId = Date.now();
         var newOption = new Option(authorName, newAuthorId, false, false);
 
-        // Add new author locally to the dropdown
         $('#bookAuthor').append(newOption).trigger('change');
 
-        // Optional: Hide the modal after local addition
-        $('#addAuthorModal').modal('hide');
-
-        // Do not clear the input field so that it submits correctly
-        // $('#authorName').val(''); // REMOVE this line
+        // Do not prevent default; allow the form to submit
+        return; // Ends the function, but form submission continues
     }
-    // Allow the form submission to continue
 });
 
     // Handle adding a new genre
     $('#addGenreForm').on('submit', function (e) {
-        e.preventDefault();
-
         var genreName = $('#genreName').val();
 
         if (genreName) {
@@ -175,9 +169,7 @@ $(document).ready(function () {
             // Add new genre to the Select2 dropdown
             $('#bookGenre').append(newOption).trigger('change');
 
-            // Hide the modal and clear the input
-            $('#addGenreModal').modal('hide');
-            $('#genreName').val('');
+            return;
         }
     });
 });
