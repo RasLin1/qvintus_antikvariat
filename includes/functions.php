@@ -126,13 +126,81 @@ function addIllustrator($pdo, $illName, $redirectTo = 'book-editor.php') {
 //Adds a new illustrator to db
 function addPublisher($pdo, $pubName, $redirectTo = 'book-editor.php') {
     $stmt_addPublisher = $pdo->prepare("INSERT INTO publishers (pub_name) VALUES (:pubName)");
-	$stmt_addPublisher->bindParam(":illName" ,$illName, PDO::PARAM_STR);
+	$stmt_addPublisher->bindParam(":pubName" ,$pubName, PDO::PARAM_STR);
     if($stmt_addPublisher->execute()){
 		// Store the success message in the session
         $_SESSION['message'] = 'Publisher added successfully';
         
         // Redirect to the dynamic location with a success flag
         header('Location: ' . $redirectTo . '?pub-success');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
+
+//Adds a new age recomendation to db
+function addAgeRec($pdo, $ageRecName, $redirectTo = 'book-editor.php') {
+    $stmt_addAgeRec = $pdo->prepare("INSERT INTO book_age_rec (age_value) VALUES (:ageName)");
+	$stmt_addAgeRec->bindParam(":ageName" ,$ageRecName, PDO::PARAM_STR);
+    if($stmt_addAgeRec->execute()){
+		// Store the success message in the session
+        $_SESSION['message'] = 'Age Recomendation added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?age-rec-success');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
+
+//Adds a new age recomendation to db
+function addCategory($pdo, $catName, $redirectTo = 'book-editor.php') {
+    $stmt_addCategory = $pdo->prepare("INSERT INTO book_categories (cat_name) VALUES (:catName)");
+	$stmt_addCategory->bindParam(":catName" ,$catName, PDO::PARAM_STR);
+    if($stmt_addCategory->execute()){
+		// Store the success message in the session
+        $_SESSION['message'] = 'Category added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?cat-success');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
+
+//Adds a new age recomendation to db
+function addSeries($pdo, $seriesName, $redirectTo = 'book-editor.php') {
+    $stmt_addSeries = $pdo->prepare("INSERT INTO book_series (series_name) VALUES (:seriesName)");
+	$stmt_addSeries->bindParam(":seriesName" ,$seriesName, PDO::PARAM_STR);
+    if($stmt_addSeries->execute()){
+		// Store the success message in the session
+        $_SESSION['message'] = 'Book series added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?series-success');
+		exit;
+	}
+	else{
+		return "ERROR";
+	}
+}
+
+//Adds a new age recomendation to db
+function addLanguage($pdo, $langName, $redirectTo = 'book-editor.php') {
+    $stmt_addLanguage = $pdo->prepare("INSERT INTO book_languages (lang_name) VALUES (:langName)");
+	$stmt_addLanguage->bindParam(":langName" ,$langName, PDO::PARAM_STR);
+    if($stmt_addLanguage->execute()){
+		// Store the success message in the session
+        $_SESSION['message'] = 'Language added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?lang-success');
 		exit;
 	}
 	else{

@@ -1,7 +1,7 @@
 <?php
 include_once '../includes/emp-header.php';
 
-checkUserRole(1, "book-editor.php");
+checkUserRole(1, "../main/index.php");
 ?>
 
 <div class="container" id="book_editor_area">
