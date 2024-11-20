@@ -25,34 +25,43 @@ $series = $stmt_fetchSeries->fetchAll(PDO::FETCH_ASSOC);
 $stmt_fetchLanguages = $pdo->query("SELECT * FROM book_languages");
 $languages = $stmt_fetchLanguages->fetchAll(PDO::FETCH_ASSOC);
 
-// Handle adding new authors, illustrators, publishers, and genres
+// Handle adding new authors, illustrators, publishers, genres etc.
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAuthor') {
-    $addAuthor = addAuthor($pdo, $_POST['authorName']);
+    $cleanData['authorName'] = cleanInput($_POST['authorName']);
+    $addAuthor = addAuthor($pdo, $cleanData['authorName']);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addIllustrator') {
-    $addIllustrator = addIllustrator($pdo, $_POST['illustratorName']);
+    $cleanData['illustratorName'] = cleanInput($_POST['illustratorName']);
+    $addIllustrator = addIllustrator($pdo, $cleanData['illustratorName']);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addPublisher') {
-    $addPublisher = addPublisher($pdo, $_POST['publisherName']);
+    $cleanData['publisherName'] = cleanInput($_POST['publisherName']);
+    $addPublisher = addPublisher($pdo, $cleanData['publisherName']);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addGenre') {
-    $addGenre = addGenre($pdo, $_POST['genreName']);
+    $cleanData['genreName'] = cleanInput($_POST['genreName']);
+    $addGenre = addGenre($pdo, $cleanData['genreName']);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAgeRecommendation') {
-    $addGenre = addAgeRec($pdo, $_POST['ageRecommendationName']);
+    $addAgeRec = addAgeRec($pdo, $_POST['ageRecommendationName']);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addCategory') {
-    $addGenre = addCategory($pdo, $_POST['categoryName']);
+    $addCategory = addCategory($pdo, $_POST['categoryName']);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addSeries') {
-    $addGenre = addSeries($pdo, $_POST['seriesName']);
+    $addSeries = addSeries($pdo, $_POST['seriesName']);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
-    $addGenre = addLanguage($pdo, $_POST['languageName']);
+    $addLanguage = addLanguage($pdo, $_POST['languageName']);
+}
+
+// Handle adding new book
+if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
+    $addBook = addBook($pdo);
 }
 
 ?>
@@ -61,7 +70,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
 <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="formType" value="addBook">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addBookModalLabel">Add New Book</h5>
@@ -74,10 +83,16 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                         <input type="text" name="bookTitle" class="form-control" id="bookTitle" required>
                     </div>
 
+                    <!-- Book Description -->
+                    <div class="mb-3">
+                        <label for="bookDescription" class="form-label">Book Description</label>
+                        <textarea name="bookDescription" class="form-control" id="bookDescription" rows="3" required></textarea>
+                    </div>
+
                     <!-- Genre -->
                     <div class="mb-3">
                         <label for="bookGenre" class="form-label">Genre</label>
-                        <select name="bookGenre" class="form-control" id="bookGenre" multiple="multiple" style="width: 100%;">
+                        <select name="bookGenre[]" class="form-control" id="bookGenre" multiple="multiple" style="width: 100%;">
                             <?php foreach ($genres as $genre): ?>
                                 <option value="<?php echo htmlspecialchars($genre['genre_id']); ?>">
                                     <?php echo htmlspecialchars($genre['genre_name']); ?>
@@ -92,7 +107,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                     <!-- Author -->
                     <div class="mb-3">
                         <label for="bookAuthor" class="form-label">Author</label>
-                        <select name="bookAuthor" class="form-control" id="bookAuthor" multiple="multiple" style="width: 100%;">
+                        <select name="bookAuthor[]" class="form-control" id="bookAuthor" multiple="multiple" style="width: 100%;">
                             <?php foreach ($authors as $author): ?>
                                 <option value="<?php echo htmlspecialchars($author['author_id']); ?>">
                                     <?php echo htmlspecialchars($author['author_name']); ?>
@@ -107,7 +122,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                     <!-- Illustrator -->
                     <div class="mb-3">
                         <label for="bookIllustrator" class="form-label">Illustrator</label>
-                        <select name="bookIllustrator" class="form-control" id="bookIllustrator" multiple="multiple" style="width: 100%;">
+                        <select name="bookIllustrator[]" class="form-control" id="bookIllustrator" multiple="multiple" style="width: 100%;">
                             <?php foreach ($illustrators as $illustrator): ?>
                                 <option value="<?php echo htmlspecialchars($illustrator['illustrator_id']); ?>">
                                     <?php echo htmlspecialchars($illustrator['illustrator_name']); ?>
@@ -134,6 +149,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                             Add New Publisher
                         </button>
                     </div>
+
                     <!-- Age Recommendation -->
                     <div class="mb-3">
                         <label for="bookAgeRecommendation" class="form-label">Age Recommendation</label>
@@ -149,6 +165,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                             Add New Age Recommendation
                         </button>
                     </div>
+
                     <!-- Category -->
                     <div class="mb-3">
                         <label for="bookCategory" class="form-label">Category</label>
@@ -164,6 +181,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                             Add New Category
                         </button>
                     </div>
+
                     <!-- Series -->
                     <div class="mb-3">
                         <label for="bookSeries" class="form-label">Series</label>
@@ -179,6 +197,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                             Add New Series
                         </button>
                     </div>
+
                     <!-- Language -->
                     <div class="mb-3">
                         <label for="bookLanguage" class="form-label">Language</label>
@@ -193,6 +212,30 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
                         <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addLanguageModal">
                             Add New Language
                         </button>
+                    </div>
+
+                    <!-- Book Relese Date -->
+                    <div class="mb-3">
+                        <label for="bookReleseDate" class="form-label">Book Relese Date</label>
+                        <input type="date" name="bookReleseDate" class="form-control" id="bookReleseDate" required>
+                    </div>
+
+                    <!-- Book Page Count -->
+                    <div class="mb-3">
+                        <label for="bookPageCount" class="form-label">Book Page Count</label>
+                        <input type="number" name="bookPageCount" class="form-control" id="bookPageCount" required>
+                    </div>
+
+                    <!-- Book Price -->
+                    <div class="mb-3">
+                        <label for="bookPrice" class="form-label">Book Price</label>
+                        <input type="number" name="bookPrice" class="form-control" id="bookPrice" required>
+                    </div>
+
+                    <!-- Book Image -->
+                    <div class="mb-3">
+                        <label for="fileToUpload" class="form-label">Book Image</label>
+                        <input type="file" name="fileToUpload" class="form-control" id="fileToUpload" required>
                     </div>
                 </div>
                 <div class="modal-footer">
