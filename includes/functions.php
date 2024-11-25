@@ -191,37 +191,10 @@ function editBook($pdo){
 	echo 'Book edited successfully!';
 }
 
-function searchBooks($pdo, $query) {
-    $searchTerm = '%' . trim($query) . '%';
 
-    $stmt_search = $pdo->prepare("
-        SELECT 
-            b.book_id, 
-            b.book_title, 
-            b.book_summary, 
-            GROUP_CONCAT(DISTINCT g.genre_name) AS genres,
-            GROUP_CONCAT(DISTINCT a.author_name) AS authors
-        FROM 
-            books b
-        LEFT JOIN 
-            book_genres bg ON b.book_id = bg.book_fk
-        LEFT JOIN 
-            genres g ON bg.genre_fk = g.genre_id
-        LEFT JOIN 
-            book_author ba ON b.book_id = ba.book_fk
-        LEFT JOIN 
-            authors a ON ba.author_fk = a.author_id
-        WHERE 
-            b.book_title LIKE :searchTerm OR
-            g.genre_name LIKE :searchTerm OR
-            a.author_name LIKE :searchTerm
-        GROUP BY 
-            b.book_id
-    ");
 
-    $stmt_search->execute([':searchTerm' => $searchTerm]);
-    return $stmt_search->fetchAll(PDO::FETCH_ASSOC);
-}
+
+
 
 // Adds a new author to db and redirects
 function addAuthor($pdo, $authName, $redirectTo = 'book-editor.php') {
@@ -239,6 +212,37 @@ function addAuthor($pdo, $authName, $redirectTo = 'book-editor.php') {
     } else {
         return "ERROR";
     }
+}
+
+// Function to search books directly from the database
+function searchBooksForTypeahead(PDO $pdo, string $query): array {
+    $sql = "
+        SELECT 
+            b.book_id, 
+            b.book_title, 
+            b.book_img, 
+            b.book_price,
+            a.author_name
+        FROM 
+            books b
+        JOIN 
+            book_author ba ON b.book_id = ba.book_fk
+        JOIN 
+            authors a ON ba.author_fk = a.author_id
+        WHERE 
+            b.book_title LIKE :query1 
+    		OR a.author_name LIKE :query2
+        LIMIT 10;
+    ";
+
+    // Prepare and execute the query with bound parameter
+    $stmt = $pdo->prepare($sql);
+
+    // Make sure the query is bound with proper syntax
+    $stmt->execute(['query1' => "%$query%", 'query2' => "%$query%"]);
+
+    // Fetch all the matching results
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 //Adds a new genre to db

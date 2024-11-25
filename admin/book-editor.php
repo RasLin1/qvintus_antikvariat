@@ -3,33 +3,6 @@ include_once '../includes/emp-header.php';
 
 checkUserRole(1, "../main/index.php");
 
-$searchTerm = '%'; // Default to match all books
-
-if (isset($_GET['title'])) {
-    $searchTerm = '%' . $_GET['title'] . '%'; // Adjust search term based on user input
-}
-
-$bookQuery = "
-    SELECT 
-        b.book_id, 
-        b.book_title, 
-        b.book_img, 
-        b.book_price,
-        a.author_name
-    FROM 
-        books b
-    JOIN 
-        book_author ba ON b.book_id = ba.book_fk
-    JOIN 
-        authors a ON ba.author_fk = a.author_id
-    WHERE 
-        b.book_title LIKE :searchTerm;
-";
-
-$stmt_retrieveBooks = $pdo->prepare($bookQuery);
-$stmt_retrieveBooks->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-$stmt_retrieveBooks->execute();
-$books = $stmt_retrieveBooks->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_POST['editBook'])){
 $singleBookQuery = "
@@ -75,6 +48,21 @@ if(isset($_POST['editBookSubmit'])){
     $editBookConfirmation = editBook($pdo);
 }
 
+if (isset($_GET['query']) && !empty($_GET['query'])) {
+    $query = $_GET['query'];
+    $results = searchBooksForTypeahead($pdo, $query);
+    
+    header('Content-Type: application/json');
+    
+    // Debugging step
+    if (empty($results)) {
+        echo json_encode(['error' => 'No results found', 'query' => $query]);
+    } else {
+        echo json_encode($results);
+    }
+    exit;
+}
+
 ?>
 
 <div class="container" id="book_editor_area">
@@ -82,38 +70,10 @@ if(isset($_POST['editBookSubmit'])){
     <div class="row" id="search_area">
         <h4>Search for books</h4>
         <input type="text" id="searchInput" placeholder="Search by title, author, or genre..." style="width: 100%; padding: 10px; margin-bottom: 20px;">
-        <div id="searchResults"></div>
+        <ul id="searchResults"></ul>
     </div>
     <div class="row" id="book_area">
-    <?php 
-    if ($books) {
-        // Start the foreach loop if there are books
-        foreach ($books as $book) {
-            echo "
-            <div class='col-md-4'>
-                <div class='card' style='width: 18rem;'>
-                    <img src='../assets/img/" . htmlspecialchars($book['book_img']) . "' class='card-img-top' alt='" . htmlspecialchars($book['book_title']) . "'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>" . htmlspecialchars($book['book_title']) . "</h5>
-                        <p class='card-text'>Author: " . htmlspecialchars($book['author_name']) . "</p>
-                        <p class='card-text'>Price: " . number_format($book['book_price'], 2) . "€</p>
-                        <div class='d-flex justify-content-between'>
-                            <!-- Edit Button -->
-                            <form method='POST'>
-                                <input type='hidden' name='currBookId' value='" . htmlspecialchars($book['book_id']) . "'/>
-                                <input type='submit' value='Edit' name='editBook'/>
-                            </form>
-                            <a href='delete_book.php?id=" . htmlspecialchars($book['book_id']) . "' class='btn btn-danger'>Delete</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ";
-        }
-    } else {
-        echo "<p>No books found.</p>";
-    }    
-    ?>
+    
 
     </div>
     <div class="row" id="add_area">
@@ -127,70 +87,99 @@ if(isset($_POST['editBookSubmit'])){
     </div>
 </div>
 
+<script>
+$(document).ready(function () {
+    // Create a Bloodhound engine for Typeahead
+    const books = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title', 'author'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: '../includes/searching/searchSpecificBook.php?query=%QUERY', // Backend endpoint
+            wildcard: '%QUERY',
+        },
+    });
+
+    // Initialize Typeahead on the input field
+    $('#searchInput').typeahead(
+        {
+            hint: true,
+            highlight: true,
+            minLength: 1, // Minimum characters to start search
+        },
+        {
+            name: 'books',
+            display: 'book_title', // What to show in the dropdown
+            source: books,
+            templates: {
+                suggestion: function (data) {
+                    return `<div><strong>${data.book_title}</strong> - ${data.author_name || 'Unknown Author'}</div>`;
+                },
+            },
+        }
+    );
+
+    // Event listener for selection from dropdown
+    $('#searchInput').bind('typeahead:select', function (event, suggestion) {
+        const cardHTML = generateBookCardHTML([suggestion]);
+        $('#book_area').html(cardHTML);
+    });
+
+    // Event listener for "Enter" key to fetch and display all matching books
+    $('#searchInput').on('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default form submission
+            const query = $(this).val();
+
+            // Fetch matching books
+            $.ajax({
+                url: '../includes/searching/searchSpecificBook.php',
+                method: 'GET',
+                data: { query },
+                dataType: 'json',
+                success: function (results) {
+                    if (results.length > 0) {
+                        const allBooksHTML = generateBookCardHTML(results);
+                        $('#book_area').html(allBooksHTML);
+                    } else {
+                        $('#book_area').html('<p>No books found for your search.</p>');
+                    }
+                },
+                error: function () {
+                    $('#book_area').html('<p>Error fetching search results. Please try again.</p>');
+                },
+            });
+        }
+    });
+
+    // Helper function to generate book cards
+    function generateBookCardHTML(books) {
+        return books
+            .map((book) => {
+                return `
+                    <div class='col-md-4'>
+                        <div class='card' style='width: 18rem;'>
+                            <img src='../assets/img/${book.book_img}' class='card-img-top' alt='${book.book_title}'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>${book.book_title}</h5>
+                                <p class='card-text'>Author: ${book.author_name || 'Unknown'}</p>
+                                <p class='card-text'>Price: ${parseFloat(book.book_price).toFixed(2)}€</p>
+                                <div class='d-flex justify-content-between'>
+                                    <form method='POST'>
+                                        <input type='hidden' name='currBookId' value='${book.book_id}'/>
+                                        <input type='submit' value='Edit' name='editBook' class='btn btn-primary'/>
+                                    </form>
+                                    <a href='delete_book.php?id=${book.book_id}' class='btn btn-danger'>Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            })
+            .join('');
+    }
+});
+</script>
+
 <?php 
 include_once '../includes/emp-footer.php';
 ?>
-
-
-<script>
-        // Debounce function to minimize API calls
-        function debounce(func, delay) {
-            let timeoutId;
-            return (...args) => {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => func(...args), delay);
-            };
-        }
-
-        // Fetch search results from the server
-        async function fetchSearchResults(query) {
-            try {
-                const response = await fetch(`search.php?query=${encodeURIComponent(query)}`);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch search results');
-                }
-                return await response.json();
-            } catch (error) {
-                console.error('Error fetching search results:', error);
-                return [];
-            }
-        }
-
-        // Update the search results in the DOM
-        function updateSearchResults(books) {
-            const resultsContainer = document.getElementById('searchResults');
-            resultsContainer.innerHTML = ''; // Clear existing results
-
-            if (books.length === 0) {
-                resultsContainer.innerHTML = '<p>No results found.</p>';
-                return;
-            }
-
-            books.forEach((book) => {
-                const bookDiv = document.createElement('div');
-                bookDiv.className = 'book-result';
-                bookDiv.innerHTML = `
-                    <h3>${book.book_title}</h3>
-                    <p><strong>Authors:</strong> ${book.authors || 'N/A'}</p>
-                    <p><strong>Genres:</strong> ${book.genres || 'N/A'}</p>
-                    <p>${book.book_summary || 'No summary available.'}</p>
-                `;
-                resultsContainer.appendChild(bookDiv);
-            });
-        }
-
-        // Add event listener for live search
-        document.getElementById('searchInput').addEventListener(
-            'input',
-            debounce(async (e) => {
-                const query = e.target.value.trim();
-                if (query === '') {
-                    updateSearchResults([]); // Clear results if input is empty
-                    return;
-                }
-
-                const results = await fetchSearchResults(query);
-                updateSearchResults(results);
-            }, 300) // 300ms debounce delay
-        );
-</script>
