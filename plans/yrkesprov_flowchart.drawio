@@ -112,7 +112,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yZJffEkvb6bC4oEsWzsj-69" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#319fff;fillColor=default;" vertex="1" parent="1">
-          <mxGeometry x="400" y="620" width="370" height="440" as="geometry" />
+          <mxGeometry x="480" y="620" width="200" height="440" as="geometry" />
         </mxCell>
         <mxCell id="yZJffEkvb6bC4oEsWzsj-70" value="book-editor.php" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="525" y="630" width="120" height="30" as="geometry" />
@@ -120,13 +120,10 @@
         <mxCell id="yZJffEkvb6bC4oEsWzsj-71" value="Funktioner" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
           <mxGeometry x="535" y="670" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="yZJffEkvb6bC4oEsWzsj-72" value="&lt;div&gt;Theese functions are for employees and admins&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;searchOwnBooks()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;createNewBook()&lt;div&gt;&lt;br&gt;&lt;div&gt;editBook()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteBook()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;liveSearchAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;liveSearchIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;liveSearchPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;liveSearchSeries()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;checkUserRole()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;sanitizeInput()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="427.5" y="740" width="130" height="320" as="geometry" />
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-72" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;searchOwnBooks()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;createNewBook()&lt;div&gt;&lt;br&gt;&lt;div&gt;editBook()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;deleteBook()&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;checkUserRole()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;sanitizeInput()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;searchAllBooks()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addSeries()&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="740" width="130" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="yZJffEkvb6bC4oEsWzsj-73" value="Theese functions are only for admins&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;searchAllBooks()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addAuthor()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addIllustrator()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addPublisher()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;addSeries()&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="612.5" y="740" width="130" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="yZJffEkvb6bC4oEsWzsj-74" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-59" target="yZJffEkvb6bC4oEsWzsj-69">
+        <mxCell id="yZJffEkvb6bC4oEsWzsj-74" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.062;entryY=-0.006;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="yZJffEkvb6bC4oEsWzsj-59" target="yZJffEkvb6bC4oEsWzsj-69">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="460" y="610" as="sourcePoint" />
             <mxPoint x="510" y="560" as="targetPoint" />
@@ -198,7 +195,7 @@
             <mxPoint x="730" y="800" as="sourcePoint" />
             <mxPoint x="780" y="750" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="678" y="580" />
+              <mxPoint x="630" y="580" />
               <mxPoint x="720" y="580" />
             </Array>
           </mxGeometry>

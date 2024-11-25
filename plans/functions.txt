@@ -12,8 +12,10 @@ takes the inputted $searchTerm and compares it to the xml file and gives suggest
 When done it sends the $searchTerm to fetchBooks() function.
 }
 
-fetchFeturedItems($pdo, $itemType){
+fetchFeturedItems(Object $pdo, int $itemType){
 prepares and executes SELECT query where item_type = $itemType; to get the different featured items
+output
+returns results as array
 }
 
 populateFeaturedItemField($feturedItems){

@@ -25,6 +25,28 @@ $series = $stmt_fetchSeries->fetchAll(PDO::FETCH_ASSOC);
 $stmt_fetchLanguages = $pdo->query("SELECT * FROM book_languages");
 $languages = $stmt_fetchLanguages->fetchAll(PDO::FETCH_ASSOC);
 
+
+
+/*if (isset($_GET['book_id'])) {
+    $book_id = intval($_GET['book_id']);
+
+    // Example function to fetch book data
+    $book = getBookById($book_id); 
+
+    if ($book) {
+        // Ensure valid JSON is returned
+        header('Content-Type: application/json');
+        echo json_encode($book);
+    } else {
+        // Handle case when no book is found
+        http_response_code(404);
+        echo json_encode(['error' => 'Book not found']);
+    }
+} else {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid or missing book ID']);
+}*/
+
 // Handle adding new authors, illustrators, publishers, genres etc.
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAuthor') {
     $cleanData['authorName'] = cleanInput($_POST['authorName']);
@@ -229,7 +251,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
                     <!-- Book Price -->
                     <div class="mb-3">
                         <label for="bookPrice" class="form-label">Book Price</label>
-                        <input type="number" name="bookPrice" class="form-control" id="bookPrice" required>
+                        <input type="number" name="bookPrice" class="form-control" id="bookPrice" step=".01" required>
                     </div>
 
                     <!-- Book Image -->
@@ -240,6 +262,55 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
                 </div>
                 <div class="modal-footer">
                     <button type="submit" name="action" value="addBook" class="btn btn-primary">Save Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+                            <!-- Book editing modal, can't edit neither genres, author nor illustrator -->
+<div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="POST">
+                <input type="hidden" name="bookIdEdit" id="bookIdEdit">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editBookModalLabel">Edit Book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Book Title -->
+                    <div class="mb-3">
+                        <label for="bookTitleEdit" class="form-label">Book Title</label>
+                        <input type="text" name="bookTitleEdit" id="bookTitleEdit" class="form-control" required>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="bookDescriptionEdit" class="form-label">Description</label>
+                        <textarea name="bookDescriptionEdit" id="bookDescriptionEdit" class="form-control" rows="3" required></textarea>
+                    </div>
+
+                    <!-- Release Date -->
+                    <div class="mb-3">
+                        <label for="releaseDateEdit" class="form-label">Release Date</label>
+                        <input type="date" name="releaseDateEdit" id="releaseDateEdit" class="form-control" required>
+                    </div>
+
+                    <!-- Page Count -->
+                    <div class="mb-3">
+                        <label for="pageCountEdit" class="form-label">Page Count</label>
+                        <input type="number" name="pageCountEdit" id="pageCountEdit" class="form-control" required>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="mb-3">
+                        <label for="priceEdit" class="form-label">Price</label>
+                        <input type="number" name="priceEdit" id="priceEdit" step="0.01" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="editBookSubmit" class="btn btn-primary">Save Changes</button>
                 </div>
             </form>
         </div>
@@ -542,7 +613,19 @@ $(document).ready(function () {
     });
 });
 
+function populateAndOpenModal(data) {
+    // Populate the modal inputs
+    document.getElementById('bookIdEdit').value = data.book_id;
+    document.getElementById('bookTitleEdit').value = data.book_title;
+    document.getElementById('bookDescriptionEdit').value = data.book_summary;
+    document.getElementById('releaseDateEdit').value = data.book_publishing_date;
+    document.getElementById('pageCountEdit').value = data.book_side_count;
+    document.getElementById('priceEdit').value = data.book_price;
 
+    // Open the modal
+    var modal = new bootstrap.Modal(document.getElementById('editBookModal'));
+    modal.show();
+}
 
 </script>
 
@@ -562,6 +645,17 @@ $(document).ready(function () {
 }
 
 #addBookModal .modal-body {
+    max-height: 70vh; /* Limit modal content height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Adjust modal scrolling behavior */
+#editBookModal {
+    overflow-y: auto; /* Ensure the modal scrolls */
+    position: relative; /* Prevent dropdown misalignment */
+}
+
+#editBookModal .modal-body {
     max-height: 70vh; /* Limit modal content height */
     overflow-y: auto; /* Enable vertical scrolling */
 }

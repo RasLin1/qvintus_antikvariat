@@ -110,14 +110,14 @@ if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['error'] === UPLOA
 }
 
 // Insert book details into the books table
-$stmt = $pdo->prepare("
+$stmt_insertBook = $pdo->prepare("
 	INSERT INTO books 
 	(book_title, book_series_fk, book_summary, publisher_fk, book_age_rec_fk, book_category_fk, book_language_fk, book_publishing_date, book_side_count, book_price, book_img, employee_fk) 
 	VALUES 
 	(:title, :series_id, :description, :publisher_id, :age_id, :category_id, :language_id, :release_date, :page_count, :price, :image, :emp_id)
 ");
 
-$stmt->execute([
+$stmt_insertBook->execute([
 	':title' => $bookTitle,
 	':description' => $bookDescription,
 	':publisher_id' => $bookPublisher,
@@ -137,24 +137,90 @@ $bookId = $pdo->lastInsertId();
 
 // Insert genres
 foreach ($bookGenre as $genreId) {
-	$stmt = $pdo->prepare("INSERT INTO book_genres (book_fk, genre_fk) VALUES (:book_id, :genre_id)");
-	$stmt->execute([':book_id' => $bookId, ':genre_id' => $genreId]);
+	$stmt_insertGenre = $pdo->prepare("INSERT INTO book_genres (book_fk, genre_fk) VALUES (:book_id, :genre_id)");
+	$stmt_insertGenre->execute([':book_id' => $bookId, ':genre_id' => $genreId]);
 }
 
 // Insert authors
 foreach ($bookAuthor as $authorId) {
-	$stmt = $pdo->prepare("INSERT INTO book_author (book_fk, author_fk) VALUES (:book_id, :author_id)");
-	$stmt->execute([':book_id' => $bookId, ':author_id' => $authorId]);
+	$stmt_insertAuthor = $pdo->prepare("INSERT INTO book_author (book_fk, author_fk) VALUES (:book_id, :author_id)");
+	$stmt_insertAuthor->execute([':book_id' => $bookId, ':author_id' => $authorId]);
 }
 
 // Insert illustrators
 foreach ($bookIllustrator as $illustratorId) {
-	$stmt = $pdo->prepare("INSERT INTO book_illustrators (book_fk, illustrator_fk) VALUES (:book_id, :illustrator_id)");
-	$stmt->execute([':book_id' => $bookId, ':illustrator_id' => $illustratorId]);
+	$stmt_insertIllustrator = $pdo->prepare("INSERT INTO book_illustrators (book_fk, illustrator_fk) VALUES (:book_id, :illustrator_id)");
+	$stmt_insertIllustrator->execute([':book_id' => $bookId, ':illustrator_id' => $illustratorId]);
 }
 
 // Redirect or provide success message
 echo 'Book added successfully!';
+}
+
+function editBook($pdo){
+	// Sanitize and collect inputs
+	$bookTitle = cleanInput($_POST['bookTitleEdit']);
+	$bookDescription = cleanInput($_POST['bookDescriptionEdit']);
+	$bookReleseDate = $_POST['releaseDateEdit'];
+	$bookPageCount = $_POST['pageCountEdit'];
+	$bookPrice = $_POST['priceEdit'];
+	$bookId = $_POST['bookIdEdit'];
+	
+
+	$stmt_updateBook = $pdo->prepare("
+    UPDATE books
+    SET 
+        book_title = :title,
+        book_summary = :description,
+        book_publishing_date = :release_date,
+        book_side_count = :page_count,
+        book_price = :price
+    WHERE 
+        book_id = :book_id
+	");
+
+	$stmt_updateBook->execute([
+		':title' => $bookTitle,
+		':description' => $bookDescription,
+		':release_date' => $bookReleseDate,
+		':page_count' => $bookPageCount,
+		':price' => $bookPrice,
+		':book_id' => $bookId
+	]);
+
+	echo 'Book edited successfully!';
+}
+
+function searchBooks($pdo, $query) {
+    $searchTerm = '%' . trim($query) . '%';
+
+    $stmt_search = $pdo->prepare("
+        SELECT 
+            b.book_id, 
+            b.book_title, 
+            b.book_summary, 
+            GROUP_CONCAT(DISTINCT g.genre_name) AS genres,
+            GROUP_CONCAT(DISTINCT a.author_name) AS authors
+        FROM 
+            books b
+        LEFT JOIN 
+            book_genres bg ON b.book_id = bg.book_fk
+        LEFT JOIN 
+            genres g ON bg.genre_fk = g.genre_id
+        LEFT JOIN 
+            book_author ba ON b.book_id = ba.book_fk
+        LEFT JOIN 
+            authors a ON ba.author_fk = a.author_id
+        WHERE 
+            b.book_title LIKE :searchTerm OR
+            g.genre_name LIKE :searchTerm OR
+            a.author_name LIKE :searchTerm
+        GROUP BY 
+            b.book_id
+    ");
+
+    $stmt_search->execute([':searchTerm' => $searchTerm]);
+    return $stmt_search->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // Adds a new author to db and redirects
