@@ -128,43 +128,4 @@ padding: 0; /* Remove padding for inline appearance */
 }
 
 
-/* Container for the search field */
-.search-container {
-    display: flex;
-    align-items: center;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-/* Search input field */
-.search-input {
-    flex: 1;
-    border: none;
-    padding: 10px 15px;
-    outline: none;
-    font-size: 16px;
-}
-
-/* Search button with the magnifying glass icon */
-.search-button {
-    border: none;
-    background: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    color: #666;
-}
-
-/* Add hover effect for the button */
-.search-button:hover {
-    color: #000;
-}
-
-/* Remove focus outline from the button */
-.search-button:focus {
-    outline: none;
-}
 
