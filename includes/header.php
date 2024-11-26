@@ -32,17 +32,39 @@ if(isset($_POST['logout'])){
 
 <body>
 <div class="container">
-<div id="nav">
-    <div>
-        <h2>Qvintus Antikvariat</h2>
-        <ul>
-            <li><a href="index.php">Hem</a></li>
-            <li><a href="books.php">Böcker</a></li>
-            <li><a href="books.php">Exklusivt</a></li>
-            <li><a href="about.php">Verksamhet</a></li>
-            <li><a href="contact.php">Kontakt</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <!-- Branding -->
+        <a class="navbar-brand" href="#">
+            <h3 class="m-0 text-white">Qvintus Antikvariat</h3>
+        </a>
+
+        <!-- Toggler Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.php">Hem</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="books.php">Böcker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="books.php">Exklusivt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="about.php">Verksamhet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="contact.php">Kontakt</a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+</nav>
 </body>
 </html>

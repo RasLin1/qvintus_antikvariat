@@ -34,9 +34,9 @@ if(isset($_POST['logout'])){
 <body>
 <div class="container">
 <div id="nav">
-    <div>
-        <h2>Qvintus Antikvariat Admin</h2>
-        <ul>
+    <div class="row">
+        <h2 class="col-12 col-md-8">Qvintus Antikvariat Admin</h2>
+        <ul class="col-12 col-md-4">
             <li><a href="admin-panel.php">Admin Panel</a></li>
         </ul>
     </div>

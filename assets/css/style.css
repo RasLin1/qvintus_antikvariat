@@ -36,12 +36,11 @@ body {
 }
 
 #nav a {
-	color: #fff;
+	color: #fff !important;
 	text-decoration: none;
 }
 
 .container {
-    width: 70%;
     margin: 0 auto;
     text-align: center;
     background-color: #000;
@@ -127,5 +126,16 @@ padding: 0; /* Remove padding for inline appearance */
     color: #007bff; /* Match your link hover color */
 }
 
+#footer ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;       /* Remove padding */
+    margin: 0;        /* Remove margin */
+    display: flex;    /* Enable Flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items horizontally */
+}
 
+#footer ul li {
+    margin: 5px 0; /* Add vertical spacing between items */
+}
 
