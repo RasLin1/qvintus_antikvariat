@@ -156,9 +156,9 @@ $(document).ready(function () {
         return books
             .map((book) => {
                 return `
-                    <div class='col-md-4'>
-                        <div class='card' style='width: 18rem;'>
-                            <img src='../assets/img/${book.book_img}' class='card-img-top' alt='${book.book_title}'>
+                    <div class='col-md-4 d-flex'>
+                        <div class='card ' style='width: 18rem;'>
+                            <img src='../assets/img/${book.book_img}' class='card-img-top flex-fill' alt='${book.book_title}'>
                             <div class='card-body'>
                                 <h5 class='card-title'>${book.book_title}</h5>
                                 <p class='card-text'>Author: ${book.author_name || 'Unknown'}</p>

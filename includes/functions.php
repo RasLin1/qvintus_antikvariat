@@ -363,4 +363,90 @@ function addLanguage($pdo, $langName, $redirectTo = 'book-editor.php') {
 		return "ERROR";
 	}
 }
-?>
+
+function addFeatItem($pdo, $redirectTo) {
+    $itemType = $_POST['featType'];
+    $genreFk = $_POST['featCategory'];
+    $bookFk = $_POST['featBook'];
+
+    // Sanitize input for possible null values
+    $genreFk = empty($genreFk) ? null : $genreFk;
+    $bookFk = empty($bookFk) ? null : $bookFk;
+
+    // Step 1: Fetch the max limit for the item type from the `featured_item_type_limits` table
+    $stmt_getLimit = $pdo->prepare("SELECT type_max_limit FROM featured_item_type_limits WHERE type_id = :typeFk");
+    $stmt_getLimit->bindParam(":typeFk", $itemType, PDO::PARAM_INT);
+    $stmt_getLimit->execute();
+    $limitResult = $stmt_getLimit->fetch(PDO::FETCH_ASSOC);
+
+    // Check if a limit was found
+    if (!$limitResult) {
+        $_SESSION['message'] = "Error: No limit found for this item type.";
+        header('Location: ' . $redirectTo . '?feat-item-limit-error');
+        exit;
+    }
+
+    $maxItems = $limitResult['type_max_limit'];  // Get the max limit for the current item type
+
+    // Step 2: Check how many items of the same type already exist in the `featured_items` table
+    $stmt_checkLimit = $pdo->prepare("SELECT COUNT(*) FROM featured_items WHERE feat_item_type_fk = :typeFk");
+    $stmt_checkLimit->bindParam(":typeFk", $itemType, PDO::PARAM_INT);
+    $stmt_checkLimit->execute();
+    $currentCount = $stmt_checkLimit->fetchColumn();
+
+    // Step 3: If the current count exceeds the maximum, prevent insert
+    if ($currentCount > $maxItems) {
+        $_SESSION['message'] = "Error: You can only have up to $maxItems featured items of this type.";
+        header('Location: ' . $redirectTo . '?feat-item-limit-exceeded');
+        exit;
+    }
+
+    // Step 4: Proceed with inserting the new featured item if the limit is not exceeded
+    $stmt_addFeatItem = $pdo->prepare("INSERT INTO featured_items (feat_item_type_fk, genre_fk, book_fk) VALUES (:typeFk, :genreFk, :bookFk)");
+    $stmt_addFeatItem->bindParam(":typeFk", $itemType, PDO::PARAM_INT);
+    $stmt_addFeatItem->bindParam(":genreFk", $genreFk, PDO::PARAM_INT);
+    $stmt_addFeatItem->bindParam(":bookFk", $bookFk, PDO::PARAM_INT);
+
+    // Step 5: Execute the insert and check for success
+    if ($stmt_addFeatItem->execute()) {
+        // Store the success message in the session
+        $_SESSION['message'] = 'Featured Item added successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?feat-item-success');
+        exit;
+    } else {
+        return "ERROR: Failed to add Featured Item.";
+    }
+}
+
+function deleteFeatItem($pdo, $itemId, $redirectTo) {
+	$stmt_deleteFeatItem = $pdo->prepare('DELETE FROM featured_items WHERE feat_item_id = :itemId');
+    $stmt_deleteFeatItem->bindParam(":itemId", $itemId, PDO::PARAM_INT);
+    if ($stmt_deleteFeatItem->execute()) {
+        // Store the success message in the session
+        $_SESSION['message'] = 'Featured Item deleted successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?feat-item-del-success');
+        exit;
+    } else {
+        return "ERROR: Failed to delete Featured Item.";
+    }
+}
+
+function updateFrontpageText($pdo, $contId, $contData, $redirectTo) {
+	$stmt_deleteFeatItem = $pdo->prepare("UPDATE front_page_content SET cont_data = :contData WHERE cont_id = :contId");
+    $stmt_deleteFeatItem->bindParam(":contData", $contData, PDO::PARAM_INT);
+    $stmt_deleteFeatItem->bindParam(":contId", $contId, PDO::PARAM_INT);
+    if ($stmt_deleteFeatItem->execute()) {
+        // Store the success message in the session
+        $_SESSION['message'] = 'Data edited successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?data-edit-success');
+        exit;
+    } else {
+        return "ERROR: Failed to delete Featured Item.";
+    }
+}

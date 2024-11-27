@@ -1,6 +1,10 @@
 <?php 
 include '../includes/header.php';
 
+$rareItem = 1;
+$popGenre = 2;
+$popBook = 3;
+
 if (isset($_GET['query']) && !empty($_GET['query'])) {
     $query = $_GET['query'];
     $results = searchBooksForTypeahead($pdo, $query);
@@ -16,6 +20,24 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
     exit;
 }
 
+$stmt_fetchRareItems = $pdo->prepare("SELECT book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchRareItems->bindParam(":typeId", $rareItem, PDO::PARAM_INT);
+$stmt_fetchRareItems->execute(); // Execute the prepared statement
+$rareItems = $stmt_fetchRareItems->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt_fetchPopGenre = $pdo->prepare("SELECT genre_name, feat_item_id FROM featured_items fi JOIN genres g ON fi.genre_fk = g.genre_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopGenre->bindParam(":typeId", $popGenre, PDO::PARAM_INT);
+$stmt_fetchPopGenre->execute(); // Execute the prepared statement
+$popGenres = $stmt_fetchPopGenre->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt_fetchPopBook = $pdo->prepare("SELECT book_title, feat_item_id FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopBook->bindParam(":typeId", $popBook, PDO::PARAM_INT);
+$stmt_fetchPopBook->execute(); // Execute the prepared statement
+$popBooks = $stmt_fetchPopBook->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt_fetchFrontPageContent = $pdo->query("SELECT * FROM front_page_content");
+$fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <div class="container">
@@ -23,7 +45,15 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
 
 <div class="search-area container mt-5">
     <!-- Search Bar -->
-    <h4 class="search-label">Vad letar du efter?</h4>
+    <h4 class="search-label">
+    <?php
+        foreach ($fpContent as $cont) {
+        if ($cont['cont_id'] == 1) {
+            echo  htmlspecialchars($cont['cont_data']);
+            break;
+        }}
+    ?>
+    </h4>
     <div class="input-group row">
         <input type="text" id="searchInput" placeholder="Search by title, author, or genre..." style="width: 100%; padding: 10px; margin-bottom: 20px;">
         <ul id="searchResults"></ul>
@@ -31,7 +61,67 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
 </div>
 
 
-<div class="rare-books-area"></div>
+<div class="rare-books-area">
+<h4 class="search-label">
+    <?php
+        foreach ($fpContent as $cont) {
+        if ($cont['cont_id'] == 2) {
+            echo  htmlspecialchars($cont['cont_data']);
+            break;
+        }}
+    ?>
+</h4>
+
+<div id="rareItemsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <button class="carousel-control-prev" type="button" data-bs-target="#featuredItemsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <div class="carousel-inner">
+        <?php
+        // Set a flag for the first carousel item to add the "active" class to it
+        $isFirstItem = true;
+
+        // Loop through the data in chunks of 4 items (4 cards per slide)
+        for ($i = 0; $i < count($rareItems); $i += 4) {
+            // Start a new carousel item
+            echo '<div class="carousel-item' . ($isFirstItem ? ' active' : '') . '">';
+            echo '<div class="row">';
+
+            // Loop through the 4 items (or fewer if it's the last chunk)
+            for ($j = $i; $j < $i + 4 && $j < count($rareItems); $j++) {
+                $item = $rareItems[$j];
+                echo '
+                <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex">
+                    <div class="card flex-fill">
+                        <img src="../assets/img/' . htmlspecialchars($item['book_img']) . '" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">' . htmlspecialchars($item['book_title']) . '</h5>
+                            <p class="card-text">' . htmlspecialchars($item['book_price']) . '</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>';
+            }
+
+            // Close the row and carousel item divs
+            echo '</div></div>';
+
+            // Set $isFirstItem to false after the first iteration
+            $isFirstItem = false;
+        }
+        ?>
+    </div>
+
+    <!-- Controls for carousel navigation -->
+    
+    <button class="carousel-control-next" type="button" data-bs-target="#featuredItemsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+</div>
 
 <div class="featured-genres-area"></div>
 

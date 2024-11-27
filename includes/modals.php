@@ -25,6 +25,11 @@ $series = $stmt_fetchSeries->fetchAll(PDO::FETCH_ASSOC);
 $stmt_fetchLanguages = $pdo->query("SELECT * FROM book_languages");
 $languages = $stmt_fetchLanguages->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt_fetchBooks = $pdo->query("SELECT * FROM books b JOIN book_author ba ON b.book_id = ba.book_fk JOIN authors a ON ba.author_fk = a.author_id");
+$allBooks = $stmt_fetchBooks->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt_fetchFeatItemTypes = $pdo->query("SELECT * FROM featured_item_types");
+$featItemTypes = $stmt_fetchFeatItemTypes->fetchAll(PDO::FETCH_ASSOC);
 
 
 /*if (isset($_GET['book_id'])) {
@@ -85,6 +90,11 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
 if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
     $addBook = addBook($pdo);
 }
+
+if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
+    $addFeatItem = addFeatItem($pdo, 'front-page-editor.php');
+}
+
 
 ?>
 
@@ -509,6 +519,59 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
     </div>
 </div>
 
+<!-- Modal for adding featured items to front page -->
+<div class="modal fade" id="addFeatItemModal" tabindex="-1" aria-labelledby="addFeatItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="POST" id="addFeatItemForm">
+                <input type="hidden" name="formType" value="addFeatItem">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addFeatItemModalLabel">Add New Featured Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="featCategory" class="form-label">Category</label>
+                        <select name="featCategory" class="form-control" id="featCategory" style="width: 100%;">
+                            <option value="" selected>Select a category</option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?php echo htmlspecialchars($category['cat_id']); ?>">
+                                    <?php echo htmlspecialchars($category['cat_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="featBook" class="form-label">Book</label>
+                        <select name="featBook" class="form-control select2" id="featBook" style="width: 100%;">
+                            <option value="" selected>Select a book</option>
+                            <?php foreach ($allBooks as $books): ?>
+                                <option value="<?php echo htmlspecialchars($books['book_id']); ?>">
+                                    <?php echo htmlspecialchars($books['book_title']) . " - " . htmlspecialchars($books['author_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="featType" class="form-label">Item Type</label>
+                        <select name="featType" class="form-control" id="featType" style="width: 100%;">
+                            <option value="" disabled selected>Select a type</option>
+                            <?php foreach ($featItemTypes as $types): ?>
+                                <option value="<?php echo htmlspecialchars($types['type_id']); ?>">
+                                    <?php echo htmlspecialchars($types['type_name'])?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="addFeatItem" value="Add Featured Item" class="btn btn-primary">Save Featured Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Include Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
@@ -528,6 +591,16 @@ $(document).ready(function () {
             allowClear: true,
             multiple: false, // Only allow single selection for Publisher
             dropdownParent: $('#addBookModal'), // Ensure dropdown stays within the modal
+        });
+    });
+
+    $(document).ready(function() {
+        // Initialize Select2 on the select element
+        $('#featBook').select2({
+            placeholder: 'Select a book',
+            allowClear: true, // Optional: Adds a clear button
+            multiple: false, // Only allow single selection for Publisher
+            dropdownParent: $('#addFeatItemModal'), // Ensure dropdown stays within the modal
         });
     });
 
