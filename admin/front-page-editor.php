@@ -36,7 +36,7 @@ if(isset($_POST['deleteFeaturedItem'])){
 
 ?>
 <div class="container">
-<div class="row" id="search_title_edit_area">
+<div class="row" id="search_title_area">
     <form method="POST">
         <?php foreach ($fpContent as $cont) {
             if ($cont['cont_id'] == 1) {
@@ -50,21 +50,98 @@ if(isset($_POST['deleteFeaturedItem'])){
         }?>
     </form><br><br><br>
 </div>
-<div class="row" name="rare_item_edit_area">
+<div class="row" name="rare_item_area">
     <form method="POST">
         <?php foreach ($fpContent as $cont) {
             if ($cont['cont_id'] == 2) {
                 echo "
+                <div class='my-2'>
                 <input type='hidden' name='contentId' value='" . htmlspecialchars($cont['cont_id'], ENT_QUOTES, 'UTF-8') . "' />
                 <input type='text' name='contentData' value='" . htmlspecialchars($cont['cont_data'], ENT_QUOTES, 'UTF-8') . "' />
                 <input type='submit' value='Update Text' name='updateFrontpageText' />
+                </div>
                 ";
                 break; // Exit after the first match, as you're only displaying one form
             }
         }?>
     </form>
+    <div class="row">
     <?php 
     foreach ($rareItems as $ftItem) {
+        // Generate card HTML for each book
+        echo "
+            <div class='col-md-4 col-12 d-flex my-2'>
+                <div class='card flex-fill' style='width: 12rem;'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{$ftItem['book_title']}</h5>
+                        <div class='d-flex justify-content-center'>
+                            <form method='POST'>
+                            <input type='hidden' name='featItemId' value='{$ftItem['feat_item_id']}'/>
+                            <input type='submit' value='Delete Item' name='deleteFeaturedItem' id='deleteFeaturedItem'/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ";
+        }
+        ?>
+    </div>
+</div><br>
+<div class="row" name="pop_genre_area">
+<form method="POST">
+        <?php foreach ($fpContent as $cont) {
+            if ($cont['cont_id'] == 3) {
+                echo "
+                <div class='my-2'>
+                <input type='hidden' name='contentId' value='" . htmlspecialchars($cont['cont_id'], ENT_QUOTES, 'UTF-8') . "' />
+                <input type='text' name='contentData' value='" . htmlspecialchars($cont['cont_data'], ENT_QUOTES, 'UTF-8') . "' />
+                <input type='submit' value='Update Text' name='updateFrontpageText' />
+                </div>
+                ";
+                break; // Exit after the first match, as you're only displaying one form
+            }
+        }?>
+    </form>
+    <div class="row">
+    <?php 
+    foreach ($popGenres as $ftItem) {
+        // Generate card HTML for each genre
+        echo "
+            <div class='col-md-6 col-12 d-flex my-2'>
+                <div class='card flex-fill' style='width: 12rem;'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{$ftItem['genre_name']}</h5>
+                        <div class='d-flex justify-content-center'>
+                            <form method='POST'>
+                                <input type='hidden' name='featItemId' value='{$ftItem['feat_item_id']}'/>
+                                <input type='submit' value='Delete Item' name='deleteFeaturedItem' id='deleteFeaturedItem'/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ";
+    }
+    ?>
+</div>
+</div><br>
+<div name="pop_book_area" class="row">
+<form method="POST">
+    <?php foreach ($fpContent as $cont) {
+        if ($cont['cont_id'] == 4) {
+            echo "
+            <input type='hidden' name='contentId' value='" . htmlspecialchars($cont['cont_id'], ENT_QUOTES, 'UTF-8') . "' />
+            <input type='text' name='contentData' value='" . htmlspecialchars($cont['cont_data'], ENT_QUOTES, 'UTF-8') . "' />
+            <input type='submit' value='Update Text' name='updateFrontpageText' />
+            ";
+            break; // Exit after the first match, as you're only displaying one form
+        }
+    }?>
+</form>
+<div class="row">
+    <?php 
+    foreach ($popBooks as $ftItem) {
         // Generate card HTML for each book
         echo "
             <div class='col-md-4 col-12 d-flex'>
@@ -82,7 +159,8 @@ if(isset($_POST['deleteFeaturedItem'])){
             </div>
         ";
         }
-        ?>
+    ?>
+</div>
 </div>
 <div class="row">
     <div class="d-flex justify-content-center">

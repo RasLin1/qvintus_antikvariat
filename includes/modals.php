@@ -92,7 +92,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
-    $addFeatItem = addFeatItem($pdo, 'front-page-editor.php');
+    $addFeatItem = addFeatItem($pdo);
 }
 
 
@@ -531,12 +531,12 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="featCategory" class="form-label">Category</label>
+                        <label for="featCategory" class="form-label">Genre</label>
                         <select name="featCategory" class="form-control" id="featCategory" style="width: 100%;">
-                            <option value="" selected>Select a category</option>
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?php echo htmlspecialchars($category['cat_id']); ?>">
-                                    <?php echo htmlspecialchars($category['cat_name']); ?>
+                            <option value="" selected>Select a genre</option>
+                            <?php foreach ($genres as $genre): ?>
+                                <option value="<?php echo htmlspecialchars($genre['genre_id']); ?>">
+                                    <?php echo htmlspecialchars($genre['genre_name']); ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>

@@ -364,7 +364,7 @@ function addLanguage($pdo, $langName, $redirectTo = 'book-editor.php') {
 	}
 }
 
-function addFeatItem($pdo, $redirectTo) {
+function addFeatItem($pdo) {
     $itemType = $_POST['featType'];
     $genreFk = $_POST['featCategory'];
     $bookFk = $_POST['featBook'];
@@ -411,9 +411,6 @@ function addFeatItem($pdo, $redirectTo) {
     if ($stmt_addFeatItem->execute()) {
         // Store the success message in the session
         $_SESSION['message'] = 'Featured Item added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?feat-item-success');
         exit;
     } else {
         return "ERROR: Failed to add Featured Item.";

@@ -62,76 +62,213 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
 
 <div class="rare-books-area">
-<h4 class="search-label">
-    <?php
-        foreach ($fpContent as $cont) {
-        if ($cont['cont_id'] == 2) {
-            echo  htmlspecialchars($cont['cont_data']);
-            break;
-        }}
-    ?>
-</h4>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <!-- Title/Label -->
+        <h4 class="rare-books-label mb-0">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 2) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </h4>
 
-<div id="rareItemsCarousel" class="carousel slide" data-bs-ride="carousel">
-    <button class="carousel-control-prev" type="button" data-bs-target="#featuredItemsCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <div class="carousel-inner">
-        <?php
-        // Set a flag for the first carousel item to add the "active" class to it
-        $isFirstItem = true;
-
-        // Loop through the data in chunks of 4 items (4 cards per slide)
-        for ($i = 0; $i < count($rareItems); $i += 4) {
-            // Start a new carousel item
-            echo '<div class="carousel-item' . ($isFirstItem ? ' active' : '') . '">';
-            echo '<div class="row">';
-
-            // Loop through the 4 items (or fewer if it's the last chunk)
-            for ($j = $i; $j < $i + 4 && $j < count($rareItems); $j++) {
-                $item = $rareItems[$j];
-                echo '
-                <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex">
-                    <div class="card flex-fill">
-                        <img src="../assets/img/' . htmlspecialchars($item['book_img']) . '" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                            <h5 class="card-title">' . htmlspecialchars($item['book_title']) . '</h5>
-                            <p class="card-text">' . htmlspecialchars($item['book_price']) . '</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>';
-            }
-
-            // Close the row and carousel item divs
-            echo '</div></div>';
-
-            // Set $isFirstItem to false after the first iteration
-            $isFirstItem = false;
-        }
-        ?>
+        <!-- Navigation Buttons -->
+        <div>
+            <button class="btn btn-outline-secondary me-1" type="button" data-bs-target="#rareItemsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" data-bs-target="#rareItemsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
 
-    <!-- Controls for carousel navigation -->
-    
-    <button class="carousel-control-next" type="button" data-bs-target="#featuredItemsCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+    <!-- Carousel -->
+    <div id="rareItemsCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php
+            $isFirstItem = true;
+
+            for ($i = 0; $i < count($rareItems); $i += 4) {
+                echo '<div class="carousel-item' . ($isFirstItem ? ' active' : '') . '">';
+                echo '<div class="row justify-content-center gx-4">';
+
+                for ($j = $i; $j < $i + 4 && $j < count($rareItems); $j++) {
+                    $item = $rareItems[$j];
+                    echo '
+                    <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                        <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
+                            <!-- Background Image Section -->
+                            <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($item['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
+                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                                    <h5 class="card-title mb-0">' . htmlspecialchars($item['book_title']) . '</h5>
+                                    <p class="card-text mb-0">' . number_format($item['book_price'], 2) . '€</p>
+                                </div>
+                            </div>
+                            <!-- Button Section -->
+                            <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>';
+                }
+
+                echo '</div></div>';
+                $isFirstItem = false;
+            }
+            ?>
+        </div>
+    </div>
 </div>
 
+<div class="row" name="featured-genres-area">
+    <h4 class="search-label">
+    <?php
+        foreach ($fpContent as $cont) {
+        if ($cont['cont_id'] == 3) {
+            echo  htmlspecialchars($cont['cont_data']);
+            break;
+        }}?>
+    </h4><br><br>
+    <?php
+        foreach ($popGenres as $genre) {
+            // Generate card HTML for each book
+            echo "
+                <div class='col-md-6 col-lg-3 col-12'>
+                    <div class='card' style='width: 18rem;'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$genre['genre_name']}</h5>
+                            <div class='d-flex justify-content-center'>
+                                <a href='#' class='btn btn-primary col-12'>View books in this genre</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ";
+        }
+    ?>
+
+
+
+</div><br><br>
+
+<div class="container" id="popular-books-area">
+<div class="d-flex justify-content-between align-items-center mb-2">
+        <!-- Title/Label -->
+        <h4 class="popular-books-label mb-0">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 2) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </h4>
+
+        <!-- Navigation Buttons -->
+        <div>
+            <button class="btn btn-outline-secondary me-1" type="button" data-bs-target="#popularBooksCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" data-bs-target="#popularBooksCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+<!-- Carousel -->
+<div id="popularBooksCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php
+            $isFirstItem = true;
+
+            for ($i = 0; $i < count($popBooks); $i += 5) {
+                echo '<div class="carousel-item' . ($isFirstItem ? ' active' : '') . '">';
+                echo '<div class="row justify-content-center gx-4">';
+
+                for ($j = $i; $j < $i + 5 && $j < count($popBooks); $j++) {
+                    $item = $popBooks[$j];
+                    echo '
+                    <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                        <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
+                            <!-- Background Image Section -->
+                            <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($item['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
+                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                                    <h5 class="card-title mb-0">' . htmlspecialchars($item['book_title']) . '</h5>
+                                    <p class="card-text mb-0">' . number_format($item['book_price'], 2) . '€</p>
+                                </div>
+                            </div>
+                            <!-- Button Section -->
+                            <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>';
+                }
+
+                echo '</div></div>';
+                $isFirstItem = false;
+            }
+            ?>
+        </div>
+    </div>
 </div>
 
-<div class="featured-genres-area"></div>
+<div class="req-area-container container" id="request-area" style="min-height: 30vh;">
+    <div class="row d-flex flex-column justify-content-between align-items-center h-100" style="min-height: 30vh;">
+        <!-- Heading at the top -->
+        <h4 class="mb-4" id="request-area-label">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 5) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </h4>
 
-<div class="popular-books-area"></div>
+        <!-- Paragraph in the middle -->
+        <p class="text-center my-auto">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 6) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </p>
 
-<div class="request-area"></div>
+        <!-- Button at the bottom -->
+        <a href="#" class="btn btn-primary mt-4" style="width: 10%;">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 7) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </a>
+    </div>
+</div>
 
-<div class="qvintus-greeting-area"></div>
+<div class="qvintus-greeting-area">
 
-<div class="customer-stories-area"></div>
+</div>
+
+<div class="customer-stories-area">
+
+</div>
 
 
 
@@ -214,35 +351,33 @@ $(document).ready(function () {
             });
         }
     });
-
-    // Helper function to generate book cards
-    function generateBookCardHTML(books) {
-        return books
-            .map((book) => {
-                return `
-                    <div class='col-md-4'>
-                        <div class='card' style='width: 18rem;'>
-                            <img src='../assets/img/${book.book_img}' class='card-img-top' alt='${book.book_title}'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>${book.book_title}</h5>
-                                <p class='card-text'>Author: ${book.author_name || 'Unknown'}</p>
-                                <p class='card-text'>Price: ${parseFloat(book.book_price).toFixed(2)}€</p>
-                                <div class='d-flex justify-content-between'>
-                                    <form method='POST'>
-                                        <input type='hidden' name='currBookId' value='${book.book_id}'/>
-                                        <input type='submit' value='Edit' name='editBook' class='btn btn-primary'/>
-                                    </form>
-                                    <a href='delete_book.php?id=${book.book_id}' class='btn btn-danger'>Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            })
-            .join('');
-    }
 });
 </script>
+<style>
+    #rareItemsCarousel {
+        position: relative;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    .carousel-inner .row {
+        margin: 0;
+    }
+    .carousel-item {
+        overflow: hidden;
+    }
+    .book-card {
+        height: 500px; /* Set a maximum width for consistent sizing */
+    }
+
+    .req-area-container {
+        height: 70%;
+    }
+
+</style>
 <?php 
 include '../includes/footer.php';
 ?>
