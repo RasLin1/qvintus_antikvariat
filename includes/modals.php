@@ -92,7 +92,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
-    $addFeatItem = addFeatItem($pdo);
+    $addFeatItem = addFeatItem($pdo, 'front-page-editor.php');
 }
 
 
@@ -520,7 +520,7 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
 </div>
 
 <!-- Modal for adding featured items to front page -->
-<div class="modal fade" id="addFeatItemModal" tabindex="-1" aria-labelledby="addFeatItemModalLabel" aria-hidden="true">
+<div class="modal fade" id="addFeatItemModal" tabindex="-1" aria-labelledby="addFeatItemModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="" method="POST" id="addFeatItemForm">
@@ -576,6 +576,8 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 <script>
+
+    
 $(document).ready(function () {
     // Initialize Select2 for dropdowns in the Add Book Modal
     $('#addBookModal').on('shown.bs.modal', function () {

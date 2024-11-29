@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include_once '../includes/emp-header.php';
 
 checkUserRole(3, "book-editor.php");
@@ -66,11 +67,11 @@ if(isset($_POST['deleteFeaturedItem'])){
         }?>
     </form>
     <div class="row">
-    <?php 
+    <?php
     foreach ($rareItems as $ftItem) {
         // Generate card HTML for each book
         echo "
-            <div class='col-md-4 col-12 d-flex my-2'>
+            <div class='col-md-3 col-12 d-flex my-2'>
                 <div class='card flex-fill' style='width: 12rem;'>
                     <div class='card-body'>
                         <h5 class='card-title'>{$ftItem['book_title']}</h5>
@@ -108,7 +109,7 @@ if(isset($_POST['deleteFeaturedItem'])){
     foreach ($popGenres as $ftItem) {
         // Generate card HTML for each genre
         echo "
-            <div class='col-md-6 col-12 d-flex my-2'>
+            <div class='col-md-3 col-12 d-flex my-2'>
                 <div class='card flex-fill' style='width: 12rem;'>
                     <div class='card-body'>
                         <h5 class='card-title'>{$ftItem['genre_name']}</h5>
@@ -131,9 +132,11 @@ if(isset($_POST['deleteFeaturedItem'])){
     <?php foreach ($fpContent as $cont) {
         if ($cont['cont_id'] == 4) {
             echo "
+            <div class='my-2'>
             <input type='hidden' name='contentId' value='" . htmlspecialchars($cont['cont_id'], ENT_QUOTES, 'UTF-8') . "' />
             <input type='text' name='contentData' value='" . htmlspecialchars($cont['cont_data'], ENT_QUOTES, 'UTF-8') . "' />
             <input type='submit' value='Update Text' name='updateFrontpageText' />
+            </div>
             ";
             break; // Exit after the first match, as you're only displaying one form
         }
@@ -144,7 +147,7 @@ if(isset($_POST['deleteFeaturedItem'])){
     foreach ($popBooks as $ftItem) {
         // Generate card HTML for each book
         echo "
-            <div class='col-md-4 col-12 d-flex'>
+            <div class='col-md-3 col-12 d-flex my-2'>
                 <div class='card flex-fill' style='width: 12rem;'>
                     <div class='card-body'>
                         <h5 class='card-title'>{$ftItem['book_title']}</h5>
@@ -164,7 +167,7 @@ if(isset($_POST['deleteFeaturedItem'])){
 </div>
 <div class="row">
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFeatItemModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFeatItemModal" id="openFeatItemModal">
             Add New Featured Item
         </button>
     </div>
@@ -172,7 +175,17 @@ if(isset($_POST['deleteFeaturedItem'])){
 </div>
 <?php include '../includes/modals.php'; ?>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const modalElement = document.getElementById('addFeatItemModal');
+    bootstrap.Modal.getOrCreateInstance(modalElement);
+});
 
+document.getElementById('addFeatItemModal').addEventListener('hidden.bs.modal', function () {
+    // Reset the modal's content or state if necessary
+    this.querySelector('form').reset(); // Example: Clear form inputs
+});
+</script>
 
 <?php 
 include_once '../includes/emp-footer.php';

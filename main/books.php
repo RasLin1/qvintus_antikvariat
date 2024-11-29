@@ -1,40 +1,65 @@
 <?php 
 include '../includes/header.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['results'])) {
-    // Decode JSON data into a PHP array
-    $results = json_decode($_POST['results'], true);
-
-    if (is_array($results)) {
-        foreach ($results as $book) {
-            // Generate card HTML for each book
-            echo "
-                <div class='col-md-4'>
-                    <div class='card' style='width: 18rem;'>
-                        <img src='../assets/img/{$book['book_img']}' class='card-img-top' alt='{$book['book_title']}'>
-                        <div class='card-body'>
-                            <h5 class='card-title'>{$book['book_title']}</h5>
-                            <p class='card-text'>Author: " . (!empty($book['author_name']) ? $book['author_name'] : 'Unknown') . "</p>
-                            <p class='card-text'>Price: " . number_format((float)$book['book_price'], 2) . "€</p>
-                            <div class='d-flex justify-content-center'>
-                                <a href='single-book.php?id={$book['book_id']}' class='btn btn-primary'>View Book</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ";
-        }
-    } else {
-        echo '<p>Invalid data received.</p>';
-    }
-} else {
-    echo '<p>No data received.</p>';
-}
 ?>
 
 <div class="container">
     <div id="search-area"></div>
-    <div id="book-area"></div>
+    <div id="book-area" class="row">
+        <?php 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['results'])) {
+            // Decode JSON data into a PHP array
+            $results = json_decode($_POST['results'], true);
+        
+            if (is_array($results)) {
+                foreach ($results as $book) {
+                    // Generate card HTML for each book
+                    echo '
+                    <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                        <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
+                            <!-- Background Image Section -->
+                            <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($book['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
+                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                                    <h5 class="card-title mb-0">' . htmlspecialchars($book['book_title']) . '</h5>
+                                    <p class="card-text mb-0">' . htmlspecialchars($book['author_name']) . '</p>
+                                    <p class="card-text mb-0">' . number_format($book['book_price'], 2) . '€</p>
+                                </div>
+                            </div>
+                            <!-- Button Section -->
+                            <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>';
+                }
+            } else {
+                echo '<p>Invalid data received.</p>';
+            }
+        } else {
+            $results = searchBooksForTypeahead($pdo, '');
+            foreach ($results as $book) {
+                // Generate card HTML for each book
+                echo '
+                    <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                        <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
+                            <!-- Background Image Section -->
+                            <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($book['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
+                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                                    <h5 class="card-title mb-0">' . htmlspecialchars($book['book_title']) . '</h5>
+                                    <p class="card-text mb-0">' . htmlspecialchars($book['author_name']) . '</p>
+                                    <p class="card-text mb-0">' . number_format($book['book_price'], 2) . '€</p>
+                                </div>
+                            </div>
+                            <!-- Button Section -->
+                            <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>';
+                }
+            }
+        ?>
+    </div>
 </div>
 
 <?php 

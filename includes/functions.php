@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 
 function cleanInput($data){
 	$data = trim($data);
@@ -153,8 +155,6 @@ foreach ($bookIllustrator as $illustratorId) {
 	$stmt_insertIllustrator->execute([':book_id' => $bookId, ':illustrator_id' => $illustratorId]);
 }
 
-// Redirect or provide success message
-echo 'Book added successfully!';
 }
 
 function editBook($pdo){
@@ -188,7 +188,6 @@ function editBook($pdo){
 		':book_id' => $bookId
 	]);
 
-	echo 'Book edited successfully!';
 }
 
 
@@ -230,18 +229,22 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
         JOIN 
             authors a ON ba.author_fk = a.author_id
         WHERE 
-            b.book_title LIKE :query1 
-    		OR a.author_name LIKE :query2
+            (:query IS NULL OR b.book_title LIKE :query1 OR a.author_name LIKE :query2)
         LIMIT 10;
     ";
 
-    // Prepare and execute the query with bound parameter
+    // Prepare the SQL query
     $stmt = $pdo->prepare($sql);
 
-    // Make sure the query is bound with proper syntax
-    $stmt->execute(['query1' => "%$query%", 'query2' => "%$query%"]);
+    // Bind parameters
+    $queryParam = $query !== '' ? "%$query%" : null;
+    $stmt->execute([
+        'query'  => $queryParam,
+        'query1' => $queryParam,
+        'query2' => $queryParam
+    ]);
 
-    // Fetch all the matching results
+    // Fetch all matching results
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -364,7 +367,7 @@ function addLanguage($pdo, $langName, $redirectTo = 'book-editor.php') {
 	}
 }
 
-function addFeatItem($pdo) {
+function addFeatItem($pdo, $redirectLink) {
     $itemType = $_POST['featType'];
     $genreFk = $_POST['featCategory'];
     $bookFk = $_POST['featBook'];
@@ -382,7 +385,7 @@ function addFeatItem($pdo) {
     // Check if a limit was found
     if (!$limitResult) {
         $_SESSION['message'] = "Error: No limit found for this item type.";
-        header('Location: ' . $redirectTo . '?feat-item-limit-error');
+        header('Location: '. $redirectLink .'?feat-item-limit-error');
         exit;
     }
 
@@ -397,10 +400,11 @@ function addFeatItem($pdo) {
     // Step 3: If the current count exceeds the maximum, prevent insert
     if ($currentCount > $maxItems) {
         $_SESSION['message'] = "Error: You can only have up to $maxItems featured items of this type.";
-        header('Location: ' . $redirectTo . '?feat-item-limit-exceeded');
+        header('Location: '. $redirectLink .'?feat-item-limit-exceeded');
         exit;
-    }
 
+    }
+    elseif ($currentCount < $maxItems){
     // Step 4: Proceed with inserting the new featured item if the limit is not exceeded
     $stmt_addFeatItem = $pdo->prepare("INSERT INTO featured_items (feat_item_type_fk, genre_fk, book_fk) VALUES (:typeFk, :genreFk, :bookFk)");
     $stmt_addFeatItem->bindParam(":typeFk", $itemType, PDO::PARAM_INT);
@@ -411,10 +415,11 @@ function addFeatItem($pdo) {
     if ($stmt_addFeatItem->execute()) {
         // Store the success message in the session
         $_SESSION['message'] = 'Featured Item added successfully';
+        header('Location: '. $redirectLink .'?feat-item-add-success');
         exit;
     } else {
         return "ERROR: Failed to add Featured Item.";
-    }
+    }}
 }
 
 function deleteFeatItem($pdo, $itemId, $redirectTo) {

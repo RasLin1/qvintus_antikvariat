@@ -30,7 +30,7 @@ $stmt_fetchPopGenre->bindParam(":typeId", $popGenre, PDO::PARAM_INT);
 $stmt_fetchPopGenre->execute(); // Execute the prepared statement
 $popGenres = $stmt_fetchPopGenre->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt_fetchPopBook = $pdo->prepare("SELECT book_title, feat_item_id FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopBook = $pdo->prepare("SELECT book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchPopBook->bindParam(":typeId", $popBook, PDO::PARAM_INT);
 $stmt_fetchPopBook->execute(); // Execute the prepared statement
 $popBooks = $stmt_fetchPopBook->fetchAll(PDO::FETCH_ASSOC);
@@ -140,7 +140,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
             // Generate card HTML for each book
             echo "
                 <div class='col-md-6 col-lg-3 col-12'>
-                    <div class='card' style='width: 18rem;'>
+                    <div class='card' style=';'>
                         <div class='card-body'>
                             <h5 class='card-title'>{$genre['genre_name']}</h5>
                             <div class='d-flex justify-content-center'>
@@ -163,7 +163,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
         <h4 class="popular-books-label mb-0">
             <?php
                 foreach ($fpContent as $cont) {
-                    if ($cont['cont_id'] == 2) {
+                    if ($cont['cont_id'] == 4) {
                         echo htmlspecialchars($cont['cont_data']);
                         break;
                     }
@@ -190,11 +190,11 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
             <?php
             $isFirstItem = true;
 
-            for ($i = 0; $i < count($popBooks); $i += 5) {
+            for ($i = 0; $i < count($popBooks); $i += 6) {
                 echo '<div class="carousel-item' . ($isFirstItem ? ' active' : '') . '">';
                 echo '<div class="row justify-content-center gx-4">';
 
-                for ($j = $i; $j < $i + 5 && $j < count($popBooks); $j++) {
+                for ($j = $i; $j < $i + 6 && $j < count($popBooks); $j++) {
                     $item = $popBooks[$j];
                     echo '
                     <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
@@ -262,8 +262,34 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<div class="qvintus-greeting-area">
+<div class="row mt-4" id="qvintus-greeting-area" style="min-height: 30vh;">
+    <div class="col-lg-6 col-12 d-flex flex-column justify-content-between align-items-center h-100" id="greeting-text-area" style="min-height: 30vh;">
+    <h4 class="mb-4" id="request-area-label">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 8) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </h4>
 
+        <!-- Paragraph in the middle -->
+        <p class="text-center my-auto">
+            <?php
+                foreach ($fpContent as $cont) {
+                    if ($cont['cont_id'] == 9) {
+                        echo htmlspecialchars($cont['cont_data']);
+                        break;
+                    }
+                }
+            ?>
+        </p>
+    </div>
+    <div class="col-lg-6 col-12" id="greeting-pic-area" style="min-height: 30vh;">
+        <img src="../assets/img/anders2.jpg" alt="Anders den mäktige" width="" height="380">
+    </div>
 </div>
 
 <div class="customer-stories-area">
