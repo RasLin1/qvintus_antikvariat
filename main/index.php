@@ -222,8 +222,8 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<div class="req-area-container container" id="request-area" style="min-height: 30vh;">
-    <div class="row d-flex flex-column justify-content-between align-items-center h-100" style="min-height: 30vh;">
+<div class="req-area-container container" id="request-area">
+    <div class="row d-flex flex-column justify-content-between align-items-center h-100" style="min-height: 50vh;">
         <!-- Heading at the top -->
         <h4 class="mb-4" id="request-area-label">
             <?php

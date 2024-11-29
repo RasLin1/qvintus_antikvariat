@@ -31,26 +31,36 @@ $allBooks = $stmt_fetchBooks->fetchAll(PDO::FETCH_ASSOC);
 $stmt_fetchFeatItemTypes = $pdo->query("SELECT * FROM featured_item_types");
 $featItemTypes = $stmt_fetchFeatItemTypes->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt_fetchUserRoles = $pdo->query("SELECT * FROM employee_roles");
+$userRoles = $stmt_fetchUserRoles->fetchAll(PDO::FETCH_ASSOC);
 
-/*if (isset($_GET['book_id'])) {
-    $book_id = intval($_GET['book_id']);
 
-    // Example function to fetch book data
-    $book = getBookById($book_id); 
+if (isset($_POST['addNewUser'])) {
+    // Assuming the form's POST data is available
+    $username = $_POST['username'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
+    $role = $_POST['role'];
 
-    if ($book) {
-        // Ensure valid JSON is returned
-        header('Content-Type: application/json');
-        echo json_encode($book);
-    } else {
-        // Handle case when no book is found
-        http_response_code(404);
-        echo json_encode(['error' => 'Book not found']);
-    }
-} else {
-    http_response_code(400);
-    echo json_encode(['error' => 'Invalid or missing book ID']);
-}*/
+    // Call the function to create the user
+    $result = createUser($pdo, $username, $firstName, $lastName, $password, $confirmPassword, $role);
+}
+
+if (isset($_POST['editExistingUser'])) {
+    // Assuming the form's POST data is available
+    $userId = $_POST['userId'];
+    $username = $_POST['username'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
+    $role = $_POST['role'];
+
+    // Call the function to create the user
+    $result = updateUser($pdo, $userId, $username, $firstName, $lastName, $password, $confirmPassword, $role);
+}
 
 // Handle adding new authors, illustrators, publishers, genres etc.
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAuthor') {
@@ -572,6 +582,121 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
     </div>
 </div>
 
+<!-- Create User Modal -->
+<div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createUserModalLabel">Create New User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" id="username" class="form-control" required>
+                    </div>
+                    <!-- First Name -->
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" name="firstName" id="firstName" class="form-control" required>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" class="form-control" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required>
+                    </div>
+                    <!-- Role -->
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select name="role" id="role" class="form-select" required>
+                            <option value="" disabled selected>Select a role</option>
+                            <?php foreach ($userRoles as $role): ?>
+                                <option value="<?php echo htmlspecialchars($role['role_id']); ?>">
+                                    <?php echo htmlspecialchars($role['role_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="addNewUser" id="addNewUser" class="btn btn-primary">Create User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <!-- Hidden User ID -->
+                    <input type="hidden" name="userId" id="userId">
+
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="editUsername" class="form-label">Username</label>
+                        <input type="text" name="username" id="editUsername" class="form-control" required>
+                    </div>
+                    <!-- First Name -->
+                    <div class="mb-3">
+                        <label for="editFirstName" class="form-label">First Name</label>
+                        <input type="text" name="firstName" id="editFirstName" class="form-control" required>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="mb-3">
+                        <label for="editLastName" class="form-label">Last Name</label>
+                        <input type="text" name="lastName" id="editLastName" class="form-control" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="editPassword" class="form-label">Password (Leave blank to keep current password)</label>
+                        <input type="password" name="password" id="editPassword" class="form-control">
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label for="editConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" name="confirmPassword" id="editConfirmPassword" class="form-control">
+                    </div>
+                    <!-- Role -->
+                    <div class="mb-3">
+                        <label for="editRole" class="form-label">Role</label>
+                        <select name="role" id="editRole" class="form-select" required>
+                            <option value="" disabled>Select a role</option>
+                            <?php foreach ($userRoles as $role): ?>
+                                <option value="<?php echo htmlspecialchars($role['role_id']); ?>">
+                                    <?php echo htmlspecialchars($role['role_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="editExistingUser" id="editExistingUser" class="btn btn-primary">Update User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Include Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
@@ -701,6 +826,28 @@ function populateAndOpenModal(data) {
     var modal = new bootstrap.Modal(document.getElementById('editBookModal'));
     modal.show();
 }
+
+document.querySelectorAll('.edit-user-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const userId = button.getAttribute('data-user-id');
+        const username = button.getAttribute('data-username');
+        const firstName = button.getAttribute('data-first-name');
+        const lastName = button.getAttribute('data-last-name');
+        const role = button.getAttribute('data-role');
+
+        // Populate the modal fields
+        document.getElementById('userId').value = userId;
+        document.getElementById('editUsername').value = username;
+        document.getElementById('editFirstName').value = firstName;
+        document.getElementById('editLastName').value = lastName;
+        document.getElementById('editRole').value = role;
+
+        // Show the modal
+        const modalElement = document.getElementById('editUserModal');
+        const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+        modalInstance.show();
+    });
+});
 
 </script>
 

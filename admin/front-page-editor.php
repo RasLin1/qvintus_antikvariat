@@ -1,5 +1,4 @@
 <?php
-ob_start();
 include_once '../includes/emp-header.php';
 
 checkUserRole(3, "book-editor.php");
@@ -136,7 +135,6 @@ if(isset($_POST['deleteFeaturedItem'])){
             <input type='hidden' name='contentId' value='" . htmlspecialchars($cont['cont_id'], ENT_QUOTES, 'UTF-8') . "' />
             <input type='text' name='contentData' value='" . htmlspecialchars($cont['cont_data'], ENT_QUOTES, 'UTF-8') . "' />
             <input type='submit' value='Update Text' name='updateFrontpageText' />
-            </div>
             ";
             break; // Exit after the first match, as you're only displaying one form
         }

@@ -53,23 +53,71 @@ function login($pdo){
 	   }
 }
 
-function register($pdo){
-	$regUserName = cleanInput($_POST['u_name']);
-	//encrypts the password with password_hash()
-	$encryptedPassword = password_hash($_POST['u_pass'], PASSWORD_DEFAULT);
-	$urole = "3";
+function createUser(PDO $pdo, $username, $firstName, $lastName, $password, $confirmPassword, $role)
+{
+    // Check if the passwords match
+    if ($password !== $confirmPassword) {
+        return "Error: Passwords do not match.";
+    }
 
-	$stmt_registerUser = $pdo->prepare('INSERT INTO employee(emp_uname, emp_pass, emp_role_fk)values(:uname, :upass, :urole)');
-	$stmt_registerUser->bindParam(":uname" ,$regUserName, PDO::PARAM_STR);
-	$stmt_registerUser->bindParam(":upass" ,$encryptedPassword, PDO::PARAM_STR);
-	$stmt_registerUser->bindParam(":urole" ,$urole, PDO::PARAM_INT);
+    // Hash the password
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-	if($stmt_registerUser->execute()){
-		header("Location: emp-login.php?newuser=1");
-	}
-	else{
-		return "Something went wrong";
-	}
+    // Prepare the insert query
+    $sql = "INSERT INTO employee (emp_uname, emp_fname, emp_lname, emp_pass, emp_role_fk) 
+            VALUES (:username, :firstName, :lastName, :password, :role)";
+    
+    $stmt = $pdo->prepare($sql);
+
+    // Bind the parameters
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+    $stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+    $stmt->bindParam(':role', $role, PDO::PARAM_INT);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        return "User created successfully!";
+    } else {
+        return "Error: Could not create user.";
+    }
+}
+
+function updateUser(PDO $pdo, $userId, $username, $firstName, $lastName, $password, $confirmPassword, $role)
+{
+    // Check if passwords are provided and match
+    if (!empty($password) || !empty($confirmPassword)) {
+        if ($password !== $confirmPassword) {
+            return "Error: Passwords do not match.";
+        }
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    }
+
+    // Prepare the update query
+    $sql = "UPDATE employee 
+            SET emp_uname = :username, emp_fname = :firstName, emp_lname = :lastName, 
+                emp_role_fk = :role" . (!empty($password) ? ", emp_pass = :password" : "") . " 
+            WHERE emp_id = :userId";
+
+    $stmt = $pdo->prepare($sql);
+
+    // Bind parameters
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+    $stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+    $stmt->bindParam(':role', $role, PDO::PARAM_INT);
+    $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+    if (!empty($password)) {
+        $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+    }
+
+    // Execute the query
+    if ($stmt->execute()) {
+        return "User updated successfully!";
+    } else {
+        return "Error: Could not update user.";
+    }
 }
 
 function addBook($pdo){
@@ -230,7 +278,7 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
             authors a ON ba.author_fk = a.author_id
         WHERE 
             (:query IS NULL OR b.book_title LIKE :query1 OR a.author_name LIKE :query2)
-        LIMIT 10;
+        LIMIT 24;
     ";
 
     // Prepare the SQL query
