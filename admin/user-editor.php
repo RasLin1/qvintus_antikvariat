@@ -21,7 +21,7 @@ if(isset($_POST['deleteUser'])){
         foreach ($users as $user) {
             // Generate card HTML for each genre
             echo "
-                <div class='col-md-3 col-12 d-flex my-2'>
+                <div class='col-lg-3 col-md-4 col-12 d-flex my-2'>
                     <div class='card flex-fill' style='width: ;'>
                         <div class='card-body'>
                             <h5 class='card-title'>{$user['emp_fname']} {$user['emp_lname']} </h5>
@@ -50,7 +50,7 @@ if(isset($_POST['deleteUser'])){
     ?>
     </div>
     <div class="row justify-content-center my-2" id="newUserButton">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal" style="width: 10vw;">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal" style="width: 150px;">
             Create New User
         </button>
     </div>

@@ -64,36 +64,40 @@ if (isset($_POST['editExistingUser'])) {
 
 // Handle adding new authors, illustrators, publishers, genres etc.
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAuthor') {
-    $cleanData['authorName'] = cleanInput($_POST['authorName']);
-    $addAuthor = addAuthor($pdo, $cleanData['authorName']);
+    $cleanAuthorName = cleanInput($_POST['authorName']);
+    $addAuthor = universalInsert($pdo, 'authors', ['author_name'], [$cleanAuthorName]);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addIllustrator') {
-    $cleanData['illustratorName'] = cleanInput($_POST['illustratorName']);
-    $addIllustrator = addIllustrator($pdo, $cleanData['illustratorName']);
+    $cleanIllName = cleanInput($_POST['illustratorName']);
+    $addIllustrator = universalInsert($pdo, 'illustrators', ['illustrator_name'], [$cleanIllName]);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addPublisher') {
-    $cleanData['publisherName'] = cleanInput($_POST['publisherName']);
-    $addPublisher = addPublisher($pdo, $cleanData['publisherName']);
+    $cleanPubName = cleanInput($_POST['publisherName']);
+    $addPublisher = universalInsert($pdo, 'publishers', ['pub_name'], [$cleanPubName]);
 }
 if (isset($_POST['formType']) && $_POST['formType'] === 'addGenre') {
-    $cleanData['genreName'] = cleanInput($_POST['genreName']);
-    $addGenre = addGenre($pdo, $cleanData['genreName']);
+    $cleanGenreName = cleanInput($_POST['genreName']);
+    $addGenre = universalInsert($pdo, 'genres', ['genre_name'], [$cleanGenreName]);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addAgeRecommendation') {
-    $addAgeRec = addAgeRec($pdo, $_POST['ageRecommendationName']);
+    $cleanAgeName = cleanInput($_POST['ageRecommendationName']);
+    $addAgeRec = universalInsert($pdo, 'book_age_rec', ['age_value'], [$cleanAgeName]);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addCategory') {
-    $addCategory = addCategory($pdo, $_POST['categoryName']);
+    $cleanCatName = cleanInput($_POST['categoryName']);
+    $addCategory = universalInsert($pdo, 'book_categories', ['cat_name'], [$cleanCatName]);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addSeries') {
-    $addSeries = addSeries($pdo, $_POST['seriesName']);
+    $cleanSeriesName = cleanInput($_POST['seriesName']);
+    $addSeries = universalInsert($pdo, 'book_series', ['series_name'], [$cleanSeriesName]);
 }
 
 if (isset($_POST['formType']) && $_POST['formType'] === 'addLanguage') {
-    $addLanguage = addLanguage($pdo, $_POST['languageName']);
+    $cleanLangName = cleanInput($_POST['languageName']);
+    $addSeries = universalInsert($pdo, 'book_languages', ['lang_name'], [$cleanLangName]);
 }
 
 // Handle adding new book

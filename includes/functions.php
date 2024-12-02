@@ -253,29 +253,6 @@ function editBook($pdo){
 
 }
 
-
-
-
-
-
-// Adds a new author to db and redirects
-function addAuthor($pdo, $authName, $redirectTo = 'book-editor.php') {
-    $stmt_addAuthor = $pdo->prepare("INSERT INTO authors (author_name) VALUES (:authName)");
-    $stmt_addAuthor->bindParam(":authName" ,$authName, PDO::PARAM_STR);
-    
-    if ($stmt_addAuthor->execute()) {
-        
-        // Store the success message in the session
-        $_SESSION['message'] = 'Author added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?auth-success');
-        exit;
-    } else {
-        return "ERROR";
-    }
-}
-
 // Function to search books directly from the database
 function searchBooksForTypeahead(PDO $pdo, string $query): array {
     $sql = "
@@ -317,123 +294,35 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-//Adds a new genre to db
-function addGenre($pdo, $genName, $redirectTo = 'book-editor.php') {
-    $stmt_addGenre = $pdo->prepare("INSERT INTO genres (genre_name) VALUES (:genName)");
-	$stmt_addGenre->bindParam(":genName" ,$genName, PDO::PARAM_STR);
-    if($stmt_addGenre->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Genre added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?gen-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
-}
+function universalInsert($pdo, $tableName, $columns, $values, $redirectTo = null) {
+    // Build the placeholders for the prepared statement
+    $placeholders = array_map(function($col) {
+        return ":" . $col;
+    }, $columns);
 
-//Adds a new illustrator to db
-function addIllustrator($pdo, $illName, $redirectTo = 'book-editor.php') {
-    $stmt_addIllustrator = $pdo->prepare("INSERT INTO illustrators (illustrator_name) VALUES (:illName)");
-	$stmt_addIllustrator->bindParam(":illName" ,$illName, PDO::PARAM_STR);
-    if($stmt_addIllustrator->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Illustrator added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?ill-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
-}
+    // Construct the SQL query dynamically
+    $sql = "INSERT INTO $tableName (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
 
-//Adds a new illustrator to db
-function addPublisher($pdo, $pubName, $redirectTo = 'book-editor.php') {
-    $stmt_addPublisher = $pdo->prepare("INSERT INTO publishers (pub_name) VALUES (:pubName)");
-	$stmt_addPublisher->bindParam(":pubName" ,$pubName, PDO::PARAM_STR);
-    if($stmt_addPublisher->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Publisher added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?pub-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
-}
+    // Prepare the statement
+    $stmt = $pdo->prepare($sql);
 
-//Adds a new age recomendation to db
-function addAgeRec($pdo, $ageRecName, $redirectTo = 'book-editor.php') {
-    $stmt_addAgeRec = $pdo->prepare("INSERT INTO book_age_rec (age_value) VALUES (:ageName)");
-	$stmt_addAgeRec->bindParam(":ageName" ,$ageRecName, PDO::PARAM_STR);
-    if($stmt_addAgeRec->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Age Recomendation added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?age-rec-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
-}
+    // Bind each value to its corresponding placeholder
+    foreach ($columns as $index => $column) {
+        $stmt->bindValue(":" . $column, $values[$index]);
+    }
 
-//Adds a new age recomendation to db
-function addCategory($pdo, $catName, $redirectTo = 'book-editor.php') {
-    $stmt_addCategory = $pdo->prepare("INSERT INTO book_categories (cat_name) VALUES (:catName)");
-	$stmt_addCategory->bindParam(":catName" ,$catName, PDO::PARAM_STR);
-    if($stmt_addCategory->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Category added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?cat-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
-}
-
-//Adds a new age recomendation to db
-function addSeries($pdo, $seriesName, $redirectTo = 'book-editor.php') {
-    $stmt_addSeries = $pdo->prepare("INSERT INTO book_series (series_name) VALUES (:seriesName)");
-	$stmt_addSeries->bindParam(":seriesName" ,$seriesName, PDO::PARAM_STR);
-    if($stmt_addSeries->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Book series added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?series-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
-}
-
-//Adds a new age recomendation to db
-function addLanguage($pdo, $langName, $redirectTo = 'book-editor.php') {
-    $stmt_addLanguage = $pdo->prepare("INSERT INTO book_languages (lang_name) VALUES (:langName)");
-	$stmt_addLanguage->bindParam(":langName" ,$langName, PDO::PARAM_STR);
-    if($stmt_addLanguage->execute()){
-		// Store the success message in the session
-        $_SESSION['message'] = 'Language added successfully';
-        
-        // Redirect to the dynamic location with a success flag
-        header('Location: ' . $redirectTo . '?lang-success');
-		exit;
-	}
-	else{
-		return "ERROR";
-	}
+    // Execute the query and handle the outcome
+    if ($stmt->execute()) {
+        // Success message handling
+        if ($redirectTo) {
+            $_SESSION['message'] = 'Record added successfully';
+            header('Location: ' . $redirectTo . '?insert-success');
+            exit;
+        }
+        return true; // Return true if successful and no redirect
+    } else {
+        return false; // Return false if the query fails
+    }
 }
 
 function addFeatItem($pdo, $redirectLink) {
