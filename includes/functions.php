@@ -449,6 +449,92 @@ function universalInsert($pdo, $tableName, $columns, $values, $redirectTo = null
     }
 }
 
+function canDelete($pdo, $objectId, $table, $columnName) {
+    try {
+        // Validate table and column names
+        $allowedTables = ['book_genres', 'book_illustrators', 'book_authors', 'featured_items'];
+        $allowedColumns = ['genre_fk', 'genre_fk', 'illustrator_fk', 'author_fk'];
+
+        if (!in_array($table, $allowedTables) || !in_array($columnName, $allowedColumns)) {
+            throw new Exception("Invalid table or column name.");
+        }
+
+        // Prepare the query
+        $stmt_count = $pdo->prepare("
+            SELECT COUNT(*) AS count 
+            FROM $table 
+            WHERE $columnName = :id
+        ");
+        $stmt_count->execute([':id' => $objectId]);
+        $result = $stmt_count->fetch(PDO::FETCH_ASSOC);
+
+        // Deletion is allowed only if the count is 0
+        return $result['count'] == 0;
+    } catch (Exception $e) {
+        error_log("Error in canDelete function: " . $e->getMessage());
+        return false; // Fail safe: assume cannot delete in case of an error
+    }
+}
+function deleteGenre($pdo, $genreId) {
+    if (!canDelete($pdo, $genreId, "book_genres", "genre_fk")) {
+        return "Cannot delete genre; it is associated with existing books.";
+    }
+
+    try {
+        $pdo->beginTransaction();
+
+        // Delete from featured_items
+        $stmt_deleteFeatured = $pdo->prepare("DELETE FROM featured_items WHERE genre_fk = :genre_id");
+        $stmt_deleteFeatured->execute([':genre_id' => $genreId]);
+
+        // Delete the genre itself
+        $stmt_deleteGenre = $pdo->prepare("DELETE FROM genres WHERE genre_id = :genre_id");
+        $stmt_deleteGenre->execute([':genre_id' => $genreId]);
+
+        $pdo->commit();
+        return "Genre deleted successfully.";
+    } catch (PDOException $e) {
+        $pdo->rollBack();
+        error_log("Error deleting genre: " . $e->getMessage());
+        return "Failed to delete genre.";
+    }
+}
+
+function deleteIllorAuth($pdo, $objectId, $tableDependencyName, $columnDependencyName, $tableName, $columnName) {
+    try {
+        // Check if the table/column names are valid to prevent SQL injection
+        $allowedTables = ['illustrators', 'authors']; // Allowed tables
+        $allowedColumns = ['illustrator_id', 'author_id']; // Allowed columns
+
+        if (!in_array($tableName, $allowedTables) || !in_array($columnName, $allowedColumns)) {
+            throw new Exception("Invalid table or column name.");
+        }
+
+
+        if (!canDelete($pdo, $objectId, $tableDependencyName, $columnDependencyName)) {
+        return "Cannot delete object; it is associated with existing books.";
+        }
+
+        // Begin the transaction
+        $pdo->beginTransaction();
+
+        // Delete the object itself
+        $stmt_delete = $pdo->prepare("DELETE FROM $tableName WHERE $columnName = :object_id");
+        $stmt_delete->execute([':object_id' => $objectId]);
+
+        // Commit the transaction
+        $pdo->commit();
+        return "Object deleted successfully.";
+    } catch (Exception $e) {
+        // Roll back in case of error
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        error_log("Error deleting object: " . $e->getMessage());
+        return "Failed to delete object.";
+    }
+}
+
 function addFeatItem($pdo, $redirectLink) {
     $itemType = $_POST['featType'];
     $genreFk = $_POST['featCategory'];
