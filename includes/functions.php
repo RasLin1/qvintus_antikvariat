@@ -220,69 +220,144 @@ foreach ($bookIllustrator as $illustratorId) {
 
 }
 
-function editBook($pdo){
-	// Sanitize and collect inputs
-	$bookTitle = cleanInput($_POST['bookTitleEdit']);
-	$bookDescription = cleanInput($_POST['bookDescriptionEdit']);
-	$bookReleseDate = $_POST['releaseDateEdit'];
-	$bookPageCount = $_POST['pageCountEdit'];
-	$bookPrice = $_POST['priceEdit'];
-	$bookId = $_POST['bookIdEdit'];
-	
+function updateBook($pdo) {
+    // Sanitize and collect inputs
+    $bookId = $_POST['bookIdEdit'];
+    $bookTitle = cleanInput($_POST['bookTitleEdit']);
+    $bookDescription = cleanInput($_POST['bookDescriptionEdit']);
+    $bookGenre = isset($_POST['bookGenreEdit']) ? $_POST['bookGenreEdit'] : [];
+    $bookAuthor = isset($_POST['bookAuthorEdit']) ? $_POST['bookAuthorEdit'] : [];
+    $bookIllustrator = isset($_POST['bookIllustratorEdit']) ? $_POST['bookIllustratorEdit'] : [];
+    $bookPublisher = cleanInput($_POST['bookPublisherEdit']);
+    $bookAgeRecommendation = cleanInput($_POST['bookAgeRecommendationEdit']);
+    $bookCategory = cleanInput($_POST['bookCategoryEdit']);
+    $bookSeries = cleanInput($_POST['bookSeriesEdit']);
+    $bookLanguage = cleanInput($_POST['bookLanguageEdit']);
+    $bookReleaseDate = cleanInput($_POST['bookReleseDateEdit']);
+    $bookPageCount = cleanInput($_POST['bookPageCountEdit']);
+    $bookPrice = cleanInput($_POST['bookPriceEdit']);
 
-	$stmt_updateBook = $pdo->prepare("
-    UPDATE books
-    SET 
-        book_title = :title,
-        book_summary = :description,
-        book_publishing_date = :release_date,
-        book_side_count = :page_count,
-        book_price = :price
-    WHERE 
-        book_id = :book_id
-	");
+    // Prepare the update query
+    $stmt_updateBook = $pdo->prepare("
+        UPDATE books
+        SET 
+            book_title = :title, 
+            book_summary = :description,
+            publisher_fk = :publisher_id, 
+            book_age_rec_fk = :age_id, 
+            book_category_fk = :category_id, 
+            book_language_fk = :language_id, 
+            book_publishing_date = :release_date, 
+            book_side_count = :page_count, 
+            book_price = :price,
+            book_series_fk = :series_id
+        WHERE book_id = :book_id
+    ");
 
-	$stmt_updateBook->execute([
-		':title' => $bookTitle,
-		':description' => $bookDescription,
-		':release_date' => $bookReleseDate,
-		':page_count' => $bookPageCount,
-		':price' => $bookPrice,
-		':book_id' => $bookId
-	]);
+    $stmt_updateBook->execute([
+        ':title' => $bookTitle,
+        ':description' => $bookDescription,
+        ':publisher_id' => $bookPublisher,
+        ':age_id' => $bookAgeRecommendation,
+        ':category_id' => $bookCategory,
+        ':language_id' => $bookLanguage,
+        ':release_date' => $bookReleaseDate,
+        ':page_count' => $bookPageCount,
+        ':price' => $bookPrice,
+        ':series_id' => $bookSeries,
+        ':book_id' => $bookId
+    ]);
 
+    // Delete current genres, authors, and illustrators to avoid duplication
+    $stmt_deleteGenres = $pdo->prepare("DELETE FROM book_genres WHERE book_fk = :book_id");
+    $stmt_deleteGenres->execute([':book_id' => $bookId]);
+
+    $stmt_deleteAuthors = $pdo->prepare("DELETE FROM book_author WHERE book_fk = :book_id");
+    $stmt_deleteAuthors->execute([':book_id' => $bookId]);
+
+    $stmt_deleteIllustrators = $pdo->prepare("DELETE FROM book_illustrators WHERE book_fk = :book_id");
+    $stmt_deleteIllustrators->execute([':book_id' => $bookId]);
+
+    // Re-insert new genres
+    foreach ($bookGenre as $genreId) {
+        // Check if the genre exists before inserting
+        $stmt_checkGenre = $pdo->prepare("SELECT COUNT(*) FROM genres WHERE genre_id = :genre_id");
+        $stmt_checkGenre->execute([':genre_id' => $genreId]);
+        if ($stmt_checkGenre->fetchColumn() > 0) {
+            $stmt_insertGenre = $pdo->prepare("INSERT INTO book_genres (book_fk, genre_fk) VALUES (:book_id, :genre_id)");
+            $stmt_insertGenre->execute([':book_id' => $bookId, ':genre_id' => $genreId]);
+        }
+    }
+
+    // Re-insert new authors
+    foreach ($bookAuthor as $authorId) {
+        // Check if the author exists before inserting
+        $stmt_checkAuthor = $pdo->prepare("SELECT COUNT(*) FROM authors WHERE author_id = :author_id");
+        $stmt_checkAuthor->execute([':author_id' => $authorId]);
+        if ($stmt_checkAuthor->fetchColumn() > 0) {
+            $stmt_insertAuthor = $pdo->prepare("INSERT INTO book_author (book_fk, author_fk) VALUES (:book_id, :author_id)");
+            $stmt_insertAuthor->execute([':book_id' => $bookId, ':author_id' => $authorId]);
+        }
+    }
+
+    // Re-insert new illustrators
+    foreach ($bookIllustrator as $illustratorId) {
+        // Check if the illustrator exists before inserting
+        $stmt_checkIllustrator = $pdo->prepare("SELECT COUNT(*) FROM illustrators WHERE illustrator_id = :illustrator_id");
+        $stmt_checkIllustrator->execute([':illustrator_id' => $illustratorId]);
+        if ($stmt_checkIllustrator->fetchColumn() > 0) {
+            $stmt_insertIllustrator = $pdo->prepare("INSERT INTO book_illustrators (book_fk, illustrator_fk) VALUES (:book_id, :illustrator_id)");
+            $stmt_insertIllustrator->execute([':book_id' => $bookId, ':illustrator_id' => $illustratorId]);
+        }
+    }
 }
 
 // Function to search books directly from the database
 function searchBooksForTypeahead(PDO $pdo, string $query): array {
     $sql = "
-        SELECT 
-            b.book_id, 
-            b.book_title, 
-            b.book_img, 
-            b.book_price,
-            a.author_name
-        FROM 
-            books b
-        JOIN 
-            book_author ba ON b.book_id = ba.book_fk
-        JOIN 
-            authors a ON ba.author_fk = a.author_id
-        JOIN 
-            book_series bs ON bs.series_id = b.book_series_fk
-        JOIN 
-            publishers p ON p.pub_id = b.publisher_fk
-        WHERE 
-            (:query IS NULL OR b.book_title LIKE :query1 OR a.author_name LIKE :query2 OR bs.series_name LIKE :query3 OR p.pub_name LIKE :query4)
-        LIMIT 24;
-    ";
+    SELECT 
+        b.book_id,
+        b.book_title,
+        b.book_summary,
+        b.book_publishing_date,
+        b.book_side_count,
+        b.book_price,
+        b.book_img,
+        b.publisher_fk,
+        b.book_language_fk,
+        b.book_category_fk,
+        b.book_age_rec_fk,
+        b.book_series_fk,
+        a.author_name,
+        GROUP_CONCAT(DISTINCT g.genre_id) AS genres,
+        GROUP_CONCAT(DISTINCT a.author_id) AS authors,
+        GROUP_CONCAT(DISTINCT i.illustrator_id) AS illustrators
+    FROM books b
+    LEFT JOIN book_genres bg ON b.book_id = bg.book_fk
+    LEFT JOIN genres g ON bg.genre_fk = g.genre_id
+    LEFT JOIN book_author ba ON b.book_id = ba.book_fk
+    LEFT JOIN authors a ON ba.author_fk = a.author_id
+    LEFT JOIN book_illustrators bi ON b.book_id = bi.book_fk
+    LEFT JOIN illustrators i ON bi.illustrator_fk = i.illustrator_id
+    LEFT JOIN book_series bs ON bs.series_id = b.book_series_fk
+    LEFT JOIN publishers p ON p.pub_id = b.publisher_fk
+    WHERE 
+        (:query IS NULL OR 
+         b.book_title LIKE :query1 OR 
+         a.author_name LIKE :query2 OR 
+         bs.series_name LIKE :query3 OR 
+         p.pub_name LIKE :query4)
+    GROUP BY b.book_id
+    LIMIT 24
+";
+
 
     // Prepare the SQL query
-    $stmt = $pdo->prepare($sql);
+    $stmt_fetchAllBookData = $pdo->prepare($sql);
 
     // Bind parameters
     $queryParam = $query !== '' ? "%$query%" : null;
-    $stmt->execute([
+    $stmt_fetchAllBookData->execute([
         'query'  => $queryParam,
         'query1' => $queryParam,
         'query2' => $queryParam,
@@ -291,7 +366,7 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
     ]);
 
     // Fetch all matching results
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt_fetchAllBookData->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function universalInsert($pdo, $tableName, $columns, $values, $redirectTo = null) {

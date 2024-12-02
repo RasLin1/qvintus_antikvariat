@@ -105,6 +105,10 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addBook') {
     $addBook = addBook($pdo);
 }
 
+if (isset($_POST['formType']) && $_POST['formType'] === 'editBook') {
+    $addBook = updateBook($pdo);
+}
+
 if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
     $addFeatItem = addFeatItem($pdo, 'front-page-editor.php');
 }
@@ -292,11 +296,11 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
     </div>
 </div>
 
-                            <!-- Book editing modal, can't edit neither genres, author nor illustrator -->
 <div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="formType" value="editBook">
                 <input type="hidden" name="bookIdEdit" id="bookIdEdit">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editBookModalLabel">Edit Book</h5>
@@ -306,35 +310,151 @@ if (isset($_POST['formType']) && $_POST['formType'] === 'addFeatItem') {
                     <!-- Book Title -->
                     <div class="mb-3">
                         <label for="bookTitleEdit" class="form-label">Book Title</label>
-                        <input type="text" name="bookTitleEdit" id="bookTitleEdit" class="form-control" required>
+                        <input type="text" name="bookTitleEdit" class="form-control" id="bookTitleEdit" required>
                     </div>
 
-                    <!-- Description -->
+                    <!-- Book Description -->
                     <div class="mb-3">
-                        <label for="bookDescriptionEdit" class="form-label">Description</label>
-                        <textarea name="bookDescriptionEdit" id="bookDescriptionEdit" class="form-control" rows="3" required></textarea>
+                        <label for="bookDescriptionEdit" class="form-label">Book Description</label>
+                        <textarea name="bookDescriptionEdit" class="form-control" id="bookDescriptionEdit" rows="3" required></textarea>
                     </div>
 
-                    <!-- Release Date -->
+                    <!-- Genre -->
                     <div class="mb-3">
-                        <label for="releaseDateEdit" class="form-label">Release Date</label>
-                        <input type="date" name="releaseDateEdit" id="releaseDateEdit" class="form-control" required>
+                        <label for="bookGenreEdit" class="form-label">Genre</label>
+                        <select name="bookGenreEdit[]" class="form-control" id="bookGenreEdit" multiple="multiple" style="width: 100%;">
+                            <?php foreach ($genres as $genre): ?>
+                                <option value="<?php echo htmlspecialchars($genre['genre_id']); ?>">
+                                    <?php echo htmlspecialchars($genre['genre_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
-                    <!-- Page Count -->
+                    <!-- Author -->
                     <div class="mb-3">
-                        <label for="pageCountEdit" class="form-label">Page Count</label>
-                        <input type="number" name="pageCountEdit" id="pageCountEdit" class="form-control" required>
+                        <label for="bookAuthorEdit" class="form-label">Author</label>
+                        <select name="bookAuthorEdit[]" class="form-control" id="bookAuthorEdit" multiple="multiple" style="width: 100%;">
+                            <?php foreach ($authors as $author): ?>
+                                <option value="<?php echo htmlspecialchars($author['author_id']); ?>">
+                                    <?php echo htmlspecialchars($author['author_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
-                    <!-- Price -->
+                    <!-- Illustrator -->
                     <div class="mb-3">
-                        <label for="priceEdit" class="form-label">Price</label>
-                        <input type="number" name="priceEdit" id="priceEdit" step="0.01" class="form-control" required>
+                        <label for="bookIllustratorEdit" class="form-label">Illustrator</label>
+                        <select name="bookIllustratorEdit[]" class="form-control" id="bookIllustratorEdit" multiple="multiple" style="width: 100%;">
+                            <?php foreach ($illustrators as $illustrator): ?>
+                                <option value="<?php echo htmlspecialchars($illustrator['illustrator_id']); ?>">
+                                    <?php echo htmlspecialchars($illustrator['illustrator_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <!-- Publisher -->
+                    <div class="mb-3">
+                        <label for="bookPublisherEdit" class="form-label">Publisher</label>
+                        <select name="bookPublisherEdit" class="form-control" id="bookPublisherEdit" style="width: 100%;">
+                            <option value="" disabled selected>Select a publisher</option> <!-- Empty default option -->
+                            <?php foreach ($publishers as $publisher): ?>
+                                <option value="<?php echo htmlspecialchars($publisher['pub_id']); ?>">
+                                    <?php echo htmlspecialchars($publisher['pub_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addPublisherModal">
+                            Add New Publisher
+                        </button>
+                    </div>
+
+                    <!-- Age Recommendation -->
+                    <div class="mb-3">
+                        <label for="bookAgeRecommendationEdit" class="form-label">Age Recommendation</label>
+                        <select name="bookAgeRecommendationEdit" class="form-control" id="bookAgeRecommendationEdit" style="width: 100%;">
+                            <option value="" disabled selected>Select an age recommendation</option>
+                            <?php foreach ($ageRecommendations as $age): ?>
+                                <option value="<?php echo htmlspecialchars($age['age_id']); ?>">
+                                    <?php echo htmlspecialchars($age['age_value']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addAgeRecommendationModal">
+                            Add New Age Recommendation
+                        </button>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="mb-3">
+                        <label for="bookCategoryEdit" class="form-label">Category</label>
+                        <select name="bookCategoryEdit" class="form-control" id="bookCategoryEdit" style="width: 100%;">
+                            <option value="" disabled selected>Select a category</option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?php echo htmlspecialchars($category['cat_id']); ?>">
+                                    <?php echo htmlspecialchars($category['cat_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                            Add New Category
+                        </button>
+                    </div>
+
+                    <!-- Series -->
+                    <div class="mb-3">
+                        <label for="bookSeriesEdit" class="form-label">Series</label>
+                        <select name="bookSeriesEdit" class="form-control" id="bookSeriesEdit" style="width: 100%;">
+                            <option value="" disabled selected>Select a series</option>
+                            <?php foreach ($series as $seriesItem): ?>
+                                <option value="<?php echo htmlspecialchars($seriesItem['series_id']); ?>">
+                                    <?php echo htmlspecialchars($seriesItem['series_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addSeriesModal">
+                            Add New Series
+                        </button>
+                    </div>
+
+                    <!-- Language -->
+                    <div class="mb-3">
+                        <label for="bookLanguageEdit" class="form-label">Language</label>
+                        <select name="bookLanguageEdit" class="form-control" id="bookLanguageEdit" style="width: 100%;">
+                            <option value="" disabled selected>Select a language</option>
+                            <?php foreach ($languages as $language): ?>
+                                <option value="<?php echo htmlspecialchars($language['lang_id']); ?>">
+                                    <?php echo htmlspecialchars($language['lang_name']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#addLanguageModal">
+                            Add New Language
+                        </button>
+                    </div>
+
+                    <!-- Book Relese Date -->
+                    <div class="mb-3">
+                        <label for="bookReleseDateEdit" class="form-label">Book Relese Date</label>
+                        <input type="date" name="bookReleseDateEdit" class="form-control" id="bookReleseDateEdit" required>
+                    </div>
+
+                    <!-- Book Page Count -->
+                    <div class="mb-3">
+                        <label for="bookPageCountEdit" class="form-label">Book Page Count</label>
+                        <input type="number" name="bookPageCountEdit" class="form-control" id="bookPageCountEdit" required>
+                    </div>
+
+                    <!-- Book Price -->
+                    <div class="mb-3">
+                        <label for="bookPriceEdit" class="form-label">Book Price</label>
+                        <input type="number" name="bookPriceEdit" class="form-control" id="bookPriceEdit" step=".01" required>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" name="editBookSubmit" class="btn btn-primary">Save Changes</button>
+                    <button type="submit" name="action" value="editBook" id="editBookSubmit" name="editBookSubmit" class="btn btn-primary">Update Book</button>
                 </div>
             </form>
         </div>
@@ -817,19 +937,62 @@ $(document).ready(function () {
     });
 });
 
-function populateAndOpenModal(data) {
-    // Populate the modal inputs
-    document.getElementById('bookIdEdit').value = data.book_id;
-    document.getElementById('bookTitleEdit').value = data.book_title;
-    document.getElementById('bookDescriptionEdit').value = data.book_summary;
-    document.getElementById('releaseDateEdit').value = data.book_publishing_date;
-    document.getElementById('pageCountEdit').value = data.book_side_count;
-    document.getElementById('priceEdit').value = data.book_price;
 
-    // Open the modal
-    var modal = new bootstrap.Modal(document.getElementById('editBookModal'));
-    modal.show();
-}
+$(document).on('click', '.edit-book-btn', function () {
+    // Get book data from data attributes
+    const bookId = $(this).data('book-id');
+    const bookTitle = $(this).data('book-title');
+    const bookSummary = $(this).data('book-summary');
+    const bookPublishingDate = $(this).data('book-publishing-date');
+    const bookSideCount = $(this).data('book-side-count');
+    const bookPrice = $(this).data('book-price');
+    const bookPublisher = $(this).data('book-publisher');
+    const bookLanguage = $(this).data('book-language');
+    const bookCategory = $(this).data('book-category');
+    const bookAgeRec = $(this).data('book-age-rec');
+    const bookSeries = $(this).data('book-series');
+    const bookGenres = $(this).data('book-genres');
+    const bookAuthors = $(this).data('book-authors');
+    const bookIllustrators = $(this).data('book-illustrators');
+
+    // Populate multiple select fields using Select2 (ensure you initialize Select2 for these fields)
+    const genreArray = bookGenres ? String(bookGenres).split(',') : [];
+    const authorArray = bookAuthors ? String(bookAuthors).split(',') : [];
+    const illustratorArray = bookIllustrators ? String(bookIllustrators).split(',') : [];
+
+    // Populate hidden input for bookId
+    $('#editBookModal #bookIdEdit').val(bookId);
+
+    // Populate modal fields
+    $('#editBookModal #bookTitleEdit').val(bookTitle);
+    $('#editBookModal #bookDescriptionEdit').val(bookSummary);
+    $('#editBookModal #bookReleseDateEdit').val(bookPublishingDate);
+    $('#editBookModal #bookPageCountEdit').val(bookSideCount);
+    $('#editBookModal #bookPriceEdit').val(bookPrice);
+    $('#editBookModal #bookPublisherEdit').val(bookPublisher).change();
+    $('#editBookModal #bookLanguageEdit').val(bookLanguage).change();
+    $('#editBookModal #bookCategoryEdit').val(bookCategory).change();
+    $('#editBookModal #bookAgeRecommendationEdit').val(bookAgeRec).change();
+    $('#editBookModal #bookSeriesEdit').val(bookSeries).change();
+
+    // Populate genres, authors, illustrators (assuming these are arrays of options)
+    $('#bookGenreEdit').val(bookGenres).trigger('change');
+    $('#bookAuthorEdit').val(bookAuthors).trigger('change');
+    $('#bookIllustratorEdit').val(bookIllustrators).trigger('change');
+
+    // Re-initialize select2
+    $('#bookGenreEdit').select2();
+    $('#bookAuthorEdit').select2();
+    $('#bookIllustratorEdit').select2();
+});
+
+$('#bookGenreEdit, #bookAuthorEdit, #bookIllustratorEdit').select2({
+    width: '100%',
+    placeholder: 'Select options',
+    allowClear: true
+});
+
+
 
 document.querySelectorAll('.edit-user-btn').forEach(button => {
     button.addEventListener('click', () => {
@@ -852,6 +1015,7 @@ document.querySelectorAll('.edit-user-btn').forEach(button => {
         modalInstance.show();
     });
 });
+
 
 </script>
 

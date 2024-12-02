@@ -4,49 +4,7 @@ include_once '../includes/emp-header.php';
 checkUserRole(1, "../main/index.php");
 
 
-if(isset($_POST['editBook'])){
-$singleBookQuery = "
-    SELECT 
-        *
-    FROM 
-        books b
-    JOIN 
-        book_author ba ON b.book_id = ba.book_fk
-    JOIN 
-        authors a ON ba.author_fk = a.author_id
-    JOIN 
-        book_illustrators bi ON b.book_id = bi.book_fk
-    JOIN 
-        illustrators i ON bi.illustrator_fk = i.illustrator_id
-    JOIN 
-        book_genres bg ON b.book_id = bg.book_fk
-    JOIN 
-        genres g ON bg.genre_fk = g.genre_id
-    WHERE 
-        b.book_id LIKE :currBookId;
-";
 
-$currBookId = (int) ($_POST['currBookId'] ?? 0);
-
-$stmt_retrieveSingleBook = $pdo->prepare($singleBookQuery);
-$stmt_retrieveSingleBook->bindParam(':currBookId', $currBookId, PDO::PARAM_INT);
-$stmt_retrieveSingleBook->execute();
-$singleBook = $stmt_retrieveSingleBook->fetch(PDO::FETCH_ASSOC);
-
-if($singleBook){
-    $singleBookData = json_encode($singleBook);
-    echo "<script>
-                var singleBookData = $singleBookData;
-                document.addEventListener('DOMContentLoaded', function() {
-                    populateAndOpenModal(singleBookData);
-                });
-              </script>";
-}
-}
-
-if(isset($_POST['editBookSubmit'])){
-    $editBookConfirmation = editBook($pdo);
-}
 
 if (isset($_GET['query']) && !empty($_GET['query'])) {
     $query = $_GET['query'];
@@ -164,10 +122,25 @@ $(document).ready(function () {
                                 <p class='card-text'>Author: ${book.author_name || 'Unknown'}</p>
                                 <p class='card-text'>Price: ${parseFloat(book.book_price).toFixed(2)}€</p>
                                 <div class='d-flex justify-content-between'>
-                                    <form method='POST'>
-                                        <input type='hidden' name='currBookId' value='${book.book_id}'/>
-                                        <input type='submit' value='Edit' name='editBook' class='btn btn-primary'/>
-                                    </form>
+                                    <button 
+                                        class="btn btn-primary edit-book-btn" data-bs-toggle="modal" data-bs-target="#editBookModal"
+                                        data-book-id="${book.book_id}" 
+                                        data-book-title="${book.book_title}" 
+                                        data-book-summary="${book.book_summary}" 
+                                        data-book-publishing-date="${book.book_publishing_date}" 
+                                        data-book-side-count="${book.book_side_count}" 
+                                        data-book-price="${book.book_price}" 
+                                        data-book-publisher="${book.publisher_fk}" 
+                                        data-book-language="${book.book_language_fk}" 
+                                        data-book-category="${book.book_category_fk}" 
+                                        data-book-age-rec="${book.book_age_rec_fk}" 
+                                        data-book-series="${book.book_series_fk}" 
+                                        data-book-genres="${book.genres}" 
+                                        data-book-authors="${book.authors}" 
+                                        data-book-illustrators="${book.illustrators}">
+                                        
+                                        Edit Book
+                                    </button>
                                     <a href='delete_book.php?id=${book.book_id}' class='btn btn-danger'>Delete</a>
                                 </div>
                             </div>
