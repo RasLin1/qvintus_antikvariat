@@ -312,6 +312,55 @@ function updateBook($pdo) {
     }
 }
 
+function deleteBook($pdo, $bookId) {
+    try {
+        // Begin a transaction
+        $pdo->beginTransaction();
+
+        // Retrieve the image file name
+        $stmt_image = $pdo->prepare("SELECT book_img FROM books WHERE book_id = :book_id");
+        $stmt_image->execute([':book_id' => $bookId]);
+        $book = $stmt_image->fetch(PDO::FETCH_ASSOC);
+
+        if ($book && !empty($book['book_img'])) {
+            $imagePath = "../assets/img/" . $book['book_img']; // Adjust the path as needed
+            if (file_exists($imagePath)) {
+                unlink($imagePath); // Delete the file
+            }
+        }
+
+        // Delete dependencies in book_genres
+        $stmt_genres = $pdo->prepare("DELETE FROM book_genres WHERE book_fk = :book_id");
+        $stmt_genres->execute([':book_id' => $bookId]);
+
+        // Delete dependencies in book_illustrators
+        $stmt_illustrators = $pdo->prepare("DELETE FROM book_illustrators WHERE book_fk = :book_id");
+        $stmt_illustrators->execute([':book_id' => $bookId]);
+
+        // Delete dependencies in book_authors
+        $stmt_authors = $pdo->prepare("DELETE FROM book_author WHERE book_fk = :book_id");
+        $stmt_authors->execute([':book_id' => $bookId]);
+
+        // Delete dependencies in featured_items
+        $stmt_featured = $pdo->prepare("DELETE FROM featured_items WHERE book_fk = :book_id");
+        $stmt_featured->execute([':book_id' => $bookId]);
+
+        // Delete the book itself
+        $stmt_book = $pdo->prepare("DELETE FROM books WHERE book_id = :book_id");
+        $stmt_book->execute([':book_id' => $bookId]);
+
+        // Commit the transaction
+        $pdo->commit();
+
+        return true; // Indicate success
+    } catch (PDOException $e) {
+        // Rollback transaction on error
+        $pdo->rollBack();
+        error_log("Error deleting book: " . $e->getMessage());
+        return false; // Indicate failure
+    }
+}
+
 // Function to search books directly from the database
 function searchBooksForTypeahead(PDO $pdo, string $query): array {
     $sql = "

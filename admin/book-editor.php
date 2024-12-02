@@ -3,22 +3,15 @@ include_once '../includes/emp-header.php';
 
 checkUserRole(1, "../main/index.php");
 
+if(isset($_POST['deleteBook'])){
+    $bookId = $_POST['deleteBookId']; // Assume the book ID is passed from a form
+    $success = deleteBook($pdo, $bookId);
 
-
-
-if (isset($_GET['query']) && !empty($_GET['query'])) {
-    $query = $_GET['query'];
-    $results = searchBooksForTypeahead($pdo, $query);
-    
-    header('Content-Type: application/json');
-    
-    // Debugging step
-    if (empty($results)) {
-        echo json_encode(['error' => 'No results found', 'query' => $query]);
+    if ($success) {
+        echo "Book and associated image deleted successfully.";
     } else {
-        echo json_encode($results);
+        echo "Failed to delete book.";
     }
-    exit;
 }
 
 ?>
@@ -114,39 +107,44 @@ $(document).ready(function () {
         return books
             .map((book) => {
                 return `
-                    <div class='col-md-4 d-flex'>
-                        <div class='card ' style='width: 18rem;'>
-                            <img src='../assets/img/${book.book_img}' class='card-img-top flex-fill' alt='${book.book_title}'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>${book.book_title}</h5>
-                                <p class='card-text'>Author: ${book.author_name || 'Unknown'}</p>
-                                <p class='card-text'>Price: ${parseFloat(book.book_price).toFixed(2)}€</p>
-                                <div class='d-flex justify-content-between'>
-                                    <button 
-                                        class="btn btn-primary edit-book-btn" data-bs-toggle="modal" data-bs-target="#editBookModal"
-                                        data-book-id="${book.book_id}" 
-                                        data-book-title="${book.book_title}" 
-                                        data-book-summary="${book.book_summary}" 
-                                        data-book-publishing-date="${book.book_publishing_date}" 
-                                        data-book-side-count="${book.book_side_count}" 
-                                        data-book-price="${book.book_price}" 
-                                        data-book-publisher="${book.publisher_fk}" 
-                                        data-book-language="${book.book_language_fk}" 
-                                        data-book-category="${book.book_category_fk}" 
-                                        data-book-age-rec="${book.book_age_rec_fk}" 
-                                        data-book-series="${book.book_series_fk}" 
-                                        data-book-genres="${book.genres}" 
-                                        data-book-authors="${book.authors}" 
-                                        data-book-illustrators="${book.illustrators}">
-                                        
-                                        Edit Book
-                                    </button>
-                                    <a href='delete_book.php?id=${book.book_id}' class='btn btn-danger'>Delete</a>
-                                </div>
-                            </div>
+            <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
+                    <!-- Background Image Section -->
+                    <div class="card-image" style="background-image: url('../assets/img/${book.book_img}'); background-size: cover; background-position: center; height: 80%; position: relative;">
+                        <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                            <h5 class="card-title mb-0">${book.book_title}</h5>
+                            <p class="card-text mb-0">${parseFloat(book.book_price).toFixed(2)}€</p>
                         </div>
                     </div>
-                `;
+                    <!-- Button Section -->
+                    <div class="card-footer d-flex flex-column justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
+                        <button 
+                            class="btn btn-warning edit-book-btn my-1" data-bs-toggle="modal" data-bs-target="#editBookModal"
+                            data-book-id="${book.book_id}" 
+                            data-book-title="${book.book_title}" 
+                            data-book-summary="${book.book_summary}" 
+                            data-book-publishing-date="${book.book_publishing_date}" 
+                            data-book-side-count="${book.book_side_count}" 
+                            data-book-price="${book.book_price}" 
+                            data-book-publisher="${book.publisher_fk}" 
+                            data-book-language="${book.book_language_fk}" 
+                            data-book-category="${book.book_category_fk}" 
+                            data-book-age-rec="${book.book_age_rec_fk}" 
+                            data-book-series="${book.book_series_fk}" 
+                            data-book-genres="${book.genres}" 
+                            data-book-authors="${book.authors}" 
+                            data-book-illustrators="${book.illustrators}">
+                            
+                            Edit Book
+                        </button>
+                        <form method="POST">
+                            <input type="hidden" name="deleteBookId" id="deleteBookId" value="${book.book_id}"/>
+                            <input type="submit" id="deleteBook" name="deleteBook" class="btn btn-danger my-1" value="Delete Book"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            `;
             })
             .join('');
     }
