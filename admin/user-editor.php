@@ -9,6 +9,10 @@ $users = $stmt_fetchAllUsers->fetchAll(PDO::FETCH_ASSOC);
 
 $stmt_fetchAllUserRoles = $pdo->query("SELECT * FROM employee");
 $roles = $stmt_fetchAllUserRoles->fetchAll(PDO::FETCH_ASSOC);
+
+if(isset($_POST['deleteUser'])){
+    $deleteResult = deleteUser($pdo, $_POST['currUserId'], "user-editor.php");
+}
 ?>
 
 <div class="container" id="user_editor_area">
@@ -34,7 +38,7 @@ $roles = $stmt_fetchAllUserRoles->fetchAll(PDO::FETCH_ASSOC);
                                 </button>
                                 <span>|</span>
                                 <form method='POST'>
-                                    <input type='hidden' name='featItemId' value='{$user['emp_id']}'/>
+                                    <input type='hidden' name='currUserId' id='currUserId' value='{$user['emp_id']}'/>
                                     <input class='btn btn-danger' type='submit' value='Delete User' name='deleteUser' id='deleteUser'/>
                                 </form>
                             </div>

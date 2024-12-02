@@ -120,6 +120,21 @@ function updateUser(PDO $pdo, $userId, $username, $firstName, $lastName, $passwo
     }
 }
 
+function deleteUser($pdo, $userId, $redirectTo) {
+	$stmt_deleteUser = $pdo->prepare('DELETE FROM employee WHERE emp_id = :uid');
+    $stmt_deleteUser->bindParam(":uid", $userId, PDO::PARAM_INT);
+    if ($stmt_deleteUser->execute()) {
+        // Store the success message in the session
+        $_SESSION['message'] = 'User deleted successfully';
+        
+        // Redirect to the dynamic location with a success flag
+        header('Location: ' . $redirectTo . '?user-del-success');
+        exit;
+    } else {
+        return "ERROR: Failed to delete user.";
+    }
+}
+
 function addBook($pdo){
 // Sanitize and collect inputs
 $bookTitle = cleanInput($_POST['bookTitle']);
@@ -276,8 +291,12 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
             book_author ba ON b.book_id = ba.book_fk
         JOIN 
             authors a ON ba.author_fk = a.author_id
+        JOIN 
+            book_series bs ON bs.series_id = b.book_series_fk
+        JOIN 
+            publishers p ON p.pub_id = b.publisher_fk
         WHERE 
-            (:query IS NULL OR b.book_title LIKE :query1 OR a.author_name LIKE :query2)
+            (:query IS NULL OR b.book_title LIKE :query1 OR a.author_name LIKE :query2 OR bs.series_name LIKE :query3 OR p.pub_name LIKE :query4)
         LIMIT 24;
     ";
 
@@ -289,7 +308,9 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
     $stmt->execute([
         'query'  => $queryParam,
         'query1' => $queryParam,
-        'query2' => $queryParam
+        'query2' => $queryParam,
+        'query3' => $queryParam,
+        'query4' => $queryParam
     ]);
 
     // Fetch all matching results
@@ -486,10 +507,10 @@ function deleteFeatItem($pdo, $itemId, $redirectTo) {
 }
 
 function updateFrontpageText($pdo, $contId, $contData, $redirectTo) {
-	$stmt_deleteFeatItem = $pdo->prepare("UPDATE front_page_content SET cont_data = :contData WHERE cont_id = :contId");
-    $stmt_deleteFeatItem->bindParam(":contData", $contData, PDO::PARAM_INT);
-    $stmt_deleteFeatItem->bindParam(":contId", $contId, PDO::PARAM_INT);
-    if ($stmt_deleteFeatItem->execute()) {
+	$stmt_uppdateFrontPageText = $pdo->prepare("UPDATE front_page_content SET cont_data = :contData WHERE cont_id = :contId");
+    $stmt_uppdateFrontPageText->bindParam(":contData", $contData, PDO::PARAM_INT);
+    $stmt_uppdateFrontPageText->bindParam(":contId", $contId, PDO::PARAM_INT);
+    if ($stmt_uppdateFrontPageText->execute()) {
         // Store the success message in the session
         $_SESSION['message'] = 'Data edited successfully';
         

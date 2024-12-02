@@ -26,7 +26,7 @@ $stmt_fetchFrontPageContent = $pdo->query("SELECT * FROM front_page_content");
 $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_POST['updateFrontpageText'])){
-    $deleteResult = updateFrontpageText($pdo, $_POST['contentId'], $_POST['contentData'], "front-page-editor.php");
+    $updateResult = updateFrontpageText($pdo, $_POST['contentId'], $_POST['contentData'], "front-page-editor.php");
 };
 
 if(isset($_POST['deleteFeaturedItem'])){
