@@ -25,7 +25,7 @@ function checkUserRole($requiredRole = 1, $redirectLink = "index.php") {
 
 function fetchAllFromTable($pdo, $tableName) {
     // Define allowed table names for validation
-    $allowedTables = ['authors', 'genres', 'illustrators', 'publishers', 'books', 'categories']; // Add your table names here
+    $allowedTables = ['authors', 'genres', 'illustrators', 'publishers', 'books', 'book_categories']; // Add your table names here
 
     if (!in_array($tableName, $allowedTables)) {
         throw new Exception("Invalid table name: " . htmlspecialchars($tableName));
