@@ -8,7 +8,7 @@ $authors = $stmt_fetchAuthors->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_POST['deleteAuthor'])){
     $authId = $_POST['deleteAuthorId']; // Assume the book ID is passed from a form
-    $message = deleteIllorAuth($pdo, $authId, "book_author", "author_fk", "authors", "author_id");
+    $message = deleteObject($pdo, $authId, "book_author", "author_fk", "authors", "author_id");
         if (isset($message)): ?>
             <div class="alert alert-info"><?= htmlspecialchars($message); ?></div>
         <?php endif;

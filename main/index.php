@@ -249,7 +249,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
         </p>
 
         <!-- Button at the bottom -->
-        <a href="#" class="btn btn-primary mt-4" style="width: 10%;">
+        <a href="contact.php" class="btn btn-primary mt-4" style="width: 10%;">
             <?php
                 foreach ($fpContent as $cont) {
                     if ($cont['cont_id'] == 7) {
@@ -380,28 +380,7 @@ $(document).ready(function () {
 });
 </script>
 <style>
-    #rareItemsCarousel {
-        position: relative;
-    }
-    .carousel-control-prev, .carousel-control-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-    }
-    .carousel-inner .row {
-        margin: 0;
-    }
-    .carousel-item {
-        overflow: hidden;
-    }
-    .book-card {
-        height: 500px; /* Set a maximum width for consistent sizing */
-    }
 
-    .req-area-container {
-        height: 70%;
-    }
 
 </style>
 <?php 

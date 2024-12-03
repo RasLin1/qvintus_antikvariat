@@ -419,46 +419,43 @@ function searchBooksForTypeahead(PDO $pdo, string $query): array {
 }
 
 function universalInsert($pdo, $tableName, $columns, $values, $redirectTo = null) {
-    // Build the placeholders for the prepared statement
-    $placeholders = array_map(function($col) {
-        return ":" . $col;
-    }, $columns);
+    try {
+        // Build the placeholders for the prepared statement
+        $placeholders = array_map(function($col) {
+            return ":" . $col;
+        }, $columns);
 
-    // Construct the SQL query dynamically
-    $sql = "INSERT INTO $tableName (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
+        // Construct the SQL query dynamically
+        $sql = "INSERT INTO $tableName (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
 
-    // Prepare the statement
-    $stmt = $pdo->prepare($sql);
+        // Prepare the statement
+        $stmt_universalInsert = $pdo->prepare($sql);
 
-    // Bind each value to its corresponding placeholder
-    foreach ($columns as $index => $column) {
-        $stmt->bindValue(":" . $column, $values[$index]);
-    }
-
-    // Execute the query and handle the outcome
-    if ($stmt->execute()) {
-        // Success message handling
-        if ($redirectTo) {
-            $_SESSION['message'] = 'Record added successfully';
-            header('Location: ' . $redirectTo . '?insert-success');
-            exit;
+        // Bind each value to its corresponding placeholder
+        foreach ($columns as $index => $column) {
+            $stmt_universalInsert->bindValue(":" . $column, $values[$index]);
         }
-        return true; // Return true if successful and no redirect
-    } else {
-        return false; // Return false if the query fails
+
+        // Execute the query
+        if ($stmt_universalInsert->execute()) {
+            // Redirect after successful insert
+            if ($redirectTo) {
+                $_SESSION['message'] = 'Record added successfully';
+                header('Location: ' . $redirectTo); // Redirect to the given page
+                exit;
+            }
+            return true; // Return true if successful and no redirect
+        } else {
+            return false; // Return false if the query fails
+        }
+    } catch (Exception $e) {
+        error_log("Error in universalInsert: " . $e->getMessage());
+        return false; // Handle any exceptions gracefully
     }
 }
 
 function canDelete($pdo, $objectId, $table, $columnName) {
     try {
-        // Validate table and column names
-        $allowedTables = ['book_genres', 'book_illustrators', 'book_authors', 'featured_items'];
-        $allowedColumns = ['genre_fk', 'genre_fk', 'illustrator_fk', 'author_fk'];
-
-        if (!in_array($table, $allowedTables) || !in_array($columnName, $allowedColumns)) {
-            throw new Exception("Invalid table or column name.");
-        }
-
         // Prepare the query
         $stmt_count = $pdo->prepare("
             SELECT COUNT(*) AS count 
@@ -475,6 +472,7 @@ function canDelete($pdo, $objectId, $table, $columnName) {
         return false; // Fail safe: assume cannot delete in case of an error
     }
 }
+
 function deleteGenre($pdo, $genreId) {
     if (!canDelete($pdo, $genreId, "book_genres", "genre_fk")) {
         return "Cannot delete genre; it is associated with existing books.";
@@ -500,11 +498,11 @@ function deleteGenre($pdo, $genreId) {
     }
 }
 
-function deleteIllorAuth($pdo, $objectId, $tableDependencyName, $columnDependencyName, $tableName, $columnName) {
+function deleteObject($pdo, $objectId, $tableDependencyName, $columnDependencyName, $tableName, $columnName) {
     try {
         // Check if the table/column names are valid to prevent SQL injection
-        $allowedTables = ['illustrators', 'authors']; // Allowed tables
-        $allowedColumns = ['illustrator_id', 'author_id']; // Allowed columns
+        $allowedTables = ['illustrators', 'authors', 'book_illustrators', 'book_author', 'publishers', 'book_categories', 'books']; // Allowed tables
+        $allowedColumns = ['illustrator_id', 'author_id', 'illustrator_fk', 'author_fk', 'pub_id', 'publisher_fk', 'book_category_fk', 'cat_id']; // Allowed columns
 
         if (!in_array($tableName, $allowedTables) || !in_array($columnName, $allowedColumns)) {
             throw new Exception("Invalid table or column name.");

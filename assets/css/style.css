@@ -44,8 +44,6 @@ body {
     margin: 0 auto;
     text-align: center;
     background-color: #000;
-	color: #fff;
-	font-size: 20px;
 	min-height: 70%;
 }
 
@@ -139,3 +137,25 @@ padding: 0; /* Remove padding for inline appearance */
     margin: 5px 0; /* Add vertical spacing between items */
 }
 
+#rareItemsCarousel {
+	position: relative;
+}
+.carousel-control-prev, .carousel-control-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+.carousel-inner .row {
+	margin: 0;
+}
+.carousel-item {
+	overflow: hidden;
+}
+.book-card {
+	height: 500px; /* Set a maximum width for consistent sizing */
+}
+
+.req-area-container {
+	height: 70%;
+}
