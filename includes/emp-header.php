@@ -28,7 +28,11 @@ if(isset($_POST['logout'])){
     <script src="https://cdn.jsdelivr.net/npm/typeahead.js@0.11.1/dist/typeahead.bundle.min.js" defer></script>
     <script src="../assets/script/script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <style>
+        .container{
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,5 +45,3 @@ if(isset($_POST['logout'])){
         </ul>
     </div>
 </div>
-</body>
-</html>

@@ -105,7 +105,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
                             <!-- Background Image Section -->
                             <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($item['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
-                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); height: 30%; color: #fff; text-align: center; padding: 10px;">
                                     <h5 class="card-title mb-0">' . htmlspecialchars($item['book_title']) . '</h5>
                                     <p class="card-text mb-0">' . number_format($item['book_price'], 2) . '€</p>
                                 </div>
@@ -249,7 +249,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
         </p>
 
         <!-- Button at the bottom -->
-        <a href="contact.php" class="btn btn-primary mt-4" style="width: 10%;">
+        <a href="contact.php" class="btn btn-primary mt-4" style="width: 150px;">
             <?php
                 foreach ($fpContent as $cont) {
                     if ($cont['cont_id'] == 7) {

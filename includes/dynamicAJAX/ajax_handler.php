@@ -13,6 +13,20 @@ if (isset($_POST['action']) && isset($_POST['type'])) {
             // Fetch data based on the entity type using fetchAllFromTable
             $data = fetchAllFromTable($pdo, $type);
             echo json_encode(['data' => $data]);
+        } elseif ($action == 'delete' && $type == 'genres' && isset($_POST['id'])) {
+            $id = $_POST['id'];
+        
+            // Call the custom deleteGenre function
+            try {
+                $message = deleteGenre($pdo, $id);
+                if ($message == "Genre deleted successfully.") {
+                    echo json_encode(['success' => true, 'message' => $message]);
+                } else {
+                    echo json_encode(['success' => false, 'message' => $message]);
+                }
+            } catch (Exception $e) {
+                echo json_encode(['error' => 'An error occurred: ' . $e->getMessage()]);
+            }
         } elseif ($action == 'delete' && isset($_POST['id']) && isset($_POST['depTab']) && isset($_POST['depCol']) && isset($_POST['tab']) && isset($_POST['col'])) {
             // Get the necessary POST data
             $id = $_POST['id'];

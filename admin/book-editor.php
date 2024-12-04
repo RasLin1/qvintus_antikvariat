@@ -107,7 +107,7 @@ $(document).ready(function () {
         return books
             .map((book) => {
                 return `
-            <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+            <div class="col-8 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
                 <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
                     <!-- Background Image Section -->
                     <div class="card-image" style="background-image: url('../assets/img/${book.book_img}'); background-size: cover; background-position: center; height: 80%; position: relative;">

@@ -2,41 +2,12 @@
 include_once '../includes/emp-header.php';
 
 checkUserRole(3, "book-editor.php");
-
-$stmt_fetchGenres = $pdo->query("SELECT * FROM genres");
-$genres = $stmt_fetchGenres->fetchAll(PDO::FETCH_ASSOC);
-
-if(isset($_POST['deleteGenre'])){
-    $genreId = $_POST['deleteGenreId']; // Assume the book ID is passed from a form
-    $message = deleteGenre($pdo, $genreId);
-        if (isset($message)): ?>
-            <div class="alert alert-info"><?= htmlspecialchars($message); ?></div>
-        <?php endif;
-}
-
-
 ?>
 
 <div class="container" id="genre_editor_area">
 <h3 class="my-4">Genre Editor</h3>
     <div class="row" id="genre_area">
-    <?php 
-    foreach ($genres as $genre) {
-        // Generate card HTML for each book
-        echo '
-        <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
-            <div class="card book-card flex-fill" style="height: ; overflow: hidden;">
-                <h5 class="card-title my-2">' . htmlspecialchars($genre['genre_name']) . '</h5>
-                <div class="card-footer d-flex justify-content-center align-items-center">
-                    <form method="POST">
-                        <input type="hidden" name="deleteGenreId" id="deleteGenreId" value="' . htmlspecialchars($genre['genre_id']) . '"/>
-                        <input type="submit" id="deleteGenre" name="deleteGenre" class="btn btn-danger my-1" value="Delete Genre"/>
-                    </form>
-                </div>
-            </div>
-        </div>';
-    }
-    ?>
+    
     </div>
     <div class="row" id="add_area">
         <div class="container">
@@ -48,6 +19,87 @@ if(isset($_POST['deleteGenre'])){
         <?php include '../includes/modals.php'; ?>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const genreContainer = document.getElementById('genre_area');
+    const addGenreForm = document.getElementById('addGenreForm');
+
+    // Fetch and render genres
+    function fetchGenres() {
+        fetch('../includes/dynamicAJAX/ajax_handler.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ action: 'fetch', type: 'genres' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.data) {
+                genreContainer.innerHTML = '';
+                data.data.forEach(genre => {
+                    genreContainer.innerHTML += `
+                        <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                            <div class="card book-card flex-fill">
+                                <h5 class="card-title my-2">${genre.genre_name}</h5>
+                                <div class="card-footer d-flex justify-content-center align-items-center">
+                                    <button class="btn btn-danger my-1" onclick="deleteGenre(${genre.genre_id})">Delete Genre</button>
+                                </div>
+                            </div>
+                        </div>`;
+                });
+            }
+        })
+        .catch(err => console.error('Error fetching genres:', err));
+    }
+
+    // Delete genre
+    window.deleteGenre = function(genreId) {
+        fetch('../includes/dynamicAJAX/ajax_handler.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'delete',
+                type: 'genres',
+                id: genreId
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            fetchGenres(); // Refresh the list after deletion
+        })
+        .catch(err => console.error('Error deleting genre:', err));
+    };
+
+    // Add new genre
+    addGenreForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(addGenreForm);
+        const genreName = formData.get('genreName');
+
+        fetch('../includes/dynamicAJAX/ajax_handler.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'insert',
+                type: 'genres',
+                'data[columns][]': 'genre_name',
+                'data[values][]': genreName
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            addGenreForm.reset(); // Reset form fields
+            fetchGenres(); // Refresh the list after addition
+            const addModal = new bootstrap.Modal(document.getElementById('addGenreModal'));
+            addModal.hide(); // Close the modal
+        })
+        .catch(err => console.error('Error adding genre:', err));
+    });
+
+    // Initial fetch of genres
+    fetchGenres();
+});
+</script>
 
 <?php 
 include_once '../includes/emp-footer.php';
