@@ -20,17 +20,17 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
     exit;
 }
 
-$stmt_fetchRareItems = $pdo->prepare("SELECT book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchRareItems = $pdo->prepare("SELECT book_id, book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchRareItems->bindParam(":typeId", $rareItem, PDO::PARAM_INT);
 $stmt_fetchRareItems->execute(); // Execute the prepared statement
 $rareItems = $stmt_fetchRareItems->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt_fetchPopGenre = $pdo->prepare("SELECT genre_name, feat_item_id FROM featured_items fi JOIN genres g ON fi.genre_fk = g.genre_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopGenre = $pdo->prepare("SELECT genre_id, genre_name, feat_item_id FROM featured_items fi JOIN genres g ON fi.genre_fk = g.genre_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchPopGenre->bindParam(":typeId", $popGenre, PDO::PARAM_INT);
 $stmt_fetchPopGenre->execute(); // Execute the prepared statement
 $popGenres = $stmt_fetchPopGenre->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt_fetchPopBook = $pdo->prepare("SELECT book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopBook = $pdo->prepare("SELECT book_id, book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchPopBook->bindParam(":typeId", $popBook, PDO::PARAM_INT);
 $stmt_fetchPopBook->execute(); // Execute the prepared statement
 $popBooks = $stmt_fetchPopBook->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<div class="container">
+<div class="container" id="main-container">
 
 
 <div class="search-area container mt-5">
@@ -112,7 +112,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <!-- Button Section -->
                             <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
-                                <a href="#" class="btn btn-primary">Learn More</a>
+                                <a href="single-book.php?id=' . $item['book_id'] . '" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>';
@@ -208,7 +208,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <!-- Button Section -->
                             <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
-                                <a href="#" class="btn btn-primary">Learn More</a>
+                                <a href="single-book.php?id=' . $item['book_id'] . '" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>';
@@ -381,6 +381,9 @@ $(document).ready(function () {
 </script>
 <style>
 
+#main-container {
+    color: white;
+}
 
 </style>
 <?php 
