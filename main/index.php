@@ -43,7 +43,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 <div class="container" id="main-container">
 
 
-<div class="search-area container mt-5">
+<div class="search-container d-flex flex-column justify-content-center align-items-center my-5" style="height:60vh;">
     <!-- Search Bar -->
     <h4 class="search-label">
     <?php
@@ -77,7 +77,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Navigation Buttons -->
         <div>
-            <button class="btn btn-outline-secondary me-1" type="button" data-bs-target="#rareItemsCarousel" data-bs-slide="prev">
+            <button class="btn btn-outline-secondary me-1 car-btn" type="button" data-bs-target="#rareItemsCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
@@ -101,7 +101,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
                 for ($j = $i; $j < $i + 4 && $j < count($rareItems); $j++) {
                     $item = $rareItems[$j];
                     echo '
-                    <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                    <div class="col-5 col-lg-2 mb-4 mx-lg-4 d-flex justify-content-center">
                         <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
                             <!-- Background Image Section -->
                             <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($item['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
@@ -173,7 +173,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Navigation Buttons -->
         <div>
-            <button class="btn btn-outline-secondary me-1" type="button" data-bs-target="#popularBooksCarousel" data-bs-slide="prev">
+            <button class="btn btn-outline-secondary me-1 " type="button" data-bs-target="#popularBooksCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
@@ -384,7 +384,21 @@ $(document).ready(function () {
 #main-container {
     color: white;
 }
+/*
+#main-container {
+    background: #F4F1E1;
+    color: #4A4A4A;
+}
 
+.car-btn {
+    background: #D68A4E;
+    color: #D68A4E;
+}
+.car-btn:hover {
+    background: #B47339;
+    color: #B47339;
+}
+*/
 </style>
 <?php 
 include '../includes/footer.php';
