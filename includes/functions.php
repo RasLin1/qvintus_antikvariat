@@ -23,6 +23,23 @@ function checkUserRole($requiredRole = 1, $redirectLink = "index.php") {
     }
 }
 
+function fetchAllFromTable($pdo, $tableName) {
+    // Define allowed table names for validation
+    $allowedTables = ['authors', 'genres', 'illustrators', 'publishers', 'books', 'book_categories']; // Add your table names here
+
+    if (!in_array($tableName, $allowedTables)) {
+        throw new Exception("Invalid table name: " . htmlspecialchars($tableName));
+    }
+
+    try {
+        $stmt_fetchAll = $pdo->query("SELECT * FROM $tableName");
+        return $stmt_fetchAll->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Error fetching from table $tableName: " . $e->getMessage());
+        return [];
+    }
+}
+
 function login($pdo){
 	$stmt_checkIfUserExists = $pdo->prepare("SELECT * FROM employee WHERE emp_uname = :uname");
 	$stmt_checkIfUserExists->bindValue(":uname", $_POST['u_name'], PDO::PARAM_STR);
@@ -441,7 +458,7 @@ function universalInsert($pdo, $tableName, $columns, $values, $redirectTo = null
             // Redirect after successful insert
             if ($redirectTo) {
                 $_SESSION['message'] = 'Record added successfully';
-                header('Location: ' . $redirectTo); // Redirect to the given page
+                header('Location: ' . $redirectTo .'add-success'); // Redirect to the given page
                 exit;
             }
             return true; // Return true if successful and no redirect

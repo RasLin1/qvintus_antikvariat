@@ -938,7 +938,9 @@ $(document).ready(function () {
 });
 
 
+
 $(document).on('click', '.edit-book-btn', function () {
+    $(this).removeAttr('aria-hidden');
     // Get book data from data attributes
     const bookId = $(this).data('book-id');
     const bookTitle = $(this).data('book-title');
@@ -979,11 +981,16 @@ $(document).on('click', '.edit-book-btn', function () {
     $('#bookGenreEdit').val(bookGenres).trigger('change');
     $('#bookAuthorEdit').val(bookAuthors).trigger('change');
     $('#bookIllustratorEdit').val(bookIllustrators).trigger('change');
+    
 
     // Re-initialize select2
     $('#bookGenreEdit').select2();
     $('#bookAuthorEdit').select2();
     $('#bookIllustratorEdit').select2();
+}); 
+
+$('#editBookModal').on('shown.bs.modal', function () {
+    
 });
 
 $('#bookGenreEdit, #bookAuthorEdit, #bookIllustratorEdit').select2({
@@ -1058,5 +1065,9 @@ document.querySelectorAll('.edit-user-btn').forEach(button => {
 .select2-results__option--highlighted {
     background-color: #e0e0e0; /* Highlighted option background color */
     color: black; /* Highlighted option text color */
+}
+
+.select2-container {
+    z-index: 1050; /* Bootstrap modal z-index */
 }
 </style>

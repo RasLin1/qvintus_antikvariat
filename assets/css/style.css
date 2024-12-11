@@ -152,10 +152,9 @@ padding: 0; /* Remove padding for inline appearance */
 .carousel-item {
 	overflow: hidden;
 }
-.book-card {
-	height: 500px; /* Set a maximum width for consistent sizing */
-}
+
 
 .req-area-container {
 	height: 70%;
 }
+

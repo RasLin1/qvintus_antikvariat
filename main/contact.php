@@ -28,6 +28,12 @@ include '../includes/header.php';
 
 </div>
 
+<style>
+    .container {
+        color: white;
+    }
+</style>
+
 <?php 
 include '../includes/footer.php';
 ?>

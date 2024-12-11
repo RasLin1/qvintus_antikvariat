@@ -14,6 +14,12 @@ include '../includes/header.php';
     </div>
 </div>
 
+<style>
+    .container {
+        color: white;
+    }
+</style>
+
 <?php 
 include '../includes/footer.php';
 ?>

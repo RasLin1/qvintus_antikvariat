@@ -20,17 +20,17 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
     exit;
 }
 
-$stmt_fetchRareItems = $pdo->prepare("SELECT book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchRareItems = $pdo->prepare("SELECT book_id, book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchRareItems->bindParam(":typeId", $rareItem, PDO::PARAM_INT);
 $stmt_fetchRareItems->execute(); // Execute the prepared statement
 $rareItems = $stmt_fetchRareItems->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt_fetchPopGenre = $pdo->prepare("SELECT genre_name, feat_item_id FROM featured_items fi JOIN genres g ON fi.genre_fk = g.genre_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopGenre = $pdo->prepare("SELECT genre_id, genre_name, feat_item_id FROM featured_items fi JOIN genres g ON fi.genre_fk = g.genre_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchPopGenre->bindParam(":typeId", $popGenre, PDO::PARAM_INT);
 $stmt_fetchPopGenre->execute(); // Execute the prepared statement
 $popGenres = $stmt_fetchPopGenre->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt_fetchPopBook = $pdo->prepare("SELECT book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
+$stmt_fetchPopBook = $pdo->prepare("SELECT book_id, book_title, feat_item_id, book_img, book_price FROM featured_items fi JOIN books b ON fi.book_fk = b.book_id WHERE feat_item_type_fk = :typeId");
 $stmt_fetchPopBook->bindParam(":typeId", $popBook, PDO::PARAM_INT);
 $stmt_fetchPopBook->execute(); // Execute the prepared statement
 $popBooks = $stmt_fetchPopBook->fetchAll(PDO::FETCH_ASSOC);
@@ -40,10 +40,10 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<div class="container">
+<div class="container" id="main-container">
 
 
-<div class="search-area container mt-5">
+<div class="search-container d-flex flex-column justify-content-center align-items-center my-5" style="height:60vh;">
     <!-- Search Bar -->
     <h4 class="search-label">
     <?php
@@ -77,7 +77,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Navigation Buttons -->
         <div>
-            <button class="btn btn-outline-secondary me-1" type="button" data-bs-target="#rareItemsCarousel" data-bs-slide="prev">
+            <button class="btn btn-outline-secondary me-1 car-btn" type="button" data-bs-target="#rareItemsCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
@@ -101,18 +101,18 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
                 for ($j = $i; $j < $i + 4 && $j < count($rareItems); $j++) {
                     $item = $rareItems[$j];
                     echo '
-                    <div class="col-12 col-md-6 col-lg-2 mb-4 mx-4 d-flex justify-content-center">
+                    <div class="col-5 col-lg-2 mb-4 mx-lg-4 d-flex justify-content-center">
                         <div class="card book-card flex-fill" style="height: 400px; overflow: hidden;">
                             <!-- Background Image Section -->
                             <div class="card-image" style="background-image: url(\'../assets/img/' . htmlspecialchars($item['book_img']) . '\'); background-size: cover; background-position: center; height: 80%; position: relative;">
-                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); color: #fff; text-align: center; padding: 10px;">
+                                <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); height: 30%; color: #fff; text-align: center; padding: 10px;">
                                     <h5 class="card-title mb-0">' . htmlspecialchars($item['book_title']) . '</h5>
                                     <p class="card-text mb-0">' . number_format($item['book_price'], 2) . '€</p>
                                 </div>
                             </div>
                             <!-- Button Section -->
                             <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
-                                <a href="#" class="btn btn-primary">Learn More</a>
+                                <a href="single-book.php?id=' . $item['book_id'] . '" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>';
@@ -173,7 +173,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Navigation Buttons -->
         <div>
-            <button class="btn btn-outline-secondary me-1" type="button" data-bs-target="#popularBooksCarousel" data-bs-slide="prev">
+            <button class="btn btn-outline-secondary me-1 " type="button" data-bs-target="#popularBooksCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
@@ -208,7 +208,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <!-- Button Section -->
                             <div class="card-footer d-flex justify-content-center align-items-center" style="height: 20%; background: #f8f9fa;">
-                                <a href="#" class="btn btn-primary">Learn More</a>
+                                <a href="single-book.php?id=' . $item['book_id'] . '" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>';
@@ -249,7 +249,7 @@ $fpContent = $stmt_fetchFrontPageContent->fetchAll(PDO::FETCH_ASSOC);
         </p>
 
         <!-- Button at the bottom -->
-        <a href="contact.php" class="btn btn-primary mt-4" style="width: 10%;">
+        <a href="contact.php" class="btn btn-primary mt-4" style="width: 150px;">
             <?php
                 foreach ($fpContent as $cont) {
                     if ($cont['cont_id'] == 7) {
@@ -381,7 +381,24 @@ $(document).ready(function () {
 </script>
 <style>
 
+#main-container {
+    color: white;
+}
+/*
+#main-container {
+    background: #F4F1E1;
+    color: #4A4A4A;
+}
 
+.car-btn {
+    background: #D68A4E;
+    color: #D68A4E;
+}
+.car-btn:hover {
+    background: #B47339;
+    color: #B47339;
+}
+*/
 </style>
 <?php 
 include '../includes/footer.php';
